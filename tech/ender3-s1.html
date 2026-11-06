@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D Printers — What&#x27;s in the Lab</title>
+<meta name="description" content="Creality Ender-3 S1 — two FDM printers for prototypes, props and tactile resources">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#121212;--slate:#4a4a4a;--mute:#8a8a8a;--orange:#f26b1d;--orange-dark:#c24f0b;--tint:#fff1e8;
+    --cloud:#f4f4f4;--line:#dcdcdc;--black:#111;--white:#fff;--max:1040px}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Nunito,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+  a{color:var(--orange-dark)}
+  h1,h2,h3{line-height:1.2;margin:0 0 .5rem;font-weight:800}
+  h1{font-size:2.4rem} h2{font-size:1.5rem} h3{font-size:1.05rem;color:var(--orange-dark)}
+  p{margin:0 0 1rem} ul{margin:0 0 1rem;padding-left:1.1rem} li{margin:.3rem 0} li::marker{color:var(--orange)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+  .eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+
+  .topbar{position:sticky;top:0;z-index:10;background:var(--black);border-bottom:3px solid var(--orange)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .brand{font-weight:800;text-decoration:none;color:#fff;font-size:1.05rem}
+  .brand span{color:var(--orange)}
+  .topbar nav a{text-decoration:none;color:#d6d6d6;margin-left:1.25rem;font-size:.95rem;font-weight:600}
+  .topbar nav a:hover,.topbar nav a.on{color:var(--orange)}
+
+  .hero{background:var(--black);color:#fff;padding:5rem 0 3.5rem;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:var(--orange)}
+  .hero .wrap{position:relative;z-index:1}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:400;margin:1.2rem 0 1rem}
+  .hero h1 b{font-weight:800;color:var(--orange)}
+  .hero p{max-width:40rem;font-size:1.15rem;color:#d6d6d6;margin:0}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:2rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.2);font-size:.95rem}
+  .hero .meta div span{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:800}
+  .hero.small{padding:3rem 0 2.5rem}
+  .hero.small h1{font-size:clamp(1.9rem,4.5vw,2.8rem);margin:.6rem 0 .4rem}
+
+  section.block{padding:3.5rem 0;border-bottom:1px solid var(--line)}
+  section.block > .wrap > h2{margin-bottom:1.25rem}
+  .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem;margin:1rem 0 1.5rem}
+  .strip div{background:var(--tint);border-left:4px solid var(--orange);padding:.6rem .8rem;border-radius:0 6px 6px 0}
+  .strip div span{display:block;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dark)}
+  .strip div b{font-weight:700;font-size:.95rem}
+
+  /* gallery */
+  .gallery{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+  .gallery a{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;height:100%;transition:transform .15s,box-shadow .15s}
+  .gallery a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.10);border-color:var(--orange)}
+  .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 45%;display:block;background:var(--cloud)}
+  .gallery .body{padding:.9rem 1rem 1.1rem}
+  .gallery .num{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dark)}
+  .gallery .name{font-weight:800;font-size:1.08rem;margin:.15rem 0 .2rem}
+  .gallery .sub{color:var(--slate);font-size:.88rem}
+  .pill{display:inline-block;margin-top:.6rem;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .55rem;border-radius:999px;background:var(--tint);color:var(--orange-dark)}
+  .pill.ready{background:#e6f4ea;color:#1e7a3a}
+  .pill.pending{background:var(--tint);color:var(--orange-dark)}
+  .pill.training{background:#eee;color:#444}
+
+  /* tech page */
+  .band{display:inline-flex;overflow:hidden;border-radius:6px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+  .band span:first-child{background:var(--black);color:var(--orange);padding:.45rem .9rem}
+  .band span:last-child{background:var(--orange);color:#fff;padding:.45rem .9rem}
+  .lead{font-size:1.1rem;color:var(--slate);margin-bottom:1.5rem}
+  figure{margin:0 0 1.25rem}
+  figure img{width:100%;max-height:460px;object-fit:contain;display:block;border-radius:8px;background:var(--cloud);border:1px solid var(--line)}
+  figcaption{font-size:.85rem;color:var(--mute);font-style:italic;margin-top:.4rem}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1rem 0 1.5rem}
+  .card{background:var(--cloud);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.25rem}
+  .card ul{margin-bottom:0}
+  .explore{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+  .explore a{display:block;text-decoration:none;color:var(--ink);background:var(--cloud);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.2rem}
+  .explore a:hover{background:var(--tint)}
+  .explore a b{display:block;margin-bottom:.3rem}
+  .explore a small{color:var(--slate);display:block;margin-bottom:.5rem}
+  .explore a em{font-style:normal;color:var(--orange-dark);font-weight:700;font-size:.9rem}
+
+  /* interaction blocks */
+  .interact{background:var(--black);color:#e6e6e6;padding:3rem 0;margin-top:3rem}
+  .interact h2{color:#fff} .interact h3{color:var(--orange)}
+  .interact p{color:#c9c9c9}
+  .igrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+  .ibox{background:#1e1e1e;border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:1.2rem 1.4rem}
+  .ibox.full{grid-column:1/-1}
+  .embed{position:relative;width:100%;aspect-ratio:16/9;background:#0a0a0a;border-radius:8px;overflow:hidden}
+  .embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .embed.tall{aspect-ratio:auto;height:560px}
+  .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;min-height:220px;border:2px dashed #555;border-radius:8px;padding:1.5rem;color:#aaa;font-size:.95rem}
+  .placeholder b{color:var(--orange);font-size:1.05rem;margin-bottom:.3rem}
+  .placeholder code{background:#000;color:#ddd;padding:.1rem .4rem;border-radius:4px;font-size:.85rem}
+
+  .pager{display:flex;justify-content:space-between;gap:1rem;padding:2rem 0;border-top:1px solid var(--line)}
+  .pager a{text-decoration:none;font-weight:700;color:var(--ink);background:var(--cloud);padding:.8rem 1.1rem;border-radius:8px;flex:1}
+  .pager a:hover{background:var(--tint)}
+  .pager a small{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-dark);font-weight:800}
+  .pager .next{text-align:right}
+
+  .collab{padding:3.5rem 0 4rem;background:var(--black);color:#e6e6e6}
+  .collab h2{color:#fff} .collab h3{color:var(--orange)} .collab a{color:var(--orange)}
+  .collab .boxes{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0}
+  .collab .boxes div{padding:1.2rem 1.4rem;border-left:4px solid var(--orange);border-radius:0 8px 8px 0;background:#1e1e1e}
+  .collab .boxes p{margin:.25rem 0} .collab strong{color:#fff}
+  .collab ol{counter-reset:step;list-style:none;padding:0;margin:0 0 1.5rem}
+  .collab ol li{counter-increment:step;position:relative;padding-left:2.4rem;margin:.6rem 0}
+  .collab ol li::before{content:counter(step);position:absolute;left:0;top:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .cta{display:inline-block;background:var(--orange);color:#fff !important;text-decoration:none;font-weight:800;padding:.8rem 1.4rem;border-radius:8px}
+  .cta:hover{background:var(--orange-dark)}
+  footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.88rem;border-top:1px solid #2a2a2a}
+  footer a{color:#cfcfcf}
+
+  @media (max-width:760px){.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.hero::after{width:260px;height:260px;right:-100px;top:-100px}.embed.tall{height:480px}}
+  @media print{.topbar,.pager,footer,.interact{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="../index.html">What's in <span>the Lab</span></a>
+    <nav>
+      <a href="../index.html#technologies" class="on">Technologies</a>
+      <a href="../index.html#about">About</a>
+      <a href="../collaborate.html" class="">Collaborate</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero small">
+  <div class="wrap">
+    <div class="band"><span>Technology 10</span><span>Digital fabrication · Teaching &amp; Research</span></div>
+    <h1>3D Printers</h1>
+    <p>Creality Ender-3 S1 — two FDM printers for prototypes, props and tactile resources</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <figure>
+          <img src="../images/ender3-s1.jpg" alt="3D Printers">
+          <figcaption>One of the two Ender-3 S1 printers, with sample prints and filament on the shelf.</figcaption>
+        </figure>
+      </div>
+      <div>
+        <div class="strip" style="grid-template-columns:1fr 1fr">
+          <div><span>Type of tech</span><b>Digital fabrication</b></div>
+          <div><span>Use</span><b>Teaching &amp; Research</b></div>
+          <div><span>Quantity</span><b>2 units</b></div>
+          <div><span>Status</span><b>Training needed (to be investigated)</b></div>
+        </div>
+        <h3>What is it?</h3>
+        <p>Desktop 3D printers that build objects layer by layer from plastic filament. Students and researchers design a model (or download one), prepare it in a slicer and print it in minutes to hours. In an education lab the printers turn ideas into tangible things: tactile maps and letters, game pieces, replicas of cultural objects, phone stands, spare parts for other equipment.</p>
+      </div>
+    </div>
+
+    <h3>What's in the kit</h3>
+    <ul>
+      <li><strong>2 Creality Ender-3 S1 printers</strong> with direct-drive extruder and automatic bed levelling</li>
+      <li><strong>Print area</strong> 220 × 220 × 270 mm; PLA, PETG and TPU filament</li>
+      <li><strong>Software:</strong> Creality Print, Ultimaker Cura or PrusaSlicer; models from Thingiverse or Printables</li>
+    </ul>
+
+    <h2 style="margin-top:2rem">Ideas for teaching and research</h2>
+    <div class="cols">
+      <div class="card"><h3>Teaching ideas</h3><ul>
+      <li><strong>Tactile materials:</strong> letters, syllables, maps and symbols in relief for literacy and accessibility.</li>
+      <li><strong>Game pieces and boards:</strong> custom tokens and tiles for vocabulary and grammar games.</li>
+      <li><strong>Cultural replicas:</strong> objects, monuments and artefacts to accompany language and culture units.</li>
+      <li><strong>Design thinking:</strong> the full cycle of model, print, test and improve.</li>
+      </ul></div>
+      <div class="card"><h3>Research ideas</h3><ul>
+      <li><strong>Accessible-resource studies:</strong> tactile materials for learners with visual impairment.</li>
+      <li><strong>Maker pedagogy:</strong> what changes when students fabricate their own learning objects.</li>
+      <li><strong>Lab infrastructure:</strong> printing mounts, stands and parts for research setups.</li>
+      </ul></div>
+    </div>
+
+    <h3>Good to know</h3>
+    <ul>
+      <li>Not yet investigated in detail — the first step is a test print and a short written procedure.</li>
+      <li>The nozzle and bed get hot; supervise students and let prints cool before removing them.</li>
+      <li>Print with PLA in a ventilated room; store filament dry.</li>
+    </ul>
+
+    <h2 style="margin-top:2rem">Learn and explore</h2>
+    <div class="explore">
+      <a href="https://manuals.plus/m/8edf7cd6acf8f04a74aa5d230825b88de4be39e8ee29f26c8d5525eea6c93b8e" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Quick installation guide for the Ender-3 S1.</small><em>Open guide →</em></a>
+      <a href="https://foro3d.com/en/2026/mayo/impresion-3d-en-secundaria-como-ensenar-con-objetos-reales.html" target="_blank" rel="noopener"><b>See example applications</b><small>Teaching with real printed objects in secondary school.</small><em>Open article →</em></a>
+    </div>
+  </div>
+</section>
+
+<section class="interact" id="interact">
+  <div class="wrap">
+    <div class="eyebrow">Get involved</div>
+    <h2>Try it, tell us, share an idea</h2>
+    <div class="igrid">
+
+      <div class="ibox full">
+        <h3>Watch our demo</h3>
+        <p>A short video recorded in the lab with this equipment.</p>
+        <div class="embed">
+          <!-- VIDEO: replace the placeholder below with the YouTube embed code.
+               YouTube → Share → Embed → copy the <iframe …></iframe> and paste it here. -->
+          <div class="placeholder"><b>Demo video placeholder</b><span>Upload the demo to YouTube (unlisted is fine).<br>Share → Embed → paste the <code>&lt;iframe&gt;</code> here.</span></div>
+        </div>
+      </div>
+
+      <div class="ibox">
+        <h3>I'm interested</h3>
+        <p>Thirty seconds: tell us you would like to try the <strong>3D Printers</strong> and we will get in touch.</p>
+        <div class="embed tall">
+          <!-- GOOGLE FORM "I'm interested": Forms → Send → < > (Embed HTML) → paste the <iframe> here.
+               Pre-fill the "Technology" question with "3D Printers" using Forms → ⋮ → Get pre-filled link. -->
+          <div class="placeholder"><b>Google Form placeholder — I'm interested</b><span>Create the “I'm interested” form (questions in FORMS.docx).<br>Send → <code>&lt;&gt;</code> Embed HTML → paste the <code>&lt;iframe&gt;</code> here.<br>Use a pre-filled link with Technology = “3D Printers”.</span></div>
+        </div>
+      </div>
+
+      <div class="ibox">
+        <h3>How would you use it?</h3>
+        <p>Post an idea, a question or a link on the wall — and see what colleagues have already suggested.</p>
+        <div class="embed tall">
+          <!-- PADLET: Share → Embed in your blog or website → copy the <iframe> and paste it here. -->
+          <div class="placeholder"><b>Padlet placeholder</b><span>Create a Padlet wall for this technology.<br>Share → Embed in your blog or website → paste the <code>&lt;iframe&gt;</code> here.</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="wrap"><div class="pager"><a href="cricut-maker-3.html"><small>← Previous</small>Cricut Maker 3</a><a class="next" href="robosapien.html"><small>Next →</small>RoboSapien</a></div></div>
+
+<footer><div class="wrap">What's in the Lab · Technology Showcase · Lab name, 2026 · <a href="../collaborate.html">Have an idea? Let's collaborate</a></div></footer>
+</body>
+</html>

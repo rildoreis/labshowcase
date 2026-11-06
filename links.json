@@ -1,0 +1,53 @@
+{
+  "podcast-kit": [
+    ["Watch a quick demonstration", "A short walkthrough of the MDX-2 interface: inputs, gain, monitoring and connecting to a phone or computer.", "https://www.youtube.com/watch?v=jaa6ZHVJTGs", "Open video"],
+    ["Explore a beginner tutorial", "Manufacturer page for the bundle, with the quick-start guide and support resources.", "https://www.movophoto.com/products/podpro-podcasting-bundle-movo", "Open page"],
+    ["See example applications", "Setting up a classroom podcast kit and what students can do with it.", "https://www.nearstream.us/blog/classroom-podcast-equipment-kit", "Open article"]
+  ],
+  "cutebot": [
+    ["Watch a quick demonstration", "Video reviews of the Smart Cutebot collected by ELECFREAKS.", "https://shop.elecfreaks.com/pages/influencer-voice", "Open page"],
+    ["Explore a beginner tutorial", "Official wiki: assembly, MakeCode extension and first programs.", "https://wiki.elecfreaks.com/en/microbit/microbit-smart-car/microbit-smart-cutebot/", "Open wiki"],
+    ["See example applications", "Classroom robotics resources built around Cutebots (University of Liverpool outreach).", "https://outreach.csc.liv.ac.uk/resources/cutebots/", "Open resources"]
+  ],
+  "nezha": [
+    ["Watch a quick demonstration", "Official product page with photos and videos of the 48-in-1 kit.", "https://shop.elecfreaks.com/products/elecfreaks-micro-bit-nezha-48-in-1-inventors-kit-without-micro-bit-board", "Open page"],
+    ["Explore a beginner tutorial", "Official wiki: parts, expansion board and getting started.", "https://wiki.elecfreaks.com/en/microbit/building-blocks/nezha-inventors-kit/", "Open wiki"],
+    ["See example applications", "Step-by-step project cases for the kit.", "https://learn-en.readthedocs.io/en/latest/microbitKit/Nezha_Inventor_s_kit_for_microbit/Nezha-Inventor-s-kit-for-microbit.html", "Open projects"]
+  ],
+  "littlebits": [
+    ["Watch a quick demonstration", "Video review of the Gizmos & Gadgets Kit.", "https://core-electronics.com.au/videos/our-review-of-littlebits-gizmos-and-gadgets-kit-2nd-edition", "Open video"],
+    ["Explore a beginner tutorial", "Getting started with littleBits: how the bits snap together and first circuits.", "https://makezine.com/projects/getting-started-with-littlebits", "Open guide"],
+    ["See example applications", "Classroom uses of the Code Kit.", "https://sites.google.com/aps.edu/apsapps/apps-extensions/classroom-edtech-applications/littlebits-code-kit", "Open page"]
+  ],
+  "sphero-bolt": [
+    ["Watch a quick demonstration", "Sphero's introduction to BOLT: sensors, LED matrix and infrared.", "https://medium.com/sphero-sprk/introducing-sphero-bolt-3682e305f265", "Open article"],
+    ["Explore a beginner tutorial", "Official BOLT resources: setup, app and first activities.", "https://sphero.com/pages/sphero-bolt-resources", "Open resources"],
+    ["See example applications", "Sphero's after-school activity guide (PDF).", "https://cdn.shopify.com/s/files/1/0306/6419/6141/files/Sphero_After_School_Guide_2023.pdf", "Open guide"]
+  ],
+  "omni-one": [
+    ["Watch a quick demonstration", "A news segment showing the Omni One in use.", "https://www.fox5ny.com/video/1755569", "Open video"],
+    ["Explore a beginner tutorial", "The Omni One manual: setup, harness and safety.", "https://www.manualslib.com/manual/3757080/Omni-One.html", "Open manual"]
+  ],
+  "meta-glasses": [
+    ["Watch a quick demonstration", "Meta's overview of the Gen 2 glasses and what they can do.", "https://www.meta.com/blog/ray-ban-meta-gen-2-now-available-ai-glasses-extended-battery-life-3k-video/", "Open page"],
+    ["Explore a beginner tutorial", "Setting up the glasses in five steps.", "https://tomsguide.com/ai/how-to-set-up-your-ray-ban-meta-smart-glasses", "Open guide"],
+    ["See example applications", "Using Ray-Ban Meta glasses for teaching: what to know.", "https://www.techlearning.com/technology/ray-ban-meta-glasses-for-teaching-what-to-know", "Open article"]
+  ],
+  "meta-quest-3": [
+    ["Explore a beginner tutorial", "Official setup guide from the Meta Help Center.", "https://www.meta.com/en-gb/help/quest/10004693912934783/", "Open guide"],
+    ["See example applications", "Meta for Education: how Quest is being used in classrooms.", "https://www.meta.com/blog/meta-for-education-quest-classroom-educators-vr-mixed-reality/", "Open article"]
+  ],
+  "cricut-maker-3": [
+    ["Watch a quick demonstration", "Official product page with videos of the Maker 3 in action.", "https://cricut.com/en-ca/cutting-machines/cricut-maker/cricut-maker-3", "Open page"],
+    ["Explore a beginner tutorial", "Setting up the Maker 3 and making a first project.", "https://craft-e-corner.com/blogs/project-inspiration/cricut-beginner-guide-setting-up-your-cricut-maker-3-and-first-project", "Open guide"],
+    ["See example applications", "Lesson plans built around a Cricut (University of New Orleans library).", "https://libguides.uno.edu/cricut/lesson-plans", "Open lessons"]
+  ],
+  "ender3-s1": [
+    ["Explore a beginner tutorial", "Quick installation guide for the Ender-3 S1.", "https://manuals.plus/m/8edf7cd6acf8f04a74aa5d230825b88de4be39e8ee29f26c8d5525eea6c93b8e", "Open guide"],
+    ["See example applications", "Teaching with real printed objects in secondary school.", "https://foro3d.com/en/2026/mayo/impresion-3d-en-secundaria-como-ensenar-con-objetos-reales.html", "Open article"]
+  ],
+  "robosapien": [
+    ["Explore a beginner tutorial", "The RoboSapien manual: controls, programming modes and sensors (PDF).", "https://asset.conrad.com/media10/add/160267/c1/-/en/000665146ML00/manual-665146-wowwee-robotics-robosapien-the-next-generation-8081-toy-robot.pdf", "Open manual"],
+    ["See example applications", "A RoboSapien at work in a high-school classroom.", "https://www.fox13now.com/2014/11/26/former-tv-star-robosapien-has-new-job-at-hunter-high", "Open article"]
+  ]
+}
