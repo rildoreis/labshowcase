@@ -7,10 +7,10 @@ e = html.escape
 
 CSS = """
   :root{--ink:#121212;--slate:#4a4a4a;--mute:#8a8a8a;--orange:#f26b1d;--orange-dark:#c24f0b;--tint:#fff1e8;
-    --cloud:#f4f4f4;--line:#dcdcdc;--black:#111;--white:#fff;--max:1040px}
+    --cloud:#f1eee9;--line:#e2ddd5;--black:#111;--white:#fff;--paper:#faf8f5;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--max:1040px}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;font-family:Nunito,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+  body{margin:0;font-family:Nunito,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
   a{color:var(--orange-dark)}
   h1,h2,h3{line-height:1.2;margin:0 0 .5rem;font-weight:800}
   h1{font-size:2.4rem} h2{font-size:1.5rem} h3{font-size:1.05rem;color:var(--orange-dark)}
@@ -26,7 +26,6 @@ CSS = """
   .topbar nav a:hover,.topbar nav a.on{color:var(--orange)}
 
   .hero{background:var(--black);color:#fff;padding:5rem 0 3.5rem;position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:var(--orange)}
   .hero .wrap{position:relative;z-index:1}
   .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:400;margin:1.2rem 0 1rem}
   .hero h1 b{font-weight:800;color:var(--orange)}
@@ -44,8 +43,10 @@ CSS = """
   .strip div b{font-weight:700;font-size:.95rem}
 
   /* gallery */
-  .gallery{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+  .gallery{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem}
+  .gallery li{grid-column:span 2}
   .gallery a{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;height:100%;transition:transform .15s,box-shadow .15s}
+  .gallery .num{display:none}
   .gallery a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.10);border-color:var(--orange)}
   .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 45%;display:block;background:var(--cloud)}
   .gallery .body{padding:.9rem 1rem 1.1rem}
@@ -67,7 +68,7 @@ CSS = """
   figcaption{font-size:.85rem;color:var(--mute);font-style:italic;margin-top:.4rem}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1rem 0 1.5rem}
-  .card{background:var(--cloud);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.25rem}
+  .card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.25rem}
   .card ul{margin-bottom:0}
   .explore{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
   .explore a{display:block;text-decoration:none;color:var(--ink);background:var(--cloud);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.2rem}
@@ -109,7 +110,33 @@ CSS = """
   footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.88rem;border-top:1px solid #2a2a2a}
   footer a{color:#cfcfcf}
 
-  @media (max-width:760px){.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.hero::after{width:260px;height:260px;right:-100px;top:-100px}.embed.tall{height:480px}}
+
+  .logo{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff;font-weight:800}
+  .logo i{display:inline-grid;place-items:center;width:30px;height:30px;background:var(--orange);color:#111;font-style:normal;font-family:var(--mono);font-weight:700;font-size:.72rem;border-radius:5px;letter-spacing:.02em}
+  .tag{font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.04em;color:var(--orange-dark);background:var(--tint);padding:.15rem .45rem;border-radius:4px;display:inline-block}
+  .hero .tag{background:#2a2a2a;color:var(--orange)}
+  .ul-mark{display:inline-block;width:56px;height:6px;background:var(--orange);border-radius:3px;transform:rotate(-1.5deg);margin:.2rem 0 1.2rem}
+  .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem}
+  .filters button{font:inherit;font-weight:700;font-size:.85rem;padding:.4rem .9rem;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--slate);cursor:pointer}
+  .filters button.on{background:var(--black);color:#fff;border-color:var(--black)}
+  .filters button:hover{border-color:var(--orange)}
+  .gallery li.hide{display:none}
+  .gallery li.featured{grid-column:span 3}
+  .gallery li.featured img{aspect-ratio:2/1}
+  .gallery li.featured .name{font-size:1.3rem}
+  .gallery .ready-note{display:block;margin-top:.5rem;color:var(--orange-dark);font-weight:700;font-size:.85rem}
+  .used{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.3rem;margin:1.5rem 0}
+  .used h3{margin-bottom:.3rem} .used p{margin:0;color:var(--slate)}
+  .learn{list-style:none;padding:0;margin:.5rem 0 0}
+  .learn li{display:grid;grid-template-columns:150px 1fr;gap:1rem;padding:.75rem 0;border-top:1px solid var(--line);margin:0}
+  .learn li:last-child{border-bottom:1px solid var(--line)}
+  .learn .k{font-family:var(--mono);font-size:.74rem;font-weight:700;color:var(--orange-dark);padding-top:.25rem}
+  .learn a{font-weight:700;color:var(--ink)} .learn a:hover{color:var(--orange-dark)}
+  .learn small{display:block;color:var(--slate)}
+  .meta-line{font-family:var(--mono);font-size:.74rem;color:var(--mute);margin-top:1rem}
+  .labgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+  .photo-ph{aspect-ratio:4/3;border:2px dashed var(--line);border-radius:10px;display:grid;place-items:center;color:var(--mute);text-align:center;padding:1rem;background:#fff}
+  @media (max-width:760px){.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
   @media print{.topbar,.pager,footer,.interact{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 """
 
@@ -120,18 +147,23 @@ HEAD = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f26b1d'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='JetBrains Mono,Menlo,monospace' font-weight='700' font-size='24' fill='%23111'%3ELAB%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:image" content="{root}images/{og}">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>{css}</style>
 </head>
 <body>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="{root}index.html">What's in <span>the Lab</span></a>
+    <a class="logo" href="{root}index.html"><i>LAB</i><span>What's in <span style="color:var(--orange)">the Lab</span></span></a>
     <nav>
       <a href="{root}index.html#technologies" class="{on_tech}">Technologies</a>
-      <a href="{root}index.html#about">About</a>
+      <a href="{root}lab.html" class="{on_lab}">The lab</a>
       <a href="{root}collaborate.html" class="{on_collab}">Collaborate</a>
     </nav>
   </div>
@@ -139,14 +171,14 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """
-<footer><div class="wrap">What's in the Lab · Technology Showcase · Lab name, 2026 · <a href="{root}collaborate.html">Have an idea? Let's collaborate</a></div></footer>
+<footer><div class="wrap">What's in the Lab · Lab name · Building, Room · City · <a href="{root}collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 6 Nov 2026 · kept by [name]</span></div></footer>
 </body>
 </html>
 """
 
-def head(title, desc, root, on="tech"):
-    return HEAD.format(title=e(title), desc=e(desc), css=CSS, root=root,
-                       on_tech="on" if on == "tech" else "", on_collab="on" if on == "collab" else "")
+def head(title, desc, root, on="tech", og="omni-one.jpg"):
+    return HEAD.format(title=e(title), desc=e(desc), css=CSS, root=root, og=og,
+                       on_tech="on" if on == "tech" else "", on_collab="on" if on == "collab" else "", on_lab="on" if on == "lab" else "")
 
 def pill(status):
     s = status.lower()
@@ -160,13 +192,22 @@ def placeholder(title, lines):
     body = "<br>".join(lines)
     return f'<div class="placeholder"><b>{title}</b><span>{body}</span></div>'
 
+def used_text(t):
+    st = t["status"].lower()
+    if st.startswith("ready"):
+        return "Not used in a course yet — set up and waiting for its first project. Be the first and we will write it up here."
+    if st.startswith("setup"):
+        return "Not available yet. Once it is set up, the first session will be documented here: who used it, for what, and what we learned."
+    return "Nobody in the lab has tried this one yet. If you know it, come and show us — a 20-minute walkthrough would be the first entry here."
+
 # ------------------------------------------------------------------ tech pages
 def tech_page(i, t):
     root = "../"
     prev_t = techs[i - 1] if i > 0 else None
     next_t = techs[i + 1] if i < len(techs) - 1 else None
+    kinds = {"Watch a quick demonstration": "WATCH", "Explore a beginner tutorial": "START HERE", "See example applications": "IN THE CLASSROOM"}
     ex = "\n".join(
-        f'      <a href="{e(u)}" target="_blank" rel="noopener"><b>{e(ti)}</b><small>{e(d)}</small><em>{e(lbl)} →</em></a>'
+        f'      <li><span class="k">{kinds.get(ti, "LINK")}</span><div><a href="{e(u)}" target="_blank" rel="noopener">{e(d.rstrip("."))}</a><small>{e(u.split("/")[2].replace("www.", ""))}</small></div></li>'
         for ti, d, u, lbl in links.get(t["id"], []))
     form_hint = e(t["name"])
     pager = '<div class="pager">'
@@ -177,7 +218,7 @@ def tech_page(i, t):
     return head(f"{t['name']} — What's in the Lab", t["lead"], root) + f"""
 <section class="hero small">
   <div class="wrap">
-    <div class="band"><span>Technology {t['num']}</span><span>{e(t['type'])} · {e(t['use'])}</span></div>
+    <span class="tag">LAB-{t['num']}</span> &nbsp;<span class="tag">{e(t['type'])}</span> &nbsp;<span class="tag">{e(t['use'])}</span>
     <h1>{e(t['name'])}</h1>
     <p>{e(t['lead'])}</p>
   </div>
@@ -209,7 +250,13 @@ def tech_page(i, t):
 {li_pairs(t['kit'])}
     </ul>
 
-    <h2 style="margin-top:2rem">Ideas for teaching and research</h2>
+    <div class="used">
+      <h3>Used so far</h3>
+      <!-- Replace with real history: course, semester, what happened, who ran it. One to three lines. -->
+      <p>{used_text(t)}</p>
+    </div>
+
+    <h2 style="margin-top:2rem">Ideas for teaching and research</h2><span class="ul-mark"></span>
     <div class="cols">
       <div class="card"><h3>Teaching ideas</h3><ul>
 {li_pairs(t['teaching'])}
@@ -225,15 +272,16 @@ def tech_page(i, t):
     </ul>
 
     <h2 style="margin-top:2rem">Learn and explore</h2>
-    <div class="explore">
+    <ul class="learn">
 {ex}
-    </div>
+    </ul>
+    <p class="meta-line">Inventory LAB-{t['num']} · {e(t['quantity'])} · status: {e(t['status'])}</p>
   </div>
 </section>
 
 <section class="interact" id="interact">
   <div class="wrap">
-    <div class="eyebrow">Get involved</div>
+    <span class="tag">Get involved</span>
     <h2>Try it, tell us, share an idea</h2>
     <div class="igrid">
 
@@ -275,16 +323,23 @@ def tech_page(i, t):
 
 # ------------------------------------------------------------------ index
 def index_page():
-    cards = "\n".join(f"""      <li><a href="tech/{t['id']}.html">
+    def cat(t):
+        ty = t["type"].lower()
+        return "robotics" if "robot" in ty else "immersive" if ("immersive" in ty or "wearable" in ty) else "fabrication" if "fabrication" in ty else "media"
+    def stat(t):
+        st = t["status"].lower()
+        return "ready" if st.startswith("ready") else "training" if st.startswith("training") else "pending"
+    ordered = sorted(techs, key=lambda t: {"ready": 0, "pending": 1, "training": 2}[stat(t)])
+    cards = "\n".join(f"""      <li class="{'featured ' if stat(t)=='ready' else ''}" data-cat="{cat(t)}" data-stat="{stat(t)}"><a href="tech/{t['id']}.html">
         <img src="{t['image']}" alt="{e(t['name'])}" loading="lazy">
-        <div class="body"><div class="num">Technology {t['num']}</div><div class="name">{e(t['name'])}</div>
-        <div class="sub">{e(t['type'])} · {e(t['use'])}</div>{pill(t['status'])}</div></a></li>""" for t in techs)
+        <div class="body"><span class="tag">LAB-{t['num']}</span><div class="name">{e(t['name'])}</div>
+        <div class="sub">{e(t['type'])} · {e(t['use'])}</div>{pill(t['status'])}{'<span class="ready-note">Book a demo this week →</span>' if stat(t)=='ready' else ''}</div></a></li>""" for t in ordered)
     return head("What's in the Lab — Technology Showcase", "Technologies available in the lab for teaching and research, with ideas for putting them to work.", "", on="tech") + f"""
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="eyebrow">Technology showcase · 2026</div>
+    <span class="tag">Technology showcase · Fall 2026</span>
     <h1>What's in <b>the Lab</b></h1>
-    <p>Technologies available for teaching and research — and ideas for putting them to work.</p>
+    <p>Eleven pieces of equipment, two of them ready to demo this week, the rest being set up. Pick one, see what it does, and tell us how you would use it.</p>
     <div class="meta">
       <div><span>Lab</span>Lab name</div>
       <div><span>Institution</span>Department · University</div>
@@ -295,9 +350,18 @@ def index_page():
 
 <section class="block" id="technologies">
   <div class="wrap">
-    <h2>Technologies</h2>
-    <p style="color:var(--slate)">Click a card to open the full page: what it is, what's in the kit, ideas for teaching and research, and how to get involved.</p>
-    <ul class="gallery">
+    <h2>Technologies</h2><span class="ul-mark"></span>
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">All</button>
+      <button data-f="stat:ready">Ready now</button>
+      <button data-f="stat:pending">Being set up</button>
+      <button data-f="stat:training">Nobody has tried yet</button>
+      <button data-f="cat:robotics">Robotics</button>
+      <button data-f="cat:immersive">Immersive &amp; wearable</button>
+      <button data-f="cat:fabrication">Fabrication</button>
+      <button data-f="cat:media">Audio &amp; electronics</button>
+    </div>
+    <ul class="gallery" id="gallery">
 {cards}
     </ul>
   </div>
@@ -305,8 +369,8 @@ def index_page():
 
 <section class="block" id="about">
   <div class="wrap">
-    <h2>About this showcase</h2>
-    <p>This catalogue presents the technologies available in the lab, one page each, with a photo of our own equipment, a plain-language description, and concrete ideas for using it in courses and research projects. Each page ends with a short demo video, a quick “I'm interested” form and an idea wall where you can see what colleagues have proposed.</p>
+    <h2>How this works</h2><span class="ul-mark"></span>
+    <p>One page per piece of equipment: our own photo, what it is in plain words, what is in the box, who has used it so far, and ideas for courses and studies. Every page ends with a short demo video, a thirty-second “I'm interested” form and an idea wall where you can see what colleagues have already proposed. The inventory code (LAB-01, LAB-02…) is the same one printed on the label of the equipment itself.</p>
     <h3>Status labels</h3>
     <div class="strip">
       <div><span>Ready to demo</span><b>Set up and working; book a session</b></div>
@@ -319,10 +383,74 @@ def index_page():
 
 <section class="collab">
   <div class="wrap">
-    <div class="eyebrow">Next steps</div>
-    <h2 style="font-size:2rem;margin-top:.4rem">Have an idea? Let's collaborate</h2>
+    <span class="tag">Next steps</span>
+    <h2 style="font-size:2rem;margin-top:.6rem">Have an idea? Let's collaborate</h2>
     <p>If a technology sparks an idea for a lesson, an assignment, a thesis or a study, we would like to hear it — and we can help with setup, training and design.</p>
-    <a class="cta" href="collaborate.html">Book a demo or share an idea →</a>
+    <a class="cta" href="collaborate.html">Book a demo or share an idea</a>
+  </div>
+</section>
+<script>
+  (function () {{
+    var btns = document.querySelectorAll('#filters button'), items = document.querySelectorAll('#gallery li');
+    btns.forEach(function (b) {{ b.addEventListener('click', function () {{
+      btns.forEach(function (x) {{ x.classList.remove('on'); }}); b.classList.add('on');
+      var f = b.dataset.f.split(':');
+      items.forEach(function (li) {{
+        var show = f[0] === 'all' || li.dataset[f[0]] === f[1];
+        li.classList.toggle('hide', !show);
+      }});
+    }}); }});
+  }})();
+</script>
+""" + FOOT.format(root="")
+
+# ------------------------------------------------------------------ lab page
+def lab_page():
+    return head("The lab — What's in the Lab", "Who we are, where we are, and how to use the lab.", "", on="lab") + """
+<section class="hero small">
+  <div class="wrap">
+    <span class="tag">Who we are</span>
+    <h1>The <b>lab</b></h1>
+    <p>A small space with a lot of equipment and a short list of rules.</p>
+  </div>
+</section>
+<section class="block">
+  <div class="wrap">
+    <div class="labgrid">
+      <div>
+        <!-- Replace with a wide photo of the room, with people in it if possible: images/lab-room.jpg -->
+        <div class="photo-ph">Photo of the room<br><small>images/lab-room.jpg · wide shot, people welcome</small></div>
+      </div>
+      <div>
+        <h2>What this place is for</h2><span class="ul-mark"></span>
+        <!-- Two or three sentences in your own words: why the lab exists, who set it up, what you hope people do here. -->
+        <p>[Two or three sentences in the team's own words: why the lab exists, who set it up, and what you hope people will do here. Mention one thing that already happened in it.]</p>
+        <h3>Where and when</h3>
+        <div class="strip" style="grid-template-columns:1fr 1fr">
+          <div><span>Room</span><b>Building · Room</b></div>
+          <div><span>Open hours</span><b>Mon–Fri, 9 am – 5 pm</b></div>
+          <div><span>Coordinator</span><b>Name</b></div>
+          <div><span>Email</span><b>name@university.edu</b></div>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:2.5rem">Team</h2><span class="ul-mark"></span>
+    <!-- One line per person: name, role, what to ask them about. Add a photo if you like. -->
+    <ul>
+      <li><strong>[Name]</strong> — coordinator. Ask about: bookings, new equipment, collaborations.</li>
+      <li><strong>[Name]</strong> — graduate assistant. Ask about: VR headsets, Omni One.</li>
+      <li><strong>[Name]</strong> — graduate assistant. Ask about: robots, 3D printers, Cricut.</li>
+    </ul>
+
+    <h2 style="margin-top:2.5rem">House rules</h2><span class="ul-mark"></span>
+    <ul>
+      <li>Book first. Even a quick look — it keeps the equipment where we expect it.</li>
+      <li>Sign the sheet when you take something out; loans are up to two weeks.</li>
+      <li>Put it back charged. Batteries and chargers live in the labelled drawer.</li>
+      <li>Recording people? Ask them first. Consent forms are in the folder by the door.</li>
+      <li>Something broke? Tell us the same day. Nobody will be upset; silence is the only problem.</li>
+    </ul>
   </div>
 </section>
 """ + FOOT.format(root="")
@@ -332,7 +460,7 @@ def collaborate_page():
     return head("Have an idea? Let's collaborate — What's in the Lab", "Book a demo, borrow equipment or propose a project.", "", on="collab") + f"""
 <section class="hero small">
   <div class="wrap">
-    <div class="eyebrow">Next steps</div>
+    <span class="tag">Next steps</span>
     <h1>Have an idea? <b>Let's collaborate</b></h1>
     <p>Nothing in this catalogue needs to be used exactly as described. Small experiments are welcome; most of our projects started as one.</p>
   </div>
@@ -368,7 +496,7 @@ def collaborate_page():
 
 <section class="interact">
   <div class="wrap">
-    <div class="eyebrow">Get involved</div>
+    <span class="tag">Get involved</span>
     <h2>Book a demo, propose a project</h2>
     <div class="igrid">
       <div class="ibox">
@@ -407,6 +535,7 @@ if False:
 os.makedirs(f"{OUT}/tech", exist_ok=True); 
 open(f"{OUT}/index.html", "w").write(index_page())
 open(f"{OUT}/collaborate.html", "w").write(collaborate_page())
+open(f"{OUT}/lab.html", "w").write(lab_page())
 for i, t in enumerate(techs):
     open(f"{OUT}/tech/{t['id']}.html", "w").write(tech_page(i, t))
 print("pages:", 2 + len(techs))

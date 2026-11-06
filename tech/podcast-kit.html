@@ -5,15 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Portable Podcast Kit — What&#x27;s in the Lab</title>
 <meta name="description" content="Movo MDX-2 bundle — two-person recording setup for computers, tablets and phones">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f26b1d'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='JetBrains Mono,Menlo,monospace' font-weight='700' font-size='24' fill='%23111'%3ELAB%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Portable Podcast Kit — What&#x27;s in the Lab">
+<meta property="og:description" content="Movo MDX-2 bundle — two-person recording setup for computers, tablets and phones">
+<meta property="og:image" content="../images/omni-one.jpg">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
   :root{--ink:#121212;--slate:#4a4a4a;--mute:#8a8a8a;--orange:#f26b1d;--orange-dark:#c24f0b;--tint:#fff1e8;
-    --cloud:#f4f4f4;--line:#dcdcdc;--black:#111;--white:#fff;--max:1040px}
+    --cloud:#f1eee9;--line:#e2ddd5;--black:#111;--white:#fff;--paper:#faf8f5;--mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--max:1040px}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;font-family:Nunito,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+  body{margin:0;font-family:Nunito,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
   a{color:var(--orange-dark)}
   h1,h2,h3{line-height:1.2;margin:0 0 .5rem;font-weight:800}
   h1{font-size:2.4rem} h2{font-size:1.5rem} h3{font-size:1.05rem;color:var(--orange-dark)}
@@ -29,7 +34,6 @@
   .topbar nav a:hover,.topbar nav a.on{color:var(--orange)}
 
   .hero{background:var(--black);color:#fff;padding:5rem 0 3.5rem;position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:var(--orange)}
   .hero .wrap{position:relative;z-index:1}
   .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:400;margin:1.2rem 0 1rem}
   .hero h1 b{font-weight:800;color:var(--orange)}
@@ -47,8 +51,10 @@
   .strip div b{font-weight:700;font-size:.95rem}
 
   /* gallery */
-  .gallery{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+  .gallery{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem}
+  .gallery li{grid-column:span 2}
   .gallery a{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;height:100%;transition:transform .15s,box-shadow .15s}
+  .gallery .num{display:none}
   .gallery a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.10);border-color:var(--orange)}
   .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 45%;display:block;background:var(--cloud)}
   .gallery .body{padding:.9rem 1rem 1.1rem}
@@ -70,7 +76,7 @@
   figcaption{font-size:.85rem;color:var(--mute);font-style:italic;margin-top:.4rem}
   .two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1rem 0 1.5rem}
-  .card{background:var(--cloud);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.25rem}
+  .card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.25rem}
   .card ul{margin-bottom:0}
   .explore{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
   .explore a{display:block;text-decoration:none;color:var(--ink);background:var(--cloud);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.2rem}
@@ -112,17 +118,43 @@
   footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.88rem;border-top:1px solid #2a2a2a}
   footer a{color:#cfcfcf}
 
-  @media (max-width:760px){.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.hero::after{width:260px;height:260px;right:-100px;top:-100px}.embed.tall{height:480px}}
+
+  .logo{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff;font-weight:800}
+  .logo i{display:inline-grid;place-items:center;width:30px;height:30px;background:var(--orange);color:#111;font-style:normal;font-family:var(--mono);font-weight:700;font-size:.72rem;border-radius:5px;letter-spacing:.02em}
+  .tag{font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.04em;color:var(--orange-dark);background:var(--tint);padding:.15rem .45rem;border-radius:4px;display:inline-block}
+  .hero .tag{background:#2a2a2a;color:var(--orange)}
+  .ul-mark{display:inline-block;width:56px;height:6px;background:var(--orange);border-radius:3px;transform:rotate(-1.5deg);margin:.2rem 0 1.2rem}
+  .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem}
+  .filters button{font:inherit;font-weight:700;font-size:.85rem;padding:.4rem .9rem;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--slate);cursor:pointer}
+  .filters button.on{background:var(--black);color:#fff;border-color:var(--black)}
+  .filters button:hover{border-color:var(--orange)}
+  .gallery li.hide{display:none}
+  .gallery li.featured{grid-column:span 3}
+  .gallery li.featured img{aspect-ratio:2/1}
+  .gallery li.featured .name{font-size:1.3rem}
+  .gallery .ready-note{display:block;margin-top:.5rem;color:var(--orange-dark);font-weight:700;font-size:.85rem}
+  .used{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.3rem;margin:1.5rem 0}
+  .used h3{margin-bottom:.3rem} .used p{margin:0;color:var(--slate)}
+  .learn{list-style:none;padding:0;margin:.5rem 0 0}
+  .learn li{display:grid;grid-template-columns:150px 1fr;gap:1rem;padding:.75rem 0;border-top:1px solid var(--line);margin:0}
+  .learn li:last-child{border-bottom:1px solid var(--line)}
+  .learn .k{font-family:var(--mono);font-size:.74rem;font-weight:700;color:var(--orange-dark);padding-top:.25rem}
+  .learn a{font-weight:700;color:var(--ink)} .learn a:hover{color:var(--orange-dark)}
+  .learn small{display:block;color:var(--slate)}
+  .meta-line{font-family:var(--mono);font-size:.74rem;color:var(--mute);margin-top:1rem}
+  .labgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
+  .photo-ph{aspect-ratio:4/3;border:2px dashed var(--line);border-radius:10px;display:grid;place-items:center;color:var(--mute);text-align:center;padding:1rem;background:#fff}
+  @media (max-width:760px){.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
   @media print{.topbar,.pager,footer,.interact{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="../index.html">What's in <span>the Lab</span></a>
+    <a class="logo" href="../index.html"><i>LAB</i><span>What's in <span style="color:var(--orange)">the Lab</span></span></a>
     <nav>
       <a href="../index.html#technologies" class="on">Technologies</a>
-      <a href="../index.html#about">About</a>
+      <a href="../lab.html" class="">The lab</a>
       <a href="../collaborate.html" class="">Collaborate</a>
     </nav>
   </div>
@@ -130,7 +162,7 @@
 
 <section class="hero small">
   <div class="wrap">
-    <div class="band"><span>Technology 01</span><span>Audio production · Teaching &amp; Research</span></div>
+    <span class="tag">LAB-01</span> &nbsp;<span class="tag">Audio production</span> &nbsp;<span class="tag">Teaching &amp; Research</span>
     <h1>Portable Podcast Kit</h1>
     <p>Movo MDX-2 bundle — two-person recording setup for computers, tablets and phones</p>
   </div>
@@ -166,7 +198,13 @@
       <li><strong>Not included:</strong> a recording device (any laptop, tablet or phone with a recording app such as Audacity or GarageBand)</li>
     </ul>
 
-    <h2 style="margin-top:2rem">Ideas for teaching and research</h2>
+    <div class="used">
+      <h3>Used so far</h3>
+      <!-- Replace with real history: course, semester, what happened, who ran it. One to three lines. -->
+      <p>Not used in a course yet — set up and waiting for its first project. Be the first and we will write it up here.</p>
+    </div>
+
+    <h2 style="margin-top:2rem">Ideas for teaching and research</h2><span class="ul-mark"></span>
     <div class="cols">
       <div class="card"><h3>Teaching ideas</h3><ul>
       <li><strong>Student podcasts:</strong> episodic projects where learners plan, script, record and edit a show in the target language.</li>
@@ -192,17 +230,18 @@
     </ul>
 
     <h2 style="margin-top:2rem">Learn and explore</h2>
-    <div class="explore">
-      <a href="https://www.youtube.com/watch?v=jaa6ZHVJTGs" target="_blank" rel="noopener"><b>Watch a quick demonstration</b><small>A short walkthrough of the MDX-2 interface: inputs, gain, monitoring and connecting to a phone or computer.</small><em>Open video →</em></a>
-      <a href="https://www.movophoto.com/products/podpro-podcasting-bundle-movo" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Manufacturer page for the bundle, with the quick-start guide and support resources.</small><em>Open page →</em></a>
-      <a href="https://www.nearstream.us/blog/classroom-podcast-equipment-kit" target="_blank" rel="noopener"><b>See example applications</b><small>Setting up a classroom podcast kit and what students can do with it.</small><em>Open article →</em></a>
-    </div>
+    <ul class="learn">
+      <li><span class="k">WATCH</span><div><a href="https://www.youtube.com/watch?v=jaa6ZHVJTGs" target="_blank" rel="noopener">A short walkthrough of the MDX-2 interface: inputs, gain, monitoring and connecting to a phone or computer</a><small>youtube.com</small></div></li>
+      <li><span class="k">START HERE</span><div><a href="https://www.movophoto.com/products/podpro-podcasting-bundle-movo" target="_blank" rel="noopener">Manufacturer page for the bundle, with the quick-start guide and support resources</a><small>movophoto.com</small></div></li>
+      <li><span class="k">IN THE CLASSROOM</span><div><a href="https://www.nearstream.us/blog/classroom-podcast-equipment-kit" target="_blank" rel="noopener">Setting up a classroom podcast kit and what students can do with it</a><small>nearstream.us</small></div></li>
+    </ul>
+    <p class="meta-line">Inventory LAB-01 · 1 kit · status: Ready to demo (recording app pending)</p>
   </div>
 </section>
 
 <section class="interact" id="interact">
   <div class="wrap">
-    <div class="eyebrow">Get involved</div>
+    <span class="tag">Get involved</span>
     <h2>Try it, tell us, share an idea</h2>
     <div class="igrid">
 
@@ -241,6 +280,6 @@
 
 <div class="wrap"><div class="pager"><a href="../index.html#technologies"><small>← Back</small>All technologies</a><a class="next" href="cutebot.html"><small>Next →</small>micro:bit Smart Cutebot</a></div></div>
 
-<footer><div class="wrap">What's in the Lab · Technology Showcase · Lab name, 2026 · <a href="../collaborate.html">Have an idea? Let's collaborate</a></div></footer>
+<footer><div class="wrap">What's in the Lab · Lab name · Building, Room · City · <a href="../collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 6 Nov 2026 · kept by [name]</span></div></footer>
 </body>
 </html>

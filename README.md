@@ -7,6 +7,7 @@ Static site for GitHub Pages. No build step is required to publish: upload these
 ```
 index.html          home: cover, gallery of technologies, about, link to Collaborate
 collaborate.html    booking, project-idea form, quick poll
+lab.html            who we are, where, house rules (fill in the placeholders)
 tech/*.html         one page per technology (11)
 images/             photos (JPG, resized for the web)
 FORMS.md            questions and settings for every Google Form
@@ -43,3 +44,10 @@ To add a technology by hand: copy any file in `tech/`, rename it, change the tex
 
 - Lab name, institution and coordinator contact (hero on `index.html`, `collaborate.html`, footer).
 - Photos: `images/` already holds the lab's own photos; replace a file to update a page.
+
+## Things only you can fill in (marked with [brackets] or HTML comments)
+
+- `lab.html`: the paragraph about the lab, the team list, the room photo (`images/lab-room.jpg`).
+- Every technology page: the **Used so far** box — one to three lines of real history.
+- Footer: "kept by [name]" and the update date.
+- Replace inventory photos with photos of the equipment in use when you have them (same file names).
