@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's in the Lab — Technology Showcase</title>
+<meta name="description" content="Technologies available in the lab for teaching and research, with ideas for putting them to work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2933; --slate:#52606d; --mute:#9aa5b1;
+    --teal:#0e7c7b; --teal-dark:#0b5f5e; --mint:#e6f3f2;
+    --cloud:#f3f5f7; --line:#d9dee3; --white:#fff;
+    --max:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55;font-size:16px}
+  a{color:var(--teal)}
+  h1,h2,h3{line-height:1.2;margin:0 0 .5rem}
+  h1{font-size:2.4rem;font-weight:600}
+  h2{font-size:1.5rem;font-weight:600}
+  h3{font-size:1.05rem;font-weight:600;color:var(--teal)}
+  p{margin:0 0 1rem}
+  ul{margin:0 0 1rem;padding-left:1.1rem}
+  li{margin:.3rem 0}
+  li::marker{color:var(--teal)}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+  .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .brand{font-weight:600;text-decoration:none;color:var(--ink)}
+  .brand span{color:var(--teal)}
+  .topbar nav a{text-decoration:none;color:var(--slate);margin-left:1.25rem;font-size:.92rem}
+  .topbar nav a:hover{color:var(--teal)}
+
+  /* hero */
+  .hero{background:var(--teal);color:#fff;padding:5rem 0 3.5rem}
+  .hero .eyebrow{color:#cfeae9}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:400;margin:1.2rem 0 1rem}
+  .hero h1 b{font-weight:700}
+  .hero p{max-width:40rem;font-size:1.15rem;color:#e6f3f2;margin:0}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:2rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.3);font-size:.92rem}
+  .hero .meta div span{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#cfeae9;margin-bottom:.15rem}
+
+  section.block{padding:3.5rem 0;border-bottom:1px solid var(--line)}
+  section.block > .wrap > h2{margin-bottom:1.25rem}
+
+  /* status legend & info strips */
+  .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem;margin:1rem 0 1.5rem}
+  .strip div{background:var(--mint);border-left:4px solid var(--teal);padding:.6rem .8rem;border-radius:0 6px 6px 0}
+  .strip div span{display:block;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+  .strip div b{font-weight:600;font-size:.95rem}
+
+  /* contents */
+  .toc{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:.8rem}
+  .toc a{display:block;text-decoration:none;color:var(--ink);background:var(--cloud);border-top:4px solid var(--teal);padding:1rem 1.1rem;border-radius:0 0 8px 8px;height:100%}
+  .toc a:hover{background:var(--mint)}
+  .toc a small{display:block;color:var(--slate);margin-top:.2rem;font-size:.85rem}
+  .toc a .num{font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--teal)}
+
+  /* technology entry */
+  .tech{padding:3.5rem 0;border-bottom:1px solid var(--line)}
+  .band{display:inline-flex;overflow:hidden;border-radius:6px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem}
+  .band span:first-child{background:var(--teal);color:#fff;padding:.45rem .9rem}
+  .band span:last-child{background:var(--mint);color:var(--teal-dark);padding:.45rem .9rem}
+  .tech .lead{font-size:1.1rem;color:var(--slate);margin-bottom:1.5rem}
+  .tech figure{margin:0 0 1.25rem}
+  .tech figure img{width:100%;height:auto;display:block;border-radius:8px;border:1px solid var(--line)}
+  .tech figcaption{font-size:.82rem;color:var(--mute);font-style:italic;margin-top:.4rem}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1rem 0 1.5rem}
+  .card{background:var(--cloud);border-top:4px solid var(--teal);border-radius:0 0 8px 8px;padding:1.1rem 1.25rem}
+  .card ul{margin-bottom:0}
+  .explore{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+  .explore a{display:block;text-decoration:none;color:var(--ink);background:var(--cloud);border-top:4px solid var(--teal);border-radius:0 0 8px 8px;padding:1.1rem 1.2rem;transition:background .15s}
+  .explore a:hover{background:var(--mint)}
+  .explore a b{display:block;margin-bottom:.3rem}
+  .explore a small{color:var(--slate);display:block;margin-bottom:.5rem}
+  .explore a em{font-style:normal;color:var(--teal);font-weight:600;font-size:.9rem}
+  .two{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem}
+  .back{display:inline-block;margin-top:1.5rem;font-size:.9rem;text-decoration:none}
+
+  /* collaborate */
+  .collab{padding:3.5rem 0 4rem}
+  .collab .boxes{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0}
+  .collab .boxes div{padding:1.2rem 1.4rem;border-left:4px solid var(--teal);border-radius:0 8px 8px 0}
+  .collab .boxes div:first-child{background:var(--mint)}
+  .collab .boxes div:last-child{background:var(--cloud)}
+  .collab .boxes p{margin:.25rem 0}
+  .collab ol{counter-reset:step;list-style:none;padding:0;margin:0 0 1.5rem}
+  .collab ol li{counter-increment:step;position:relative;padding-left:2.4rem;margin:.6rem 0}
+  .collab ol li::before{content:counter(step);position:absolute;left:0;top:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+
+  footer{background:var(--ink);color:#c9d1d8;padding:1.5rem 0;font-size:.85rem}
+  footer a{color:#cfeae9}
+
+  @media (max-width:760px){
+    .cols,.two,.collab .boxes{grid-template-columns:1fr}
+    .topbar nav{display:none}
+    .hero{padding:3.5rem 0 2.5rem}
+  }
+  @media print{
+    .topbar,.back,footer{display:none}
+    .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .tech,.collab,section.block{page-break-before:always;padding:1.5rem 0}
+    .hero{page-break-after:always}
+    a{color:var(--ink);text-decoration:none}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">What's in <span>the Lab</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#contents">Contents</a>
+      <a href="#collaborate">Collaborate</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Technology showcase · 2026</div>
+    <h1>What's in <b>the Lab</b></h1>
+    <p>Technologies available for teaching and research — and ideas for putting them to work.</p>
+    <div class="meta">
+      <div><span>Lab</span>Lab name</div>
+      <div><span>Institution</span>Department · University</div>
+      <div><span>Contact</span>Coordinator name · email</div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <h2>About this showcase</h2>
+    <p>This catalogue presents the technologies available in the lab, one at a time, with a photo of our own equipment, a plain-language description, and concrete ideas for using it in courses and research projects. It is meant to be browsed, not read cover to cover: jump to anything that catches your eye from the contents below.</p>
+    <h3>How each entry is organized</h3>
+    <ul>
+      <li><strong>Overview</strong> — photo, name, type of technology and intended use, what it is, what comes in the kit, and its current status.</li>
+      <li><strong>Ideas and resources</strong> — teaching ideas, research ideas, practical notes, and a <em>Learn and explore</em> section with a short demonstration, a beginner tutorial and example applications.</li>
+    </ul>
+    <h3>Status labels</h3>
+    <div class="strip">
+      <div><span>Ready to demo</span><b>Set up and working; book a session</b></div>
+      <div><span>Setup pending</span><b>Some configuration still needed</b></div>
+      <div><span>Training needed</span><b>No one has used it yet</b></div>
+      <div><span>In use</span><b>Currently booked by a project</b></div>
+    </div>
+    <h3>Have an idea?</h3>
+    <p>Each technology is a starting point. If you see a connection to a course, a thesis or a study, the <a href="#collaborate">last section</a> explains how to book a demo, borrow equipment and start a collaboration.</p>
+  </div>
+</section>
+
+<section class="block" id="contents">
+  <div class="wrap">
+    <h2>Contents</h2>
+    <ul class="toc" id="toc"><!-- filled automatically from the technology sections below --></ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     TECHNOLOGY ENTRY — copy this whole <section> for each new item.
+     Change: id, data-num, data-category, title, lead text, image,
+     strip values, lists and the three "Learn and explore" links.
+     The Contents list updates itself.
+     ============================================================ -->
+<section class="tech" id="podcast-kit" data-num="01" data-category="Audio production · Teaching &amp; Research">
+  <div class="wrap">
+    <div class="band"><span>Technology 01</span><span>Audio production · Teaching &amp; Research</span></div>
+    <h2 class="title">Portable Podcast Kit</h2>
+    <p class="lead">Movo MDX-2 bundle — two-person recording setup for computers, tablets and phones</p>
+
+    <div class="two">
+      <div>
+        <figure>
+          <img src="images/podcast-kit.png" alt="Our podcast kit: two microphones on stands, the MDX-2 interface and two headphones">
+          <figcaption>Figure 1 – Our kit: two microphones on stands, the MDX-2 interface and two headphones.</figcaption>
+        </figure>
+      </div>
+      <div>
+        <div class="strip" style="grid-template-columns:1fr 1fr">
+          <div><span>Type of tech</span><b>Audio production</b></div>
+          <div><span>Use</span><b>Teaching &amp; Research</b></div>
+          <div><span>Quantity</span><b>1 kit</b></div>
+          <div><span>Status</span><b>Ready to demo (recording app pending)</b></div>
+        </div>
+        <h3>What is it?</h3>
+        <p>A compact two-channel recording setup that lets two speakers record clean, separate audio tracks on a laptop, tablet or phone — no studio required. The MDX-2 interface runs on batteries or USB power, so the kit can be carried to a classroom, an office or the field and set up in minutes. It suits podcasting, interviews, pronunciation work and any project where students produce audio rather than only consume it.</p>
+      </div>
+    </div>
+
+    <h3>What's in the kit</h3>
+    <ul>
+      <li><strong>2 dynamic microphones</strong> (XLR, with windscreens) on tabletop stands</li>
+      <li><strong>MDX-2 audio interface</strong> — 2 inputs, headphone monitoring, up to 24-bit/48 kHz; runs on USB power or 2 AA batteries (about 3 hours with phantom power on)</li>
+      <li><strong>2 pairs of headphones</strong> for live monitoring</li>
+      <li><strong>Cables and case</strong> — 2 XLR, USB-A, USB-C and Lightning</li>
+      <li><strong>Not included:</strong> a recording device (any laptop, tablet or phone with a recording app such as Audacity or GarageBand)</li>
+    </ul>
+
+    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
+    <div class="cols">
+      <div class="card">
+        <h3>Teaching ideas</h3>
+        <ul>
+          <li><strong>Student podcasts:</strong> episodic projects where learners plan, script, record and edit a show in the target language.</li>
+          <li><strong>Interview tasks:</strong> pair activities with guest speakers, peers or community members, followed by transcription and discussion.</li>
+          <li><strong>Pronunciation and fluency:</strong> recorded speaking samples that students compare over the semester.</li>
+          <li><strong>Audio description and narration:</strong> recording voice tracks for accessible media, museum guides or visual novels.</li>
+          <li><strong>Radio drama and storytelling:</strong> two-voice readings, dialogues and sound-rich narratives.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Research ideas</h3>
+        <ul>
+          <li><strong>Spoken-corpus building:</strong> clean two-track recordings for discourse, pragmatics or interaction analysis.</li>
+          <li><strong>Oral-history and ethnographic interviews:</strong> portable, battery-powered fieldwork setup.</li>
+          <li><strong>Think-aloud and usability studies:</strong> capturing participant commentary during task-based sessions.</li>
+          <li><strong>Audio-description reception studies:</strong> producing stimuli with consistent recording quality.</li>
+          <li><strong>Learner-speech studies:</strong> longitudinal samples of fluency, prosody or accuracy.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Good to know</h3>
+    <ul>
+      <li>The recording app still needs to be installed on the lab device before the first demo.</li>
+      <li>This is new equipment — no one has reported experience with it yet, so the first session should be a guided walkthrough.</li>
+      <li>Each microphone records to its own track; keep headphones on while recording and set gain so speech peaks around –12 dB. Dynamic mics pick up little room noise, so ordinary classrooms work fine.</li>
+    </ul>
+
+    <h3 style="margin-top:2rem">Learn and explore</h3>
+    <div class="explore">
+      <a href="https://www.youtube.com/watch?v=jaa6ZHVJTGs" target="_blank" rel="noopener">
+        <b>Watch a quick demonstration</b>
+        <small>A short walkthrough of the MDX-2 interface: inputs, gain, monitoring and connecting to a phone or computer.</small>
+        <em>Open video →</em>
+      </a>
+      <a href="https://www.movophoto.com/products/podpro-podcasting-bundle-movo" target="_blank" rel="noopener">
+        <b>Explore a beginner tutorial</b>
+        <small>Manufacturer page for the bundle, with the quick-start guide and support resources.</small>
+        <em>Open page →</em>
+      </a>
+      <a href="https://www.thepodcasthost.com/equipment/movo-podpro-t-podcast-equipment-bundle/" target="_blank" rel="noopener">
+        <b>See example applications</b>
+        <small>A hands-on review with sample recordings and setup tips for two-person interviews.</small>
+        <em>Open article →</em>
+      </a>
+    </div>
+
+    <a class="back" href="#contents">↑ Back to contents</a>
+  </div>
+</section>
+<!-- ================= end of technology entry ================= -->
+
+<section class="collab" id="collaborate">
+  <div class="wrap">
+    <div class="eyebrow">Next steps</div>
+    <h2 style="font-size:2rem;margin-top:.4rem">Have an idea? Let's collaborate</h2>
+    <p>Nothing in this catalogue needs to be used exactly as described. If a technology sparks an idea for a lesson, an assignment, a thesis or a study, we would like to hear it — and we can help with setup, training and design. Small experiments are welcome; most of our projects started as one.</p>
+
+    <div class="boxes">
+      <div>
+        <div class="eyebrow">Get in touch</div>
+        <p><strong>Coordinator:</strong> Name</p>
+        <p><strong>Email:</strong> <a href="mailto:name@university.edu">name@university.edu</a></p>
+        <p><strong>Office:</strong> Building · Room</p>
+        <p><strong>Open hours:</strong> Mon–Fri, 9 am – 5 pm</p>
+      </div>
+      <div>
+        <div class="eyebrow">Book or borrow</div>
+        <p><strong>Demo request:</strong> <a href="#">booking form link</a></p>
+        <p><strong>Equipment loans:</strong> up to 2 weeks; sign-out sheet at the front desk</p>
+        <p><strong>Lab website:</strong> <a href="#">lab website link</a></p>
+      </div>
+    </div>
+
+    <h3>How it usually goes</h3>
+    <ol>
+      <li><strong>Share the idea.</strong> Tell us the idea in a few lines — the course or project, the technology, and what you would like students or participants to do.</li>
+      <li><strong>Book a demo.</strong> We set up the equipment and walk you through it in about 30 minutes. Bring a colleague or a student assistant if you like.</li>
+      <li><strong>Run a pilot.</strong> Try it in one class or one pilot session. We can be present the first time.</li>
+      <li><strong>Build on it.</strong> Together we refine the activity or protocol, document it, and add it to this catalogue as an example for others.</li>
+    </ol>
+
+    <h3>What we can offer</h3>
+    <ul>
+      <li>Hands-on training sessions for instructors, students and research assistants.</li>
+      <li>Help designing activities, assessment rubrics and research protocols around the equipment.</li>
+      <li>Technical support during the first sessions and troubleshooting afterwards.</li>
+      <li>Space for workshops, recordings and small group work.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">What's in the Lab · Technology Showcase · Lab name, 2026</div>
+</footer>
+
+<script>
+  // Build the Contents list from every technology section on the page.
+  (function () {
+    var toc = document.getElementById('toc');
+    if (!toc) return;
+    document.querySelectorAll('section.tech').forEach(function (s) {
+      var title = s.querySelector('.title');
+      var lead = s.querySelector('.lead');
+      var li = document.createElement('li');
+      li.innerHTML = '<a href="#' + s.id + '"><span class="num">Technology ' + (s.dataset.num || '') + '</span><br>' +
+        (title ? title.textContent : s.id) +
+        (lead ? '<small>' + lead.textContent + '</small>' : '') + '</a>';
+      toc.appendChild(li);
+    });
+  })();
+</script>
+</body>
+</html>
