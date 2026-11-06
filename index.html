@@ -3,121 +3,128 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What's in the Lab — Technology Showcase</title>
+<title>What&#x27;s in the Lab — Technology Showcase</title>
 <meta name="description" content="Technologies available in the lab for teaching and research, with ideas for putting them to work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#121212; --slate:#4a4a4a; --mute:#8a8a8a;
-    --orange:#f26b1d; --orange-dark:#c24f0b; --tint:#fff1e8;
-    --cloud:#f4f4f4; --line:#dcdcdc; --black:#111111; --white:#fff;
-    --max:1040px;
-  }
+  :root{--ink:#121212;--slate:#4a4a4a;--mute:#8a8a8a;--orange:#f26b1d;--orange-dark:#c24f0b;--tint:#fff1e8;
+    --cloud:#f4f4f4;--line:#dcdcdc;--black:#111;--white:#fff;--max:1040px}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;font-family:Inter,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.55;font-size:16px}
+  body{margin:0;font-family:Nunito,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
   a{color:var(--orange-dark)}
-  h1,h2,h3{line-height:1.2;margin:0 0 .5rem}
-  h1{font-size:2.4rem;font-weight:600}
-  h2{font-size:1.5rem;font-weight:600}
-  h3{font-size:1.05rem;font-weight:600;color:var(--orange-dark)}
-  p{margin:0 0 1rem}
-  ul{margin:0 0 1rem;padding-left:1.1rem}
-  li{margin:.3rem 0}
-  li::marker{color:var(--orange)}
+  h1,h2,h3{line-height:1.2;margin:0 0 .5rem;font-weight:800}
+  h1{font-size:2.4rem} h2{font-size:1.5rem} h3{font-size:1.05rem;color:var(--orange-dark)}
+  p{margin:0 0 1rem} ul{margin:0 0 1rem;padding-left:1.1rem} li{margin:.3rem 0} li::marker{color:var(--orange)}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 1.25rem}
-  .eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+  .eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
 
   .topbar{position:sticky;top:0;z-index:10;background:var(--black);border-bottom:3px solid var(--orange)}
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
-  .brand{font-weight:600;text-decoration:none;color:#fff}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+  .brand{font-weight:800;text-decoration:none;color:#fff;font-size:1.05rem}
   .brand span{color:var(--orange)}
-  .topbar nav a{text-decoration:none;color:#d6d6d6;margin-left:1.25rem;font-size:.92rem}
-  .topbar nav a:hover{color:var(--orange)}
+  .topbar nav a{text-decoration:none;color:#d6d6d6;margin-left:1.25rem;font-size:.95rem;font-weight:600}
+  .topbar nav a:hover,.topbar nav a.on{color:var(--orange)}
 
   .hero{background:var(--black);color:#fff;padding:5rem 0 3.5rem;position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:var(--orange);opacity:.9}
+  .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:var(--orange)}
   .hero .wrap{position:relative;z-index:1}
-  .hero .eyebrow{color:var(--orange)}
   .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:400;margin:1.2rem 0 1rem}
-  .hero h1 b{font-weight:700;color:var(--orange)}
+  .hero h1 b{font-weight:800;color:var(--orange)}
   .hero p{max-width:40rem;font-size:1.15rem;color:#d6d6d6;margin:0}
-  .hero .meta{display:flex;flex-wrap:wrap;gap:2rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.2);font-size:.92rem}
-  .hero .meta div span{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.15rem}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:2rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.2);font-size:.95rem}
+  .hero .meta div span{display:block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:800}
+  .hero.small{padding:3rem 0 2.5rem}
+  .hero.small h1{font-size:clamp(1.9rem,4.5vw,2.8rem);margin:.6rem 0 .4rem}
 
   section.block{padding:3.5rem 0;border-bottom:1px solid var(--line)}
   section.block > .wrap > h2{margin-bottom:1.25rem}
-
   .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem;margin:1rem 0 1.5rem}
   .strip div{background:var(--tint);border-left:4px solid var(--orange);padding:.6rem .8rem;border-radius:0 6px 6px 0}
-  .strip div span{display:block;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dark)}
-  .strip div b{font-weight:600;font-size:.95rem}
+  .strip div span{display:block;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dark)}
+  .strip div b{font-weight:700;font-size:.95rem}
 
-  .toc{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem}
-  .toc a{display:block;text-decoration:none;color:var(--ink);background:var(--cloud);border-top:4px solid var(--orange);padding:1rem 1.1rem;border-radius:0 0 8px 8px;height:100%}
-  .toc a:hover{background:var(--tint)}
-  .toc a small{display:block;color:var(--slate);margin-top:.2rem;font-size:.85rem}
-  .toc a .num{font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--orange-dark)}
+  /* gallery */
+  .gallery{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+  .gallery a{display:block;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden;height:100%;transition:transform .15s,box-shadow .15s}
+  .gallery a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.10);border-color:var(--orange)}
+  .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 45%;display:block;background:var(--cloud)}
+  .gallery .body{padding:.9rem 1rem 1.1rem}
+  .gallery .num{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dark)}
+  .gallery .name{font-weight:800;font-size:1.08rem;margin:.15rem 0 .2rem}
+  .gallery .sub{color:var(--slate);font-size:.88rem}
+  .pill{display:inline-block;margin-top:.6rem;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .55rem;border-radius:999px;background:var(--tint);color:var(--orange-dark)}
+  .pill.ready{background:#e6f4ea;color:#1e7a3a}
+  .pill.pending{background:var(--tint);color:var(--orange-dark)}
+  .pill.training{background:#eee;color:#444}
 
-  .tech{padding:3.5rem 0;border-bottom:1px solid var(--line)}
-  .tech:nth-of-type(even){background:#fafafa}
-  .band{display:inline-flex;overflow:hidden;border-radius:6px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.2rem}
+  /* tech page */
+  .band{display:inline-flex;overflow:hidden;border-radius:6px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
   .band span:first-child{background:var(--black);color:var(--orange);padding:.45rem .9rem}
   .band span:last-child{background:var(--orange);color:#fff;padding:.45rem .9rem}
-  .tech .lead{font-size:1.1rem;color:var(--slate);margin-bottom:1.5rem}
-  .tech figure{margin:0 0 1.25rem}
-  .tech figure img{width:100%;max-height:440px;object-fit:contain;display:block;border-radius:8px;background:var(--cloud);border:1px solid var(--line)}
-  .tech figcaption{font-size:.82rem;color:var(--mute);font-style:italic;margin-top:.4rem}
+  .lead{font-size:1.1rem;color:var(--slate);margin-bottom:1.5rem}
+  figure{margin:0 0 1.25rem}
+  figure img{width:100%;max-height:460px;object-fit:contain;display:block;border-radius:8px;background:var(--cloud);border:1px solid var(--line)}
+  figcaption{font-size:.85rem;color:var(--mute);font-style:italic;margin-top:.4rem}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
   .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1rem 0 1.5rem}
   .card{background:var(--cloud);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.25rem}
   .card ul{margin-bottom:0}
   .explore{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-  .explore a{display:block;text-decoration:none;color:var(--ink);background:var(--cloud);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.2rem;transition:background .15s}
+  .explore a{display:block;text-decoration:none;color:var(--ink);background:var(--cloud);border-top:4px solid var(--orange);border-radius:0 0 8px 8px;padding:1.1rem 1.2rem}
   .explore a:hover{background:var(--tint)}
   .explore a b{display:block;margin-bottom:.3rem}
   .explore a small{color:var(--slate);display:block;margin-bottom:.5rem}
-  .explore a em{font-style:normal;color:var(--orange-dark);font-weight:600;font-size:.9rem}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
-  .back{display:inline-block;margin-top:1.5rem;font-size:.9rem;text-decoration:none}
+  .explore a em{font-style:normal;color:var(--orange-dark);font-weight:700;font-size:.9rem}
+
+  /* interaction blocks */
+  .interact{background:var(--black);color:#e6e6e6;padding:3rem 0;margin-top:3rem}
+  .interact h2{color:#fff} .interact h3{color:var(--orange)}
+  .interact p{color:#c9c9c9}
+  .igrid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+  .ibox{background:#1e1e1e;border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:1.2rem 1.4rem}
+  .ibox.full{grid-column:1/-1}
+  .embed{position:relative;width:100%;aspect-ratio:16/9;background:#0a0a0a;border-radius:8px;overflow:hidden}
+  .embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .embed.tall{aspect-ratio:auto;height:560px}
+  .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;min-height:220px;border:2px dashed #555;border-radius:8px;padding:1.5rem;color:#aaa;font-size:.95rem}
+  .placeholder b{color:var(--orange);font-size:1.05rem;margin-bottom:.3rem}
+  .placeholder code{background:#000;color:#ddd;padding:.1rem .4rem;border-radius:4px;font-size:.85rem}
+
+  .pager{display:flex;justify-content:space-between;gap:1rem;padding:2rem 0;border-top:1px solid var(--line)}
+  .pager a{text-decoration:none;font-weight:700;color:var(--ink);background:var(--cloud);padding:.8rem 1.1rem;border-radius:8px;flex:1}
+  .pager a:hover{background:var(--tint)}
+  .pager a small{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-dark);font-weight:800}
+  .pager .next{text-align:right}
 
   .collab{padding:3.5rem 0 4rem;background:var(--black);color:#e6e6e6}
-  .collab h2,.collab h3{color:#fff}
-  .collab h3{color:var(--orange)}
-  .collab a{color:var(--orange)}
+  .collab h2{color:#fff} .collab h3{color:var(--orange)} .collab a{color:var(--orange)}
   .collab .boxes{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0}
   .collab .boxes div{padding:1.2rem 1.4rem;border-left:4px solid var(--orange);border-radius:0 8px 8px 0;background:#1e1e1e}
-  .collab .boxes p{margin:.25rem 0}
-  .collab .boxes strong{color:#fff}
+  .collab .boxes p{margin:.25rem 0} .collab strong{color:#fff}
   .collab ol{counter-reset:step;list-style:none;padding:0;margin:0 0 1.5rem}
   .collab ol li{counter-increment:step;position:relative;padding-left:2.4rem;margin:.6rem 0}
-  .collab ol li strong{color:#fff}
-  .collab ol li::before{content:counter(step);position:absolute;left:0;top:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--orange);color:#fff;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center}
-  .collab li::marker{color:var(--orange)}
+  .collab ol li::before{content:counter(step);position:absolute;left:0;top:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .cta{display:inline-block;background:var(--orange);color:#fff !important;text-decoration:none;font-weight:800;padding:.8rem 1.4rem;border-radius:8px}
+  .cta:hover{background:var(--orange-dark)}
+  footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.88rem;border-top:1px solid #2a2a2a}
+  footer a{color:#cfcfcf}
 
-  footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.85rem;border-top:1px solid #2a2a2a}
-
-  @media (max-width:760px){
-    .cols,.two,.collab .boxes{grid-template-columns:1fr}
-    .topbar nav{display:none}
-    .hero{padding:3.5rem 0 2.5rem}
-    .hero::after{width:260px;height:260px;right:-100px;top:-100px}
-  }
-  @media print{
-    .topbar,.back,footer{display:none}
-    .tech,.collab,section.block{page-break-before:always;padding:1.5rem 0}
-    .hero{page-break-after:always}
-    a{color:var(--ink);text-decoration:none}
-    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  }
+  @media (max-width:760px){.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.hero::after{width:260px;height:260px;right:-100px;top:-100px}.embed.tall{height:480px}}
+  @media print{.topbar,.pager,footer,.interact{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
-
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="#top">What's in <span>the Lab</span></a>
-    <nav><a href="#about">About</a><a href="#contents">Contents</a><a href="#collaborate">Collaborate</a></nav>
+    <a class="brand" href="index.html">What's in <span>the Lab</span></a>
+    <nav>
+      <a href="index.html#technologies" class="on">Technologies</a>
+      <a href="index.html#about">About</a>
+      <a href="collaborate.html" class="">Collaborate</a>
+    </nav>
   </div>
 </header>
 
@@ -134,15 +141,63 @@
   </div>
 </section>
 
+<section class="block" id="technologies">
+  <div class="wrap">
+    <h2>Technologies</h2>
+    <p style="color:var(--slate)">Click a card to open the full page: what it is, what's in the kit, ideas for teaching and research, and how to get involved.</p>
+    <ul class="gallery">
+      <li><a href="tech/podcast-kit.html">
+        <img src="images/podcast-kit.jpg" alt="Portable Podcast Kit" loading="lazy">
+        <div class="body"><div class="num">Technology 01</div><div class="name">Portable Podcast Kit</div>
+        <div class="sub">Audio production · Teaching &amp; Research</div><span class="pill ready">Ready to demo</span></div></a></li>
+      <li><a href="tech/cutebot.html">
+        <img src="images/cutebot.jpg" alt="micro:bit Smart Cutebot" loading="lazy">
+        <div class="body"><div class="num">Technology 02</div><div class="name">micro:bit Smart Cutebot</div>
+        <div class="sub">Educational robotics · Teaching &amp; Research</div><span class="pill ready">Ready to demo</span></div></a></li>
+      <li><a href="tech/nezha.html">
+        <img src="images/nezha.jpg" alt="Nezha Inventor&#x27;s Kit for micro:bit" loading="lazy">
+        <div class="body"><div class="num">Technology 03</div><div class="name">Nezha Inventor&#x27;s Kit for micro:bit</div>
+        <div class="sub">Educational robotics · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
+      <li><a href="tech/littlebits.html">
+        <img src="images/littlebits.jpg" alt="littleBits Kits" loading="lazy">
+        <div class="body"><div class="num">Technology 04</div><div class="name">littleBits Kits</div>
+        <div class="sub">Electronics &amp; invention · Teaching</div><span class="pill training">Training needed</span></div></a></li>
+      <li><a href="tech/sphero-bolt.html">
+        <img src="images/sphero-bolt.jpg" alt="Sphero BOLT Power Pack" loading="lazy">
+        <div class="body"><div class="num">Technology 05</div><div class="name">Sphero BOLT Power Pack</div>
+        <div class="sub">Educational robotics · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
+      <li><a href="tech/omni-one.html">
+        <img src="images/omni-one.jpg" alt="Omni One" loading="lazy">
+        <div class="body"><div class="num">Technology 06</div><div class="name">Omni One</div>
+        <div class="sub">Immersive technology · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
+      <li><a href="tech/meta-glasses.html">
+        <img src="images/meta-glasses.jpg" alt="Ray-Ban Meta Smart Glasses" loading="lazy">
+        <div class="body"><div class="num">Technology 07</div><div class="name">Ray-Ban Meta Smart Glasses</div>
+        <div class="sub">Wearable &amp; AI · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
+      <li><a href="tech/meta-quest-3.html">
+        <img src="images/meta-quest-3.jpg" alt="Meta Quest 3" loading="lazy">
+        <div class="body"><div class="num">Technology 08</div><div class="name">Meta Quest 3</div>
+        <div class="sub">Immersive technology · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
+      <li><a href="tech/cricut-maker-3.html">
+        <img src="images/cricut-maker-3.jpg" alt="Cricut Maker 3" loading="lazy">
+        <div class="body"><div class="num">Technology 09</div><div class="name">Cricut Maker 3</div>
+        <div class="sub">Digital fabrication · Teaching</div><span class="pill training">Training needed</span></div></a></li>
+      <li><a href="tech/ender3-s1.html">
+        <img src="images/ender3-s1.jpg" alt="3D Printers" loading="lazy">
+        <div class="body"><div class="num">Technology 10</div><div class="name">3D Printers</div>
+        <div class="sub">Digital fabrication · Teaching &amp; Research</div><span class="pill training">Training needed</span></div></a></li>
+      <li><a href="tech/robosapien.html">
+        <img src="images/robosapien.jpg" alt="RoboSapien" loading="lazy">
+        <div class="body"><div class="num">Technology 11</div><div class="name">RoboSapien</div>
+        <div class="sub">Educational robotics · Teaching</div><span class="pill training">Training needed</span></div></a></li>
+    </ul>
+  </div>
+</section>
+
 <section class="block" id="about">
   <div class="wrap">
     <h2>About this showcase</h2>
-    <p>This catalogue presents the technologies available in the lab, one at a time, with a photo of our own equipment, a plain-language description, and concrete ideas for using it in courses and research projects. It is meant to be browsed, not read cover to cover: jump to anything that catches your eye from the contents below.</p>
-    <h3>How each entry is organized</h3>
-    <ul>
-      <li><strong>Overview</strong> — photo, name, type of technology and intended use, what it is, what comes in the kit, and its current status.</li>
-      <li><strong>Ideas and resources</strong> — teaching ideas, research ideas, practical notes, and a <em>Learn and explore</em> section with a demonstration, a beginner tutorial and example applications.</li>
-    </ul>
+    <p>This catalogue presents the technologies available in the lab, one page each, with a photo of our own equipment, a plain-language description, and concrete ideas for using it in courses and research projects. Each page ends with a short demo video, a quick “I'm interested” form and an idea wall where you can see what colleagues have proposed.</p>
     <h3>Status labels</h3>
     <div class="strip">
       <div><span>Ready to demo</span><b>Set up and working; book a session</b></div>
@@ -150,781 +205,18 @@
       <div><span>Training needed</span><b>No one has used it yet</b></div>
       <div><span>In use</span><b>Currently booked by a project</b></div>
     </div>
-    <h3>Have an idea?</h3>
-    <p>Each technology is a starting point. If you see a connection to a course, a thesis or a study, the <a href="#collaborate">last section</a> explains how to book a demo, borrow equipment and start a collaboration.</p>
   </div>
 </section>
 
-<section class="block" id="contents">
-  <div class="wrap">
-    <h2>Contents</h2>
-    <ul class="toc" id="toc"></ul>
-  </div>
-</section>
-
-<!-- Technology entries are generated from techs.json and links.json by build_site.py.
-     To add one by hand, copy a whole <section class="tech"> block and edit it; the Contents list updates itself. -->
-
-<section class="tech" id="podcast-kit" data-num="01">
-  <div class="wrap">
-    <div class="band"><span>Technology 01</span><span>Audio production · Teaching &amp; Research</span></div>
-    <h2 class="title">Portable Podcast Kit</h2>
-    <p class="lead">Movo MDX-2 bundle — two-person recording setup for computers, tablets and phones</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/podcast-kit.jpg" alt="Portable Podcast Kit" loading="lazy">
-          <figcaption>Our kit: two dynamic microphones on stands, the MDX-2 interface and two headphones.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Audio production</b></div>
-          <div><span>Use</span><b>Teaching &amp; Research</b></div>
-          <div><span>Quantity</span><b>1 kit</b></div>
-          <div><span>Status</span><b>Ready to demo (recording app pending)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>A compact two-channel recording setup that lets two speakers record clean, separate audio tracks on a laptop, tablet or phone — no studio required. The MDX-2 interface runs on batteries or USB power, so the kit can be carried to a classroom, an office or the field and set up in minutes. It suits podcasting, interviews, pronunciation work and any project where students produce audio rather than only consume it.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>2 dynamic microphones</strong> (XLR, with windscreens) on tabletop stands</li>
-      <li><strong>MDX-2 audio interface</strong> — 2 inputs, headphone monitoring, up to 24-bit/48 kHz; runs on USB power or 2 AA batteries</li>
-      <li><strong>2 pairs of headphones</strong> for live monitoring</li>
-      <li><strong>Cables and case</strong> — 2 XLR, USB-A, USB-C and Lightning</li>
-      <li><strong>Not included:</strong> a recording device (any laptop, tablet or phone with a recording app such as Audacity or GarageBand)</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Student podcasts:</strong> episodic projects where learners plan, script, record and edit a show in the target language.</li>
-      <li><strong>Interview tasks:</strong> pair activities with guest speakers, peers or community members, followed by transcription and discussion.</li>
-      <li><strong>Pronunciation and fluency:</strong> recorded speaking samples that students compare over the semester.</li>
-      <li><strong>Audio description and narration:</strong> voice tracks for accessible media, museum guides or visual novels.</li>
-      <li><strong>Radio drama and storytelling:</strong> two-voice readings, dialogues and sound-rich narratives.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Spoken-corpus building:</strong> clean two-track recordings for discourse, pragmatics or interaction analysis.</li>
-      <li><strong>Oral-history and ethnographic interviews:</strong> portable, battery-powered fieldwork setup.</li>
-      <li><strong>Think-aloud and usability studies:</strong> capturing participant commentary during task-based sessions.</li>
-      <li><strong>Audio-description reception studies:</strong> producing stimuli with consistent recording quality.</li>
-      <li><strong>Learner-speech studies:</strong> longitudinal samples of fluency, prosody or accuracy.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>The recording app still needs to be installed on the lab device before the first demo.</li>
-      <li>New equipment — no one has reported experience with it yet, so the first session should be a guided walkthrough.</li>
-      <li>Each microphone records to its own track; keep headphones on while recording and set gain so speech peaks around –12 dB.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://www.youtube.com/watch?v=jaa6ZHVJTGs" target="_blank" rel="noopener"><b>Watch a quick demonstration</b><small>A short walkthrough of the MDX-2 interface: inputs, gain, monitoring and connecting to a phone or computer.</small><em>Open video →</em></a>
-      <a href="https://www.movophoto.com/products/podpro-podcasting-bundle-movo" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Manufacturer page for the bundle, with the quick-start guide and support resources.</small><em>Open page →</em></a>
-      <a href="https://www.nearstream.us/blog/classroom-podcast-equipment-kit" target="_blank" rel="noopener"><b>See example applications</b><small>Setting up a classroom podcast kit and what students can do with it.</small><em>Open article →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="cutebot" data-num="02">
-  <div class="wrap">
-    <div class="band"><span>Technology 02</span><span>Educational robotics · Teaching &amp; Research</span></div>
-    <h2 class="title">micro:bit Smart Cutebot</h2>
-    <p class="lead">ELECFREAKS robot car driven by a micro:bit — block coding on wheels</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/cutebot.jpg" alt="micro:bit Smart Cutebot" loading="lazy">
-          <figcaption>One of the three Cutebot cars, assembled and sitting on its box.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Educational robotics</b></div>
-          <div><span>Use</span><b>Teaching &amp; Research</b></div>
-          <div><span>Quantity</span><b>3 cars</b></div>
-          <div><span>Status</span><b>Ready to demo (1 assembled)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>A small two-wheeled robot car controlled by a BBC micro:bit. Students program it in MakeCode (drag-and-drop blocks or Python) to drive, follow lines, avoid obstacles with its ultrasonic sensor, light up its LEDs and react to the micro:bit&#x27;s buttons and sensors. It is one of the quickest ways to get from “first line of code” to something that moves across the floor.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>Cutebot chassis</strong> with two motors, line-tracking sensors, ultrasonic distance sensor, RGB headlights and a buzzer</li>
-      <li><strong>micro:bit</strong> slots into the top of the car and is programmed over USB or Bluetooth</li>
-      <li><strong>Power:</strong> 3 AAA batteries per car (not included)</li>
-      <li><strong>Software:</strong> Microsoft MakeCode in the browser, with the Cutebot extension</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>First steps in coding:</strong> drive the car with block code, then add sensors one at a time.</li>
-      <li><strong>Language tasks with a twist:</strong> students write instructions in the target language for a partner to translate into code — giving directions, sequencing, imperatives.</li>
-      <li><strong>Storytelling and maps:</strong> a floor map of a city or a story world that the robot has to navigate.</li>
-      <li><strong>Maths and measurement:</strong> distance, speed, angles and timing become concrete problems.</li>
-      <li><strong>Group challenges:</strong> line-following races, obstacle courses and “deliver the package” missions.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Computational thinking in language classrooms:</strong> how learners negotiate meaning while coding together.</li>
-      <li><strong>Task-based learning studies:</strong> comparing robot-mediated tasks with traditional ones.</li>
-      <li><strong>Collaborative talk:</strong> recording and analysing pair interaction during debugging.</li>
-      <li><strong>Teacher education:</strong> pre-service teachers&#x27; confidence with physical computing.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>One car is assembled and ready; the other two are still in their boxes.</li>
-      <li>Needs 3 AAA batteries per car — keep a set in the lab.</li>
-      <li>New equipment — no one has reported experience with it yet; MakeCode runs in any browser, so the first session can start on a laptop.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://shop.elecfreaks.com/pages/influencer-voice" target="_blank" rel="noopener"><b>Watch a quick demonstration</b><small>Video reviews of the Smart Cutebot collected by ELECFREAKS.</small><em>Open page →</em></a>
-      <a href="https://wiki.elecfreaks.com/en/microbit/microbit-smart-car/microbit-smart-cutebot/" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Official wiki: assembly, MakeCode extension and first programs.</small><em>Open wiki →</em></a>
-      <a href="https://outreach.csc.liv.ac.uk/resources/cutebots/" target="_blank" rel="noopener"><b>See example applications</b><small>Classroom robotics resources built around Cutebots (University of Liverpool outreach).</small><em>Open resources →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="nezha" data-num="03">
-  <div class="wrap">
-    <div class="band"><span>Technology 03</span><span>Educational robotics · Teaching &amp; Research</span></div>
-    <h2 class="title">Nezha Inventor&#x27;s Kit for micro:bit</h2>
-    <p class="lead">ELECFREAKS building-block kit with motors and sensors — medium difficulty</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/nezha.jpg" alt="Nezha Inventor&#x27;s Kit for micro:bit" loading="lazy">
-          <figcaption>The three Nezha kits in their carrying cases.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Educational robotics</b></div>
-          <div><span>Use</span><b>Teaching &amp; Research</b></div>
-          <div><span>Quantity</span><b>3 kits</b></div>
-          <div><span>Status</span><b>Setup pending (needs assembly and charging)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>A construction kit that combines a micro:bit with plastic building blocks, servo motors and sensors. Students build mechanical models — vehicles, cranes, a catapult, a smart lamp — and then program their behaviour in MakeCode. It sits one step above the Cutebot: more building, more parts, more room for open-ended projects.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>Nezha expansion board</strong> with motor and servo ports and a rechargeable battery</li>
-      <li><strong>Building blocks</strong> (LEGO-compatible), motors, servos and sensors</li>
-      <li><strong>micro:bit</strong> as the controller; programmed in MakeCode</li>
-      <li><strong>Guide</strong> with over thirty step-by-step projects</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Project-based units:</strong> each group builds and programs a different model and presents it to the class.</li>
-      <li><strong>Procedural language:</strong> students write and follow assembly instructions in the target language.</li>
-      <li><strong>Engineering design cycle:</strong> plan, build, test, improve — with the robot as the evidence.</li>
-      <li><strong>Cross-curricular STEAM:</strong> simple machines, levers, gears and sensors in one build.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Maker education studies:</strong> how open-ended building affects engagement and persistence.</li>
-      <li><strong>Multimodal interaction analysis:</strong> gesture, talk and manipulation of parts during group work.</li>
-      <li><strong>Instructional-text research:</strong> how learners read and produce technical instructions in a second language.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>Medium difficulty — plan the first session around one guided build.</li>
-      <li>One kit still needs to be assembled, and the battery packs need charging before the first demo.</li>
-      <li>New equipment — no one has reported experience with it yet.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://shop.elecfreaks.com/products/elecfreaks-micro-bit-nezha-48-in-1-inventors-kit-without-micro-bit-board" target="_blank" rel="noopener"><b>Watch a quick demonstration</b><small>Official product page with photos and videos of the 48-in-1 kit.</small><em>Open page →</em></a>
-      <a href="https://wiki.elecfreaks.com/en/microbit/building-blocks/nezha-inventors-kit/" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Official wiki: parts, expansion board and getting started.</small><em>Open wiki →</em></a>
-      <a href="https://learn-en.readthedocs.io/en/latest/microbitKit/Nezha_Inventor_s_kit_for_microbit/Nezha-Inventor-s-kit-for-microbit.html" target="_blank" rel="noopener"><b>See example applications</b><small>Step-by-step project cases for the kit.</small><em>Open projects →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="littlebits" data-num="04">
-  <div class="wrap">
-    <div class="band"><span>Technology 04</span><span>Electronics &amp; invention · Teaching</span></div>
-    <h2 class="title">littleBits Kits</h2>
-    <p class="lead">Gizmos &amp; Gadgets Kit (2015) and Code Kit (2017) — snap-together electronics</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/littlebits.jpg" alt="littleBits Kits" loading="lazy">
-          <figcaption>The two littleBits boxes: Gizmos &amp; Gadgets and the Code Kit.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Electronics &amp; invention</b></div>
-          <div><span>Use</span><b>Teaching</b></div>
-          <div><span>Quantity</span><b>2 kits</b></div>
-          <div><span>Status</span><b>Training needed (to be investigated)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>littleBits are small electronic modules — power, sensors, motors, lights, buzzers — that snap together with magnets, so students can build working circuits and inventions in minutes without soldering or wiring. The Gizmos &amp; Gadgets Kit focuses on mechanical inventions (materials for 12 projects with 15 bits); the Code Kit adds a programmable “codeBit” and over 100 classroom activities with 10 lessons for grades 3 and up.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>Gizmos &amp; Gadgets Kit:</strong> 15 bits plus wheels, gears, servo, motors and craft materials for 12 inventions</li>
-      <li><strong>Code Kit:</strong> codeBit, sensors, LED matrix, buttons; 1–3 students per kit; grades 3+</li>
-      <li><strong>Software:</strong> the littleBits Code Kit app (block-based, browser or desktop)</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Invention challenges:</strong> “build something that helps…” prompts, then a pitch in the target language.</li>
-      <li><strong>Vocabulary of cause and effect:</strong> if-then language mapped onto input–output circuits.</li>
-      <li><strong>Games and quizzes:</strong> the Code Kit&#x27;s built-in game projects (buzzers, scoreboards) for classroom activities.</li>
-      <li><strong>Low-floor prototyping:</strong> fast mock-ups of interactive objects for design thinking sessions.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Tinkering and creativity:</strong> observing idea generation with modular, no-wiring electronics.</li>
-      <li><strong>Younger learners:</strong> early STEM and language integration in grades 3–6.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>Older kits (boxes dated 2015 and 2017); contents and software compatibility still need to be checked.</li>
-      <li>Not yet investigated in detail — may be kept out of the public showcase until someone has tested them.</li>
-      <li>Both kits are in the same photo; add a separate entry later if they are presented individually.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://core-electronics.com.au/videos/our-review-of-littlebits-gizmos-and-gadgets-kit-2nd-edition" target="_blank" rel="noopener"><b>Watch a quick demonstration</b><small>Video review of the Gizmos &amp; Gadgets Kit.</small><em>Open video →</em></a>
-      <a href="https://makezine.com/projects/getting-started-with-littlebits" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Getting started with littleBits: how the bits snap together and first circuits.</small><em>Open guide →</em></a>
-      <a href="https://sites.google.com/aps.edu/apsapps/apps-extensions/classroom-edtech-applications/littlebits-code-kit" target="_blank" rel="noopener"><b>See example applications</b><small>Classroom uses of the Code Kit.</small><em>Open page →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="sphero-bolt" data-num="05">
-  <div class="wrap">
-    <div class="band"><span>Technology 05</span><span>Educational robotics · Teaching &amp; Research</span></div>
-    <h2 class="title">Sphero BOLT Power Pack</h2>
-    <p class="lead">15 programmable robot balls with charging bases, protractors and an educator guide</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/sphero-bolt.jpg" alt="Sphero BOLT Power Pack" loading="lazy">
-          <figcaption>The BOLT Power Pack case with the 15 robots in their inductive charging bases.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Educational robotics</b></div>
-          <div><span>Use</span><b>Teaching &amp; Research</b></div>
-          <div><span>Quantity</span><b>1 pack (15 robots)</b></div>
-          <div><span>Status</span><b>Setup pending (not yet opened)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>Sphero BOLT is a transparent, app-controlled robot ball with an 8×8 LED matrix, sensors (gyroscope, accelerometer, light, compass) and infrared communication between robots. Students drive it, draw paths for it, program it with blocks or JavaScript in the Sphero Edu app, and build activities around its sensors. The Power Pack holds fifteen robots, charging them in one case — enough for a whole class working in pairs.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>15 Sphero BOLT robots</strong> with 15 inductive charging bases and 15 turbo covers</li>
-      <li><strong>15 protractors</strong> and a hard carrying case with built-in charging</li>
-      <li><strong>Educator guide</strong> with lessons and classroom-management tips (model PP02)</li>
-      <li><strong>Software:</strong> Sphero Edu app on tablets, phones, Chromebooks or computers</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Whole-class coding:</strong> pairs program their own robot; the LED matrix shows messages, emojis or words.</li>
-      <li><strong>Language and movement:</strong> learners give or decode spoken instructions, then test them on the robot.</li>
-      <li><strong>Maths and physics:</strong> speed, distance, angles and heading using the protractors.</li>
-      <li><strong>Games:</strong> relay races, mazes and robot “painting” on paper.</li>
-      <li><strong>Storytelling:</strong> robots act out scenes or follow routes on a story map.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Class-scale robotics studies:</strong> fifteen identical units allow controlled comparisons across groups.</li>
-      <li><strong>Collaboration and talk:</strong> paired programming interaction in a second language.</li>
-      <li><strong>Learning analytics:</strong> the Sphero Edu platform logs programs and runs.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>The pack has not been opened or set up yet; the first task is charging the case and installing the app.</li>
-      <li>Comes with an educator guide — a good starting point for the first demo.</li>
-      <li>Plan floor space: the robots need a clear area to run.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://medium.com/sphero-sprk/introducing-sphero-bolt-3682e305f265" target="_blank" rel="noopener"><b>Watch a quick demonstration</b><small>Sphero&#x27;s introduction to BOLT: sensors, LED matrix and infrared.</small><em>Open article →</em></a>
-      <a href="https://sphero.com/pages/sphero-bolt-resources" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Official BOLT resources: setup, app and first activities.</small><em>Open resources →</em></a>
-      <a href="https://cdn.shopify.com/s/files/1/0306/6419/6141/files/Sphero_After_School_Guide_2023.pdf" target="_blank" rel="noopener"><b>See example applications</b><small>Sphero&#x27;s after-school activity guide (PDF).</small><em>Open guide →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="omni-one" data-num="06">
-  <div class="wrap">
-    <div class="band"><span>Technology 06</span><span>Immersive technology · Teaching &amp; Research</span></div>
-    <h2 class="title">Omni One</h2>
-    <p class="lead">Virtuix omnidirectional VR treadmill — walk and run inside virtual worlds</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/omni-one.jpg" alt="Omni One" loading="lazy">
-          <figcaption>The Omni One platform with its support arm, installed in the lab.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Immersive technology</b></div>
-          <div><span>Use</span><b>Teaching &amp; Research</b></div>
-          <div><span>Quantity</span><b>1 unit</b></div>
-          <div><span>Status</span><b>Setup pending (being set up)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>A full-body VR system: the user stands on a low-friction dish wearing special shoes and a support harness, and physically walks, runs or crouches to move through the virtual environment. Combined with a VR headset, it turns locomotion into a natural movement instead of a joystick push — which matters for presence, for exercise and for studies of embodied experience.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>Omni One platform</strong> with support arm, harness and vest</li>
-      <li><strong>VR headset</strong> integrated with the system</li>
-      <li><strong>Shoes</strong> in several sizes with low-friction soles</li>
-      <li><strong>Software:</strong> the Omni One store of compatible titles</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Embodied virtual field trips:</strong> walking through a city, museum or historical site in the target language.</li>
-      <li><strong>Situated vocabulary:</strong> movement verbs, directions and spatial language experienced physically.</li>
-      <li><strong>Demonstrations of immersion:</strong> showing the difference between seated and full-body VR in media or design courses.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Presence and embodiment studies:</strong> comparing locomotion methods and their effect on learning or recall.</li>
-      <li><strong>Physical activity and cognition:</strong> movement-based tasks in immersive environments.</li>
-      <li><strong>Accessibility and audio description in VR:</strong> navigation with audio cues.</li>
-      <li><strong>User experience research:</strong> onboarding, discomfort and motion sickness across users.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>Someone is currently working on the setup; not yet available for demos.</li>
-      <li>Needs a clear area around the platform and a short safety briefing before use.</li>
-      <li>Sessions should be short at first; ask about dizziness and take breaks.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://www.fox5ny.com/video/1755569" target="_blank" rel="noopener"><b>Watch a quick demonstration</b><small>A news segment showing the Omni One in use.</small><em>Open video →</em></a>
-      <a href="https://www.manualslib.com/manual/3757080/Omni-One.html" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>The Omni One manual: setup, harness and safety.</small><em>Open manual →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="meta-glasses" data-num="07">
-  <div class="wrap">
-    <div class="band"><span>Technology 07</span><span>Wearable &amp; AI · Teaching &amp; Research</span></div>
-    <h2 class="title">Ray-Ban Meta Smart Glasses</h2>
-    <p class="lead">Wayfarer (Gen 2) — camera, open-ear audio and a voice assistant in a pair of glasses</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/meta-glasses.jpg" alt="Ray-Ban Meta Smart Glasses" loading="lazy">
-          <figcaption>One of the four pairs, with its charging case and box.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Wearable &amp; AI</b></div>
-          <div><span>Use</span><b>Teaching &amp; Research</b></div>
-          <div><span>Quantity</span><b>4 units</b></div>
-          <div><span>Status</span><b>Setup pending (being set up)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>Ordinary-looking glasses with a built-in camera, microphones and small speakers in the arms. The wearer can take first-person photos and video, listen to audio, take calls, and talk to the Meta AI assistant — asking what it sees, translating speech or text, or answering questions hands-free. They pair with a phone through the Meta AI app.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>4 pairs of Ray-Ban Meta Wayfarer glasses</strong> (Gen 2)</li>
-      <li><strong>Charging cases</strong> and cables</li>
-      <li><strong>Software:</strong> Meta AI app on a paired phone</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>First-person video tasks:</strong> students record a tour, a recipe or a how-to while narrating in the target language.</li>
-      <li><strong>Live translation practice:</strong> testing and critiquing the assistant&#x27;s translations in real situations.</li>
-      <li><strong>Describe what you see:</strong> oral description tasks captured from the speaker&#x27;s point of view — a natural fit for audio description training.</li>
-      <li><strong>Fieldwork and interviews:</strong> hands-free recording of community visits (with consent).</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Human–AI interaction in language use:</strong> how learners rely on or correct AI translation and description.</li>
-      <li><strong>Egocentric video for interaction analysis:</strong> gaze-aligned recordings of classroom or service encounters.</li>
-      <li><strong>Privacy and ethics studies:</strong> attitudes toward recording in public and in classrooms.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>Someone is currently working on the setup; the glasses need pairing with a phone and a Meta account.</li>
-      <li>Recording others requires consent; the LED indicator must stay visible and uncovered.</li>
-      <li>Plan for a prescription-free use or clip-on lenses; the frames are standard Wayfarer size.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://www.meta.com/blog/ray-ban-meta-gen-2-now-available-ai-glasses-extended-battery-life-3k-video/" target="_blank" rel="noopener"><b>Watch a quick demonstration</b><small>Meta&#x27;s overview of the Gen 2 glasses and what they can do.</small><em>Open page →</em></a>
-      <a href="https://tomsguide.com/ai/how-to-set-up-your-ray-ban-meta-smart-glasses" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Setting up the glasses in five steps.</small><em>Open guide →</em></a>
-      <a href="https://www.techlearning.com/technology/ray-ban-meta-glasses-for-teaching-what-to-know" target="_blank" rel="noopener"><b>See example applications</b><small>Using Ray-Ban Meta glasses for teaching: what to know.</small><em>Open article →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="meta-quest-3" data-num="08">
-  <div class="wrap">
-    <div class="band"><span>Technology 08</span><span>Immersive technology · Teaching &amp; Research</span></div>
-    <h2 class="title">Meta Quest 3</h2>
-    <p class="lead">Standalone VR and mixed-reality headset — 512 GB, four units for group sessions</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/meta-quest-3.jpg" alt="Meta Quest 3" loading="lazy">
-          <figcaption>A Quest 3 headset with its two Touch Plus controllers.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Immersive technology</b></div>
-          <div><span>Use</span><b>Teaching &amp; Research</b></div>
-          <div><span>Quantity</span><b>4 units</b></div>
-          <div><span>Status</span><b>Setup pending (being set up)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>A self-contained headset — no PC or cables needed — for virtual reality and mixed reality, where virtual objects appear in the real room through colour passthrough cameras. Users explore 3D environments, visit virtual places, use creative and educational apps, and meet others in shared spaces. With four units, small groups can be in the same virtual room at once.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>4 Meta Quest 3 headsets</strong> (512 GB) with Touch Plus controllers</li>
-      <li><strong>Charging cables</strong> and a head strap</li>
-      <li><strong>Software:</strong> Meta Horizon store and app; can also stream PC VR over Wi-Fi</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Virtual field trips:</strong> cities, museums and natural sites in the target language or culture.</li>
-      <li><strong>Simulated learning environments:</strong> role-plays in restaurants, airports, clinics or job interviews.</li>
-      <li><strong>Spatial exploration:</strong> describing and navigating places; prepositions and directions.</li>
-      <li><strong>Experiential activities:</strong> creative apps for 3D drawing, music or storytelling, followed by a reflection task.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Immersive learning studies:</strong> vocabulary retention or pragmatic competence after VR versus video.</li>
-      <li><strong>User experience research:</strong> onboarding, comfort, motion sickness and accessibility.</li>
-      <li><strong>Simulation-based investigations:</strong> behaviour and language in controlled virtual scenarios.</li>
-      <li><strong>Audio description in 360° and VR:</strong> reception studies with blind and sighted users.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>Someone is currently working on the setup; accounts and apps still need to be configured.</li>
-      <li>Keep sessions to 15–20 minutes at first and clear a 2 × 2 m area per headset.</li>
-      <li>Clean the facial interface after each user; disposable covers help in group sessions.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://www.meta.com/en-gb/help/quest/10004693912934783/" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Official setup guide from the Meta Help Center.</small><em>Open guide →</em></a>
-      <a href="https://www.meta.com/blog/meta-for-education-quest-classroom-educators-vr-mixed-reality/" target="_blank" rel="noopener"><b>See example applications</b><small>Meta for Education: how Quest is being used in classrooms.</small><em>Open article →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="cricut-maker-3" data-num="09">
-  <div class="wrap">
-    <div class="band"><span>Technology 09</span><span>Digital fabrication · Teaching</span></div>
-    <h2 class="title">Cricut Maker 3</h2>
-    <p class="lead">Computer-controlled cutting machine — vinyl, paper, card, fabric and more</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/cricut-maker-3.jpg" alt="Cricut Maker 3" loading="lazy">
-          <figcaption>The Cricut Maker 3 (model CXPL303) on the lab bench.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Digital fabrication</b></div>
-          <div><span>Use</span><b>Teaching</b></div>
-          <div><span>Quantity</span><b>1 unit + accessories</b></div>
-          <div><span>Status</span><b>Training needed (to be investigated)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>A precision cutting plotter: you design shapes, letters or layouts in the Cricut Design Space app, and the machine cuts, scores, draws or engraves them on hundreds of materials — from sticker vinyl and cardstock to fabric, leather and thin wood. It is the quickest route from a digital design to a physical label, stencil, sticker, card or tactile material.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>Cricut Maker 3</strong> (model CXPL303) with fine-point blade and accessories</li>
-      <li><strong>Mats, tools and sample materials</strong> included in the box</li>
-      <li><strong>Software:</strong> Cricut Design Space (Windows, macOS, iOS, Android)</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Tactile and visual materials:</strong> raised letters, labels, word cards, game pieces and classroom signage.</li>
-      <li><strong>Accessible resources:</strong> stencils, textured shapes and large-print labels for inclusive classrooms.</li>
-      <li><strong>Design and language projects:</strong> posters, stickers and packaging with text in the target language.</li>
-      <li><strong>Event and exhibition materials:</strong> signs, name tags and decorations for fairs and showcases.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Tactile-material production:</strong> rapid prototyping of accessible teaching resources for low-vision learners.</li>
-      <li><strong>Maker spaces in teacher education:</strong> adoption and use of fabrication tools by language teachers.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>Not yet investigated in detail — someone needs to try a first cut and document the steps.</li>
-      <li>Design Space needs an account; the machine connects by USB or Bluetooth.</li>
-      <li>Keep spare mats and a selection of vinyl and cardstock in the lab.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://cricut.com/en-ca/cutting-machines/cricut-maker/cricut-maker-3" target="_blank" rel="noopener"><b>Watch a quick demonstration</b><small>Official product page with videos of the Maker 3 in action.</small><em>Open page →</em></a>
-      <a href="https://craft-e-corner.com/blogs/project-inspiration/cricut-beginner-guide-setting-up-your-cricut-maker-3-and-first-project" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Setting up the Maker 3 and making a first project.</small><em>Open guide →</em></a>
-      <a href="https://libguides.uno.edu/cricut/lesson-plans" target="_blank" rel="noopener"><b>See example applications</b><small>Lesson plans built around a Cricut (University of New Orleans library).</small><em>Open lessons →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="ender3-s1" data-num="10">
-  <div class="wrap">
-    <div class="band"><span>Technology 10</span><span>Digital fabrication · Teaching &amp; Research</span></div>
-    <h2 class="title">3D Printers</h2>
-    <p class="lead">Creality Ender-3 S1 — two FDM printers for prototypes, props and tactile resources</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/ender3-s1.jpg" alt="3D Printers" loading="lazy">
-          <figcaption>One of the two Ender-3 S1 printers, with sample prints and filament on the shelf.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Digital fabrication</b></div>
-          <div><span>Use</span><b>Teaching &amp; Research</b></div>
-          <div><span>Quantity</span><b>2 units</b></div>
-          <div><span>Status</span><b>Training needed (to be investigated)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>Desktop 3D printers that build objects layer by layer from plastic filament. Students and researchers design a model (or download one), prepare it in a slicer and print it in minutes to hours. In an education lab the printers turn ideas into tangible things: tactile maps and letters, game pieces, replicas of cultural objects, phone stands, spare parts for other equipment.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>2 Creality Ender-3 S1 printers</strong> with direct-drive extruder and automatic bed levelling</li>
-      <li><strong>Print area</strong> 220 × 220 × 270 mm; PLA, PETG and TPU filament</li>
-      <li><strong>Software:</strong> Creality Print, Ultimaker Cura or PrusaSlicer; models from Thingiverse or Printables</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Tactile materials:</strong> letters, syllables, maps and symbols in relief for literacy and accessibility.</li>
-      <li><strong>Game pieces and boards:</strong> custom tokens and tiles for vocabulary and grammar games.</li>
-      <li><strong>Cultural replicas:</strong> objects, monuments and artefacts to accompany language and culture units.</li>
-      <li><strong>Design thinking:</strong> the full cycle of model, print, test and improve.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Accessible-resource studies:</strong> tactile materials for learners with visual impairment.</li>
-      <li><strong>Maker pedagogy:</strong> what changes when students fabricate their own learning objects.</li>
-      <li><strong>Lab infrastructure:</strong> printing mounts, stands and parts for research setups.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>Not yet investigated in detail — the first step is a test print and a short written procedure.</li>
-      <li>The nozzle and bed get hot; supervise students and let prints cool before removing them.</li>
-      <li>Print with PLA in a ventilated room; store filament dry.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://manuals.plus/m/8edf7cd6acf8f04a74aa5d230825b88de4be39e8ee29f26c8d5525eea6c93b8e" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>Quick installation guide for the Ender-3 S1.</small><em>Open guide →</em></a>
-      <a href="https://foro3d.com/en/2026/mayo/impresion-3d-en-secundaria-como-ensenar-con-objetos-reales.html" target="_blank" rel="noopener"><b>See example applications</b><small>Teaching with real printed objects in secondary school.</small><em>Open article →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-<section class="tech" id="robosapien" data-num="11">
-  <div class="wrap">
-    <div class="band"><span>Technology 11</span><span>Educational robotics · Teaching</span></div>
-    <h2 class="title">RoboSapien</h2>
-    <p class="lead">WowWee 8081N — remote-controlled, programmable humanoid robot</p>
-
-    <div class="two">
-      <div>
-        <figure>
-          <img src="images/robosapien.jpg" alt="RoboSapien" loading="lazy">
-          <figcaption>The RoboSapien with its infrared remote.</figcaption>
-        </figure>
-      </div>
-      <div>
-        <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Type of tech</span><b>Educational robotics</b></div>
-          <div><span>Use</span><b>Teaching</b></div>
-          <div><span>Quantity</span><b>1 unit</b></div>
-          <div><span>Status</span><b>Training needed (to be investigated)</b></div>
-        </div>
-        <h3>What is it?</h3>
-        <p>A 35 cm humanoid robot that walks, dances, picks up objects and makes dozens of sounds and gestures, controlled by an infrared remote. It can be programmed with sequences of moves — up to several dozen steps — and it reacts to touch and sound. More playful than the other robots in the lab, it is a strong hook for younger learners and for demonstrations of commands, sequences and body language.</p>
-      </div>
-    </div>
-
-    <h3>What's in the kit</h3>
-    <ul>
-      <li><strong>RoboSapien robot</strong> (model 8081N) with infrared remote control</li>
-      <li><strong>Power:</strong> D-cell batteries for the robot, AAA for the remote</li>
-      <li><strong>Programming:</strong> through the remote — sequence, touch-sensor and sound-sensor programs</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Ideas for teaching and research</h3>
-    <div class="cols">
-      <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Commands and sequencing:</strong> students plan a routine in words, then program it on the remote.</li>
-      <li><strong>Body language and gesture vocabulary:</strong> naming and describing the robot&#x27;s movements and moods.</li>
-      <li><strong>Performance tasks:</strong> a short choreographed skit or dialogue between a student and the robot.</li>
-      <li><strong>Young learners:</strong> an engaging introduction to robots before moving to coding kits.</li>
-      </ul></div>
-      <div class="card"><h3>Research ideas</h3><ul>
-      <li><strong>Human–robot interaction with children:</strong> responses to a humanoid, non-speaking robot in language play.</li>
-      <li><strong>Comparative demos:</strong> the robot as a contrast to screen-based and ball-shaped robots in engagement studies.</li>
-      </ul></div>
-    </div>
-
-    <h3>Good to know</h3>
-    <ul>
-      <li>Not yet investigated in detail — check the batteries and the remote before the first demo.</li>
-      <li>Programming is done entirely through the remote; the manual explains the sequence modes.</li>
-    </ul>
-
-    <h3 style="margin-top:2rem">Learn and explore</h3>
-    <div class="explore">
-      <a href="https://asset.conrad.com/media10/add/160267/c1/-/en/000665146ML00/manual-665146-wowwee-robotics-robosapien-the-next-generation-8081-toy-robot.pdf" target="_blank" rel="noopener"><b>Explore a beginner tutorial</b><small>The RoboSapien manual: controls, programming modes and sensors (PDF).</small><em>Open manual →</em></a>
-      <a href="https://www.fox13now.com/2014/11/26/former-tv-star-robosapien-has-new-job-at-hunter-high" target="_blank" rel="noopener"><b>See example applications</b><small>A RoboSapien at work in a high-school classroom.</small><em>Open article →</em></a>
-    </div>
-
-    <a class="back" href="#contents">↑ Back to contents</a>
-  </div>
-</section>
-
-<section class="collab" id="collaborate">
+<section class="collab">
   <div class="wrap">
     <div class="eyebrow">Next steps</div>
     <h2 style="font-size:2rem;margin-top:.4rem">Have an idea? Let's collaborate</h2>
-    <p>Nothing in this catalogue needs to be used exactly as described. If a technology sparks an idea for a lesson, an assignment, a thesis or a study, we would like to hear it — and we can help with setup, training and design. Small experiments are welcome; most of our projects started as one.</p>
-    <div class="boxes">
-      <div>
-        <div class="eyebrow">Get in touch</div>
-        <p><strong>Coordinator:</strong> Name</p>
-        <p><strong>Email:</strong> <a href="mailto:name@university.edu">name@university.edu</a></p>
-        <p><strong>Office:</strong> Building · Room</p>
-        <p><strong>Open hours:</strong> Mon–Fri, 9 am – 5 pm</p>
-      </div>
-      <div>
-        <div class="eyebrow">Book or borrow</div>
-        <p><strong>Demo request:</strong> <a href="#">booking form link</a></p>
-        <p><strong>Equipment loans:</strong> up to 2 weeks; sign-out sheet at the front desk</p>
-        <p><strong>Lab website:</strong> <a href="#">lab website link</a></p>
-      </div>
-    </div>
-    <h3>How it usually goes</h3>
-    <ol>
-      <li><strong>Share the idea.</strong> Tell us the idea in a few lines — the course or project, the technology, and what you would like students or participants to do.</li>
-      <li><strong>Book a demo.</strong> We set up the equipment and walk you through it in about 30 minutes. Bring a colleague or a student assistant if you like.</li>
-      <li><strong>Run a pilot.</strong> Try it in one class or one pilot session. We can be present the first time.</li>
-      <li><strong>Build on it.</strong> Together we refine the activity or protocol, document it, and add it to this catalogue as an example for others.</li>
-    </ol>
-    <h3>What we can offer</h3>
-    <ul>
-      <li>Hands-on training sessions for instructors, students and research assistants.</li>
-      <li>Help designing activities, assessment rubrics and research protocols around the equipment.</li>
-      <li>Technical support during the first sessions and troubleshooting afterwards.</li>
-      <li>Space for workshops, recordings and small group work.</li>
-    </ul>
+    <p>If a technology sparks an idea for a lesson, an assignment, a thesis or a study, we would like to hear it — and we can help with setup, training and design.</p>
+    <a class="cta" href="collaborate.html">Book a demo or share an idea →</a>
   </div>
 </section>
 
-<footer><div class="wrap">What's in the Lab · Technology Showcase · Lab name, 2026</div></footer>
-
-<script>
-  (function () {
-    var toc = document.getElementById('toc'); if (!toc) return;
-    document.querySelectorAll('section.tech').forEach(function (s) {
-      var title = s.querySelector('.title'), lead = s.querySelector('.lead');
-      var li = document.createElement('li');
-      li.innerHTML = '<a href="#' + s.id + '"><span class="num">Technology ' + (s.dataset.num || '') + '</span><br>' +
-        (title ? title.textContent : s.id) + (lead ? '<small>' + lead.textContent + '</small>' : '') + '</a>';
-      toc.appendChild(li);
-    });
-  })();
-</script>
+<footer><div class="wrap">What's in the Lab · Technology Showcase · Lab name, 2026 · <a href="collaborate.html">Have an idea? Let's collaborate</a></div></footer>
 </body>
 </html>
