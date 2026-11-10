@@ -1,53 +1,35 @@
 # What's in the Lab — Technology Showcase
 
-Static site for GitHub Pages. No build step is required to publish: upload these files as they are.
+Emerging Technologies and Creativity Research Laboratory · Learning, Design and Technology · Oklahoma State University · 007A Willard Hall
+
+A static site for GitHub Pages. You do not need a build step to publish it: upload the files as they are.
 
 ## Files
 
 ```
-index.html          home: cover, gallery of technologies, about, link to Collaborate
-collaborate.html    booking, project-idea form, quick poll
-lab.html            who we are, where, house rules (fill in the placeholders)
-tech/*.html         one page per technology (11)
+index.html          home page: cover, gallery of the 15 technologies (alphabetical), how this works
+lab.html            about the lab: photo, description, room, hours, contacts
+collaborate.html    how collaboration works, contacts, embedded Google Form
+tech/*.html         one page per technology
 images/             photos (JPG, resized for the web)
-FORMS.md            questions and settings for every Google Form
-techs.json          the text of every technology page (source data)
-links.json          the "Learn and explore" links per technology
+techs.json          text of every technology page (source data)
+links.json          "Learn and explore" links per technology
+build_multi.py      regenerates every page from techs.json and links.json
 ```
 
 ## Publish on GitHub Pages
 
-1. Create a public repository (for example `lab-showcase`).
-2. Upload everything in this folder to the repository root (`index.html` must be at the root).
-3. Settings → Pages → Source: *Deploy from a branch* → branch `main`, folder `/ (root)` → Save.
+1. Create a public repository, for example `lab-showcase`.
+2. Upload everything in this folder to the root of the repository. `index.html` must be at the root.
+3. Go to Settings → Pages → Source: *Deploy from a branch*, choose branch `main`, folder `/ (root)`, and save.
 4. After a minute or two the site is live at `https://USERNAME.github.io/lab-showcase/`.
-   Each technology has its own address, e.g. `…/lab-showcase/tech/meta-quest-3.html` — handy for QR codes next to the equipment.
+   Each technology has its own address, for example `…/lab-showcase/tech/meta-quest-3.html`. You can use these addresses in QR codes.
 
-## Add the interactive blocks
+## Edit content
 
-Every page has dashed placeholders. Each one has an HTML comment just above it saying what to paste:
+- **Small text changes:** edit the HTML files directly.
+- **Many changes, or adding a technology:** edit `techs.json` and `links.json`, then run `python3 build_multi.py` in this folder. The script regenerates every page, the gallery, the LAB codes (alphabetical) and the previous/next links.
+- **Photos:** replace a file in `images/` and keep the same name.
+- **Footer date:** update "Page updated …" in `build_multi.py`, or in every HTML file, whenever you publish changes.
 
-- **Demo video** — YouTube → Share → Embed → copy the `<iframe>` → replace the placeholder `<div class="placeholder">…</div>`.
-- **I'm interested** — Google Form (see FORMS.md, Form 1) → Send → `< >` → copy the `<iframe>`. Use a pre-filled link per technology.
-- **Idea wall** — Padlet → Share → *Embed in your blog or website* → copy the `<iframe>`.
-- **Book a demo / Propose a project / Quick poll** — on `collaborate.html`, same procedure (FORMS.md, Forms 2–4, or a Google Calendar appointment schedule).
-
-Remove the placeholder `<div>` and paste the `<iframe>` in its place; the surrounding `<div class="embed">` sizes it.
-
-## Edit or add technologies
-
-Either edit the HTML pages directly, or edit `techs.json` / `links.json` and run `python3 build_multi.py` in this folder to regenerate every page, including the gallery and the previous/next links.
-
-To add a technology by hand: copy any file in `tech/`, rename it, change the text and the image, and add a card to the gallery in `index.html`.
-
-## Placeholders to fill in
-
-- Lab name, institution and coordinator contact (hero on `index.html`, `collaborate.html`, footer).
-- Photos: `images/` already holds the lab's own photos; replace a file to update a page.
-
-## Things only you can fill in (marked with [brackets] or HTML comments)
-
-- `lab.html`: the paragraph about the lab, the team list, the room photo (`images/lab-room.jpg`).
-- Every technology page: the **Used so far** box — one to three lines of real history.
-- Footer: "kept by [name]" and the update date.
-- Replace inventory photos with photos of the equipment in use when you have them (same file names).
+The Google Form on `collaborate.html` is embedded with an `<iframe>`. If you change the form, paste the new embed code in the same place.

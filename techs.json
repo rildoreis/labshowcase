@@ -1,341 +1,985 @@
 [
   {
-    "id": "podcast-kit", "num": "01", "name": "Portable Podcast Kit",
-    "lead": "Movo MDX-2 bundle — two-person recording setup for computers, tablets and phones",
-    "type": "Audio production", "use": "Teaching & Research", "quantity": "1 kit",
-    "status": "Ready to demo (recording app pending)",
-    "image": "images/podcast-kit.jpg",
-    "caption": "Our kit: two dynamic microphones on stands, the MDX-2 interface and two headphones.",
-    "summary": "A compact two-channel recording setup that lets two speakers record clean, separate audio tracks on a laptop, tablet or phone — no studio required. The MDX-2 interface runs on batteries or USB power, so the kit can be carried to a classroom, an office or the field and set up in minutes. It suits podcasting, interviews, pronunciation work and any project where students produce audio rather than only consume it.",
-    "kit": [
-      ["2 dynamic microphones", " (XLR, with windscreens) on tabletop stands"],
-      ["MDX-2 audio interface", " — 2 inputs, headphone monitoring, up to 24-bit/48 kHz; runs on USB power or 2 AA batteries"],
-      ["2 pairs of headphones", " for live monitoring"],
-      ["Cables and case", " — 2 XLR, USB-A, USB-C and Lightning"],
-      ["Not included:", " a recording device (any laptop, tablet or phone with a recording app such as Audacity or GarageBand)"]
-    ],
-    "teaching": [
-      ["Student podcasts:", " episodic projects where learners plan, script, record and edit a show in the target language."],
-      ["Interview tasks:", " pair activities with guest speakers, peers or community members, followed by transcription and discussion."],
-      ["Pronunciation and fluency:", " recorded speaking samples that students compare over the semester."],
-      ["Audio description and narration:", " voice tracks for accessible media, museum guides or visual novels."],
-      ["Radio drama and storytelling:", " two-voice readings, dialogues and sound-rich narratives."]
-    ],
-    "research": [
-      ["Spoken-corpus building:", " clean two-track recordings for discourse, pragmatics or interaction analysis."],
-      ["Oral-history and ethnographic interviews:", " portable, battery-powered fieldwork setup."],
-      ["Think-aloud and usability studies:", " capturing participant commentary during task-based sessions."],
-      ["Audio-description reception studies:", " producing stimuli with consistent recording quality."],
-      ["Learner-speech studies:", " longitudinal samples of fluency, prosody or accuracy."]
-    ],
-    "notes": [
-      "The recording app still needs to be installed on the lab device before the first demo.",
-      "New equipment — no one has reported experience with it yet, so the first session should be a guided walkthrough.",
-      "Each microphone records to its own track; keep headphones on while recording and set gain so speech peaks around –12 dB."
-    ]
-  },
-  {
-    "id": "cutebot", "num": "02", "name": "micro:bit Smart Cutebot",
-    "lead": "ELECFREAKS robot car driven by a micro:bit — block coding on wheels",
-    "type": "Educational robotics", "use": "Teaching & Research", "quantity": "3 cars",
-    "status": "Ready to demo (1 assembled)",
-    "image": "images/cutebot.jpg",
-    "caption": "One of the three Cutebot cars, assembled and sitting on its box.",
-    "summary": "A small two-wheeled robot car controlled by a BBC micro:bit. Students program it in MakeCode (drag-and-drop blocks or Python) to drive, follow lines, avoid obstacles with its ultrasonic sensor, light up its LEDs and react to the micro:bit's buttons and sensors. It is one of the quickest ways to get from “first line of code” to something that moves across the floor.",
-    "kit": [
-      ["Cutebot chassis", " with two motors, line-tracking sensors, ultrasonic distance sensor, RGB headlights and a buzzer"],
-      ["micro:bit", " slots into the top of the car and is programmed over USB or Bluetooth"],
-      ["Power:", " 3 AAA batteries per car (not included)"],
-      ["Software:", " Microsoft MakeCode in the browser, with the Cutebot extension"]
-    ],
-    "teaching": [
-      ["First steps in coding:", " drive the car with block code, then add sensors one at a time."],
-      ["Language tasks with a twist:", " students write instructions in the target language for a partner to translate into code — giving directions, sequencing, imperatives."],
-      ["Storytelling and maps:", " a floor map of a city or a story world that the robot has to navigate."],
-      ["Maths and measurement:", " distance, speed, angles and timing become concrete problems."],
-      ["Group challenges:", " line-following races, obstacle courses and “deliver the package” missions."]
-    ],
-    "research": [
-      ["Computational thinking in language classrooms:", " how learners negotiate meaning while coding together."],
-      ["Task-based learning studies:", " comparing robot-mediated tasks with traditional ones."],
-      ["Collaborative talk:", " recording and analysing pair interaction during debugging."],
-      ["Teacher education:", " pre-service teachers' confidence with physical computing."]
-    ],
-    "notes": [
-      "One car is assembled and ready; the other two are still in their boxes.",
-      "Needs 3 AAA batteries per car — keep a set in the lab.",
-      "New equipment — no one has reported experience with it yet; MakeCode runs in any browser, so the first session can start on a laptop."
-    ]
-  },
-  {
-    "id": "nezha", "num": "03", "name": "Nezha Inventor's Kit for micro:bit",
-    "lead": "ELECFREAKS building-block kit with motors and sensors — medium difficulty",
-    "type": "Educational robotics", "use": "Teaching & Research", "quantity": "3 kits",
-    "status": "Setup pending (needs assembly and charging)",
-    "image": "images/nezha.jpg",
-    "caption": "The three Nezha kits in their carrying cases.",
-    "summary": "A construction kit that combines a micro:bit with plastic building blocks, servo motors and sensors. Students build mechanical models — vehicles, cranes, a catapult, a smart lamp — and then program their behaviour in MakeCode. It sits one step above the Cutebot: more building, more parts, more room for open-ended projects.",
-    "kit": [
-      ["Nezha expansion board", " with motor and servo ports and a rechargeable battery"],
-      ["Building blocks", " (LEGO-compatible), motors, servos and sensors"],
-      ["micro:bit", " as the controller; programmed in MakeCode"],
-      ["Guide", " with over thirty step-by-step projects"]
-    ],
-    "teaching": [
-      ["Project-based units:", " each group builds and programs a different model and presents it to the class."],
-      ["Procedural language:", " students write and follow assembly instructions in the target language."],
-      ["Engineering design cycle:", " plan, build, test, improve — with the robot as the evidence."],
-      ["Cross-curricular STEAM:", " simple machines, levers, gears and sensors in one build."]
-    ],
-    "research": [
-      ["Maker education studies:", " how open-ended building affects engagement and persistence."],
-      ["Multimodal interaction analysis:", " gesture, talk and manipulation of parts during group work."],
-      ["Instructional-text research:", " how learners read and produce technical instructions in a second language."]
-    ],
-    "notes": [
-      "Medium difficulty — plan the first session around one guided build.",
-      "One kit still needs to be assembled, and the battery packs need charging before the first demo.",
-      "New equipment — no one has reported experience with it yet."
-    ]
-  },
-  {
-    "id": "littlebits", "num": "04", "name": "littleBits Kits",
-    "lead": "Gizmos & Gadgets Kit (2015) and Code Kit (2017) — snap-together electronics",
-    "type": "Electronics & invention", "use": "Teaching", "quantity": "2 kits",
-    "status": "Training needed (to be investigated)",
-    "image": "images/littlebits.jpg",
-    "caption": "The two littleBits boxes: Gizmos & Gadgets and the Code Kit.",
-    "summary": "littleBits are small electronic modules — power, sensors, motors, lights, buzzers — that snap together with magnets, so students can build working circuits and inventions in minutes without soldering or wiring. The Gizmos & Gadgets Kit focuses on mechanical inventions (materials for 12 projects with 15 bits); the Code Kit adds a programmable “codeBit” and over 100 classroom activities with 10 lessons for grades 3 and up.",
-    "kit": [
-      ["Gizmos & Gadgets Kit:", " 15 bits plus wheels, gears, servo, motors and craft materials for 12 inventions"],
-      ["Code Kit:", " codeBit, sensors, LED matrix, buttons; 1–3 students per kit; grades 3+"],
-      ["Software:", " the littleBits Code Kit app (block-based, browser or desktop)"]
-    ],
-    "teaching": [
-      ["Invention challenges:", " “build something that helps…” prompts, then a pitch in the target language."],
-      ["Vocabulary of cause and effect:", " if-then language mapped onto input–output circuits."],
-      ["Games and quizzes:", " the Code Kit's built-in game projects (buzzers, scoreboards) for classroom activities."],
-      ["Low-floor prototyping:", " fast mock-ups of interactive objects for design thinking sessions."]
-    ],
-    "research": [
-      ["Tinkering and creativity:", " observing idea generation with modular, no-wiring electronics."],
-      ["Younger learners:", " early STEM and language integration in grades 3–6."]
-    ],
-    "notes": [
-      "Older kits (boxes dated 2015 and 2017); contents and software compatibility still need to be checked.",
-      "Not yet investigated in detail — may be kept out of the public showcase until someone has tested them.",
-      "Both kits are in the same photo; add a separate entry later if they are presented individually."
-    ]
-  },
-  {
-    "id": "sphero-bolt", "num": "05", "name": "Sphero BOLT Power Pack",
-    "lead": "15 programmable robot balls with charging bases, protractors and an educator guide",
-    "type": "Educational robotics", "use": "Teaching & Research", "quantity": "1 pack (15 robots)",
-    "status": "Setup pending (not yet opened)",
-    "image": "images/sphero-bolt.jpg",
-    "caption": "The BOLT Power Pack case with the 15 robots in their inductive charging bases.",
-    "summary": "Sphero BOLT is a transparent, app-controlled robot ball with an 8×8 LED matrix, sensors (gyroscope, accelerometer, light, compass) and infrared communication between robots. Students drive it, draw paths for it, program it with blocks or JavaScript in the Sphero Edu app, and build activities around its sensors. The Power Pack holds fifteen robots, charging them in one case — enough for a whole class working in pairs.",
-    "kit": [
-      ["15 Sphero BOLT robots", " with 15 inductive charging bases and 15 turbo covers"],
-      ["15 protractors", " and a hard carrying case with built-in charging"],
-      ["Educator guide", " with lessons and classroom-management tips (model PP02)"],
-      ["Software:", " Sphero Edu app on tablets, phones, Chromebooks or computers"]
-    ],
-    "teaching": [
-      ["Whole-class coding:", " pairs program their own robot; the LED matrix shows messages, emojis or words."],
-      ["Language and movement:", " learners give or decode spoken instructions, then test them on the robot."],
-      ["Maths and physics:", " speed, distance, angles and heading using the protractors."],
-      ["Games:", " relay races, mazes and robot “painting” on paper."],
-      ["Storytelling:", " robots act out scenes or follow routes on a story map."]
-    ],
-    "research": [
-      ["Class-scale robotics studies:", " fifteen identical units allow controlled comparisons across groups."],
-      ["Collaboration and talk:", " paired programming interaction in a second language."],
-      ["Learning analytics:", " the Sphero Edu platform logs programs and runs."]
-    ],
-    "notes": [
-      "The pack has not been opened or set up yet; the first task is charging the case and installing the app.",
-      "Comes with an educator guide — a good starting point for the first demo.",
-      "Plan floor space: the robots need a clear area to run."
-    ]
-  },
-  {
-    "id": "omni-one", "num": "06", "name": "Omni One",
-    "lead": "Virtuix omnidirectional VR treadmill — walk and run inside virtual worlds",
-    "type": "Immersive technology", "use": "Teaching & Research", "quantity": "1 unit",
-    "status": "Setup pending (being set up)",
-    "image": "images/omni-one.jpg",
-    "caption": "The Omni One platform with its support arm, installed in the lab.",
-    "summary": "A full-body VR system: the user stands on a low-friction dish wearing special shoes and a support harness, and physically walks, runs or crouches to move through the virtual environment. Combined with a VR headset, it turns locomotion into a natural movement instead of a joystick push — which matters for presence, for exercise and for studies of embodied experience.",
-    "kit": [
-      ["Omni One platform", " with support arm, harness and vest"],
-      ["VR headset", " integrated with the system"],
-      ["Shoes", " in several sizes with low-friction soles"],
-      ["Software:", " the Omni One store of compatible titles"]
-    ],
-    "teaching": [
-      ["Embodied virtual field trips:", " walking through a city, museum or historical site in the target language."],
-      ["Situated vocabulary:", " movement verbs, directions and spatial language experienced physically."],
-      ["Demonstrations of immersion:", " showing the difference between seated and full-body VR in media or design courses."]
-    ],
-    "research": [
-      ["Presence and embodiment studies:", " comparing locomotion methods and their effect on learning or recall."],
-      ["Physical activity and cognition:", " movement-based tasks in immersive environments."],
-      ["Accessibility and audio description in VR:", " navigation with audio cues."],
-      ["User experience research:", " onboarding, discomfort and motion sickness across users."]
-    ],
-    "notes": [
-      "Someone is currently working on the setup; not yet available for demos.",
-      "Needs a clear area around the platform and a short safety briefing before use.",
-      "Sessions should be short at first; ask about dizziness and take breaks."
-    ]
-  },
-  {
-    "id": "meta-glasses", "num": "07", "name": "Ray-Ban Meta Smart Glasses",
-    "lead": "Wayfarer (Gen 2) — camera, open-ear audio and a voice assistant in a pair of glasses",
-    "type": "Wearable & AI", "use": "Teaching & Research", "quantity": "4 units",
-    "status": "Setup pending (being set up)",
-    "image": "images/meta-glasses.jpg",
-    "caption": "One of the four pairs, with its charging case and box.",
-    "summary": "Ordinary-looking glasses with a built-in camera, microphones and small speakers in the arms. The wearer can take first-person photos and video, listen to audio, take calls, and talk to the Meta AI assistant — asking what it sees, translating speech or text, or answering questions hands-free. They pair with a phone through the Meta AI app.",
-    "kit": [
-      ["4 pairs of Ray-Ban Meta Wayfarer glasses", " (Gen 2)"],
-      ["Charging cases", " and cables"],
-      ["Software:", " Meta AI app on a paired phone"]
-    ],
-    "teaching": [
-      ["First-person video tasks:", " students record a tour, a recipe or a how-to while narrating in the target language."],
-      ["Live translation practice:", " testing and critiquing the assistant's translations in real situations."],
-      ["Describe what you see:", " oral description tasks captured from the speaker's point of view — a natural fit for audio description training."],
-      ["Fieldwork and interviews:", " hands-free recording of community visits (with consent)."]
-    ],
-    "research": [
-      ["Human–AI interaction in language use:", " how learners rely on or correct AI translation and description."],
-      ["Egocentric video for interaction analysis:", " gaze-aligned recordings of classroom or service encounters."],
-      ["Privacy and ethics studies:", " attitudes toward recording in public and in classrooms."]
-    ],
-    "notes": [
-      "Someone is currently working on the setup; the glasses need pairing with a phone and a Meta account.",
-      "Recording others requires consent; the LED indicator must stay visible and uncovered.",
-      "Plan for a prescription-free use or clip-on lenses; the frames are standard Wayfarer size."
-    ]
-  },
-  {
-    "id": "meta-quest-3", "num": "08", "name": "Meta Quest 3",
-    "lead": "Standalone VR and mixed-reality headset — 512 GB, four units for group sessions",
-    "type": "Immersive technology", "use": "Teaching & Research", "quantity": "4 units",
-    "status": "Setup pending (being set up)",
-    "image": "images/meta-quest-3.jpg",
-    "caption": "A Quest 3 headset with its two Touch Plus controllers.",
-    "summary": "A self-contained headset — no PC or cables needed — for virtual reality and mixed reality, where virtual objects appear in the real room through colour passthrough cameras. Users explore 3D environments, visit virtual places, use creative and educational apps, and meet others in shared spaces. With four units, small groups can be in the same virtual room at once.",
-    "kit": [
-      ["4 Meta Quest 3 headsets", " (512 GB) with Touch Plus controllers"],
-      ["Charging cables", " and a head strap"],
-      ["Software:", " Meta Horizon store and app; can also stream PC VR over Wi-Fi"]
-    ],
-    "teaching": [
-      ["Virtual field trips:", " cities, museums and natural sites in the target language or culture."],
-      ["Simulated learning environments:", " role-plays in restaurants, airports, clinics or job interviews."],
-      ["Spatial exploration:", " describing and navigating places; prepositions and directions."],
-      ["Experiential activities:", " creative apps for 3D drawing, music or storytelling, followed by a reflection task."]
-    ],
-    "research": [
-      ["Immersive learning studies:", " vocabulary retention or pragmatic competence after VR versus video."],
-      ["User experience research:", " onboarding, comfort, motion sickness and accessibility."],
-      ["Simulation-based investigations:", " behaviour and language in controlled virtual scenarios."],
-      ["Audio description in 360° and VR:", " reception studies with blind and sighted users."]
-    ],
-    "notes": [
-      "Someone is currently working on the setup; accounts and apps still need to be configured.",
-      "Keep sessions to 15–20 minutes at first and clear a 2 × 2 m area per headset.",
-      "Clean the facial interface after each user; disposable covers help in group sessions."
-    ]
-  },
-  {
-    "id": "cricut-maker-3", "num": "09", "name": "Cricut Maker 3",
-    "lead": "Computer-controlled cutting machine — vinyl, paper, card, fabric and more",
-    "type": "Digital fabrication", "use": "Teaching", "quantity": "1 unit + accessories",
-    "status": "Training needed (to be investigated)",
-    "image": "images/cricut-maker-3.jpg",
-    "caption": "The Cricut Maker 3 (model CXPL303) on the lab bench.",
-    "summary": "A precision cutting plotter: you design shapes, letters or layouts in the Cricut Design Space app, and the machine cuts, scores, draws or engraves them on hundreds of materials — from sticker vinyl and cardstock to fabric, leather and thin wood. It is the quickest route from a digital design to a physical label, stencil, sticker, card or tactile material.",
-    "kit": [
-      ["Cricut Maker 3", " (model CXPL303) with fine-point blade and accessories"],
-      ["Mats, tools and sample materials", " included in the box"],
-      ["Software:", " Cricut Design Space (Windows, macOS, iOS, Android)"]
-    ],
-    "teaching": [
-      ["Tactile and visual materials:", " raised letters, labels, word cards, game pieces and classroom signage."],
-      ["Accessible resources:", " stencils, textured shapes and large-print labels for inclusive classrooms."],
-      ["Design and language projects:", " posters, stickers and packaging with text in the target language."],
-      ["Event and exhibition materials:", " signs, name tags and decorations for fairs and showcases."]
-    ],
-    "research": [
-      ["Tactile-material production:", " rapid prototyping of accessible teaching resources for low-vision learners."],
-      ["Maker spaces in teacher education:", " adoption and use of fabrication tools by language teachers."]
-    ],
-    "notes": [
-      "Not yet investigated in detail — someone needs to try a first cut and document the steps.",
-      "Design Space needs an account; the machine connects by USB or Bluetooth.",
-      "Keep spare mats and a selection of vinyl and cardstock in the lab."
-    ]
-  },
-  {
-    "id": "ender3-s1", "num": "10", "name": "3D Printers",
+    "id": "ender3-s1",
+    "num": "01",
+    "name": "3D Printers",
     "lead": "Creality Ender-3 S1 — two FDM printers for prototypes, props and tactile resources",
-    "type": "Digital fabrication", "use": "Teaching & Research", "quantity": "2 units",
+    "type": "Digital fabrication",
+    "use": "Teaching & Research",
+    "quantity": "2 units",
     "status": "Training needed (to be investigated)",
     "image": "images/ender3-s1.jpg",
     "caption": "One of the two Ender-3 S1 printers, with sample prints and filament on the shelf.",
     "summary": "Desktop 3D printers that build objects layer by layer from plastic filament. Students and researchers design a model (or download one), prepare it in a slicer and print it in minutes to hours. In an education lab the printers turn ideas into tangible things: tactile maps and letters, game pieces, replicas of cultural objects, phone stands, spare parts for other equipment.",
     "kit": [
-      ["2 Creality Ender-3 S1 printers", " with direct-drive extruder and automatic bed levelling"],
-      ["Print area", " 220 × 220 × 270 mm; PLA, PETG and TPU filament"],
-      ["Software:", " Creality Print, Ultimaker Cura or PrusaSlicer; models from Thingiverse or Printables"]
+      [
+        "2 Creality Ender-3 S1 printers",
+        " with direct-drive extruder and automatic bed levelling"
+      ],
+      [
+        "Print area",
+        " 220 × 220 × 270 mm; PLA, PETG and TPU filament"
+      ],
+      [
+        "Software:",
+        " Creality Print, Ultimaker Cura or PrusaSlicer; models from Thingiverse or Printables"
+      ]
     ],
     "teaching": [
-      ["Tactile materials:", " letters, syllables, maps and symbols in relief for literacy and accessibility."],
-      ["Game pieces and boards:", " custom tokens and tiles for vocabulary and grammar games."],
-      ["Cultural replicas:", " objects, monuments and artefacts to accompany language and culture units."],
-      ["Design thinking:", " the full cycle of model, print, test and improve."]
+      [
+        "Models for any subject:",
+        " molecules, cells, terrain, historical artefacts and geometric solids students can hold."
+      ],
+      [
+        "Design challenges:",
+        " students identify a real problem and print a prototype solution."
+      ],
+      [
+        "Accessible materials:",
+        " tactile diagrams, maps and graphs for learners with visual impairments."
+      ],
+      [
+        "Teacher-made manipulatives:",
+        " fraction bars, tiles, game pieces and models made for a specific lesson."
+      ]
     ],
     "research": [
-      ["Accessible-resource studies:", " tactile materials for learners with visual impairment."],
-      ["Maker pedagogy:", " what changes when students fabricate their own learning objects."],
-      ["Lab infrastructure:", " printing mounts, stands and parts for research setups."]
+      [
+        "Maker pedagogy:",
+        " what changes when students design and fabricate their own learning objects."
+      ],
+      [
+        "Tangible representations:",
+        " physical models and conceptual understanding in STEM."
+      ],
+      [
+        "Research equipment:",
+        " printing mounts, stands and parts for study setups."
+      ]
     ],
     "notes": [
-      "Not yet investigated in detail — the first step is a test print and a short written procedure.",
       "The nozzle and bed get hot; supervise students and let prints cool before removing them.",
-      "Print with PLA in a ventilated room; store filament dry."
+      "Print with PLA in a ventilated room; store filament dry.",
+      "Prepare models in Creality Print, Cura or PrusaSlicer before printing."
     ]
   },
   {
-    "id": "robosapien", "num": "11", "name": "RoboSapien",
+    "id": "cricut-maker-3",
+    "num": "02",
+    "name": "Cricut Maker 3",
+    "lead": "Computer-controlled cutting machine — vinyl, paper, card, fabric and more",
+    "type": "Digital fabrication",
+    "use": "Teaching",
+    "quantity": "1 unit + accessories",
+    "status": "Training needed (to be investigated)",
+    "image": "images/cricut-maker-3.jpg",
+    "caption": "The Cricut Maker 3 (model CXPL303) on the lab bench.",
+    "summary": "A precision cutting plotter: you design shapes, letters or layouts in the Cricut Design Space app, and the machine cuts, scores, draws or engraves them on hundreds of materials — from sticker vinyl and cardstock to fabric, leather and thin wood. It is the quickest route from a digital design to a physical label, stencil, sticker, card or tactile material.",
+    "kit": [
+      [
+        "Cricut Maker 3",
+        " (model CXPL303) with fine-point blade and accessories"
+      ],
+      [
+        "Mats, tools and sample materials",
+        " included in the box"
+      ],
+      [
+        "Software:",
+        " Cricut Design Space (Windows, macOS, iOS, Android)"
+      ]
+    ],
+    "teaching": [
+      [
+        "Classroom materials:",
+        " labels, stencils, manipulatives, word walls and signage."
+      ],
+      [
+        "Student design projects:",
+        " posters, packaging, infographics and paper engineering such as pop-up models."
+      ],
+      [
+        "Accessible resources:",
+        " textured shapes, raised labels and large-print materials."
+      ],
+      [
+        "Exhibitions and events:",
+        " displays for science fairs, showcases and poster sessions."
+      ]
+    ],
+    "research": [
+      [
+        "Making in teacher education:",
+        " how pre-service teachers use fabrication tools to design materials."
+      ],
+      [
+        "Design-based research:",
+        " iterating on teacher-made materials with students."
+      ]
+    ],
+    "notes": [
+      "Design Space needs an account; the machine connects by USB or Bluetooth.",
+      "Choose the right material setting before each cut — the wrong one tears paper or leaves vinyl uncut.",
+      "Keep spare mats and a selection of vinyl and cardstock in the lab."
+    ]
+  },
+  {
+    "id": "green-screen",
+    "num": "03",
+    "name": "Green Screen Studio Kit",
+    "lead": "Pull-up chroma-key backdrop, two LED panels and a tripod — a small video studio that packs away",
+    "type": "Video production",
+    "use": "Teaching & Research",
+    "quantity": "1 set (screen, 2 lights, tripod)",
+    "status": "To confirm",
+    "image": "images/green-screen.jpg",
+    "caption": "The kit set up in the lab: Emart pull-up green screen, two UBeesize LED panels and the Victiv NT70 tripod.",
+    "summary": "Everything needed to film someone in front of a background that is replaced later: a green backdrop that pulls up from its case and locks at the height you want, two LED panels to light the screen and the speaker evenly, and a tripod that holds a camera or a phone. Recorded clips go into a chroma-key app or editor (Do Ink, iMovie, CapCut, OBS) that swaps the green for any image or video — a newsroom, a map, a slide, a historical site.",
+    "kit": [
+      [
+        "Emart collapsible green screen",
+        " — pull-up backdrop with a self-locking frame, stores in its own case"
+      ],
+      [
+        "2 UBeesize 12-inch LED video lights",
+        " on adjustable stands"
+      ],
+      [
+        "Victiv NT70 tripod",
+        " — aluminium, about 50–188 cm (19.5–74 in), pan head, phone holder and quick-release plate"
+      ],
+      [
+        "Not included:",
+        " the camera or phone and the editing software"
+      ]
+    ],
+    "teaching": [
+      [
+        "News and weather reports:",
+        " students present a science topic, a historical event or a current issue in front of a map or scene."
+      ],
+      [
+        "Instructional videos:",
+        " short how-to and explainer clips with slides or diagrams behind the presenter."
+      ],
+      [
+        "Virtual field trips by video:",
+        " students “stand” in a place they researched and explain it."
+      ],
+      [
+        "Presentation practice:",
+        " recorded talks that students review with a rubric before presenting live."
+      ],
+      [
+        "Teacher education:",
+        " pre-service teachers record micro-lessons for peer feedback."
+      ]
+    ],
+    "research": [
+      [
+        "Video-based learning materials:",
+        " producing consistent stimuli for multimedia-learning studies."
+      ],
+      [
+        "Instructor presence in video:",
+        " comparing on-screen presenter formats."
+      ],
+      [
+        "Student-created media:",
+        " what learners do with authoring tools when they produce rather than watch."
+      ]
+    ],
+    "notes": [
+      "Light the green screen evenly first, then the speaker; shadows and wrinkles are what break the key.",
+      "Keep the speaker about a metre in front of the screen and avoid green clothing."
+    ]
+  },
+  {
+    "id": "insta360-x5",
+    "num": "04",
+    "name": "Insta360 X5",
+    "lead": "8K 360° action camera — Essentials Bundle with spare battery and invisible selfie stick",
+    "type": "Immersive technology",
+    "use": "Teaching & Research",
+    "quantity": "1 bundle",
+    "status": "To confirm",
+    "image": "images/insta360-x5.jpg",
+    "caption": "The Insta360 X5 Essentials Bundle.",
+    "summary": "A pocket camera with two lenses that records everything around it at once, in up to 8K 360° video. Afterwards you either keep the full sphere — to watch in a VR headset like our Quest 3 or on YouTube 360 — or “reframe” it into a normal video, choosing where to look after the fact. The selfie stick disappears from the shot, it is waterproof and rugged, and stabilisation keeps the footage smooth while walking.",
+    "kit": [
+      [
+        "Insta360 X5",
+        " — dual 1/1.28-inch sensors, 8K30 360° video, 72 MP photos, removable lens guards"
+      ],
+      [
+        "Essentials Bundle accessories:",
+        " spare battery, fast-charge case, 114 cm invisible selfie stick, lens guard, lens cap and carry case"
+      ],
+      [
+        "Software:",
+        " Insta360 app (phone) and Insta360 Studio (computer) for reframing and export"
+      ]
+    ],
+    "teaching": [
+      [
+        "Virtual tours:",
+        " students film a place — a lab, a museum, a natural site — and build a guided 360° tour with questions for viewers."
+      ],
+      [
+        "Classroom observation for teacher education:",
+        " future teachers revisit a lesson in 360° and notice what a fixed camera would miss."
+      ],
+      [
+        "Content for the VR headsets:",
+        " record scenes to view on the Quest 3 instead of buying ready-made content."
+      ],
+      [
+        "Scenarios and case studies:",
+        " groups act out a situation around the camera; others watch and discuss how they would respond."
+      ]
+    ],
+    "research": [
+      [
+        "360° video in teacher education:",
+        " noticing, presence and reflection compared with standard video."
+      ],
+      [
+        "Immersive learning materials:",
+        " creating controlled 360° stimuli for experiments."
+      ],
+      [
+        "Fieldwork documentation:",
+        " recording whole environments for later analysis."
+      ]
+    ],
+    "notes": [
+      "Keep people within one to two metres of the camera and avoid rotating it while filming — viewers in headsets feel it.",
+      "Filming people in public or in class needs consent; 360° means everyone in the room is in the shot."
+    ]
+  },
+  {
+    "id": "littlebits",
+    "num": "05",
+    "name": "littleBits Kits",
+    "lead": "Gizmos & Gadgets Kit (2015) and Code Kit (2017) — snap-together electronics",
+    "type": "Electronics & invention",
+    "use": "Teaching",
+    "quantity": "2 kits",
+    "status": "Training needed (to be investigated)",
+    "image": "images/littlebits.jpg",
+    "caption": "The two littleBits boxes: Gizmos & Gadgets and the Code Kit.",
+    "summary": "littleBits are small electronic modules — power, sensors, motors, lights, buzzers — that snap together with magnets, so students can build working circuits and inventions in minutes without soldering or wiring. The Gizmos & Gadgets Kit focuses on mechanical inventions (materials for 12 projects with 15 bits); the Code Kit adds a programmable “codeBit” and over 100 classroom activities with 10 lessons for grades 3 and up.",
+    "kit": [
+      [
+        "Gizmos & Gadgets Kit:",
+        " 15 bits and materials for 12 inventions"
+      ],
+      [
+        "Code Kit:",
+        " 100+ activities and 10 lessons; 1–3 students per kit; grades 3+"
+      ]
+    ],
+    "teaching": [
+      [
+        "Invention challenges:",
+        " “build something that helps…” prompts in any subject, followed by a short pitch."
+      ],
+      [
+        "Systems thinking:",
+        " inputs, outputs and feedback made visible in a working circuit."
+      ],
+      [
+        "Science and engineering:",
+        " circuits, energy and simple machines through hands-on builds."
+      ],
+      [
+        "Rapid prototyping:",
+        " quick mock-ups of interactive objects in design-thinking sessions."
+      ]
+    ],
+    "research": [
+      [
+        "Tinkering and creativity:",
+        " observing idea generation with modular, no-wiring electronics."
+      ],
+      [
+        "Early STEM:",
+        " physical computing with younger learners in grades 3–6."
+      ]
+    ],
+    "notes": [
+      "Bits snap together with magnets and only connect the right way round — no wiring, no soldering.",
+      "Build in order: power first, then inputs, then outputs.",
+      "The two kits can be combined for bigger inventions."
+    ]
+  },
+  {
+    "id": "meeting-owl",
+    "num": "06",
+    "name": "Meeting Owl 4+",
+    "lead": "Owl Labs 360° camera, microphone and speaker for hybrid classes and meetings",
+    "type": "Video conferencing",
+    "use": "Teaching & Research",
+    "quantity": "1 unit",
+    "status": "To confirm",
+    "image": "images/meeting-owl.jpg",
+    "caption": "The Meeting Owl 4+ with its reference card on the lab table.",
+    "summary": "An all-in-one device that sits in the middle of the table and gives remote participants a sense of being in the room. It shows a 360° panorama of everyone present and automatically switches a second view to whoever is speaking. It connects to a computer by USB-C and works as camera, microphone and speaker in Zoom, Teams, Google Meet and other platforms. It does not record on its own — recording happens in the meeting software.",
+    "kit": [
+      [
+        "Meeting Owl 4+",
+        " — 4K 360° camera (64 MP sensor), microphones and speakers in one unit"
+      ],
+      [
+        "Power adapter and USB-C cable",
+        " to the host computer"
+      ],
+      [
+        "Reference card and holder",
+        " with the four-step setup"
+      ],
+      [
+        "Software:",
+        " Meeting Owl app for settings and updates; any video-conferencing platform"
+      ]
+    ],
+    "teaching": [
+      [
+        "Hybrid seminars and guest speakers:",
+        " bring a remote expert or a partner class into a round-table discussion."
+      ],
+      [
+        "Virtual exchange:",
+        " joint sessions with a class at another school or university."
+      ],
+      [
+        "Thesis defences and committee meetings:",
+        " with members joining remotely."
+      ],
+      [
+        "Teaching demonstrations:",
+        " pre-service teachers lead a small-group activity while observers watch remotely."
+      ]
+    ],
+    "research": [
+      [
+        "Focus groups:",
+        " record group discussions with every participant in frame (with consent), via the meeting software."
+      ],
+      [
+        "Hybrid learning studies:",
+        " participation and turn-taking between in-room and remote students."
+      ],
+      [
+        "Interaction analysis:",
+        " the 360° view keeps gaze and gesture of all participants available for analysis."
+      ]
+    ],
+    "notes": [
+      "Place it in the centre of the table, at least 0.5 m (18 in) from the screen.",
+      "In the meeting software, set camera, microphone and speaker all to Meeting Owl.",
+      "Tell participants when a session is being recorded."
+    ]
+  },
+  {
+    "id": "meta-quest-3",
+    "num": "07",
+    "name": "Meta Quest 3",
+    "lead": "Standalone VR and mixed-reality headset — 512 GB, four units for group sessions",
+    "type": "Immersive technology",
+    "use": "Teaching & Research",
+    "quantity": "4 units",
+    "status": "Setup pending (being set up)",
+    "image": "images/meta-quest-3.jpg",
+    "caption": "A Quest 3 headset with its two Touch Plus controllers.",
+    "summary": "A self-contained headset — no PC or cables needed — for virtual reality and mixed reality, where virtual objects appear in the real room through colour passthrough cameras. Users explore 3D environments, visit virtual places, use creative and educational apps, and meet others in shared spaces. With four units, small groups can be in the same virtual room at once.",
+    "kit": [
+      [
+        "4 Meta Quest 3 headsets",
+        " (512 GB) with Touch Plus controllers"
+      ],
+      [
+        "Charging cables",
+        " and a head strap"
+      ],
+      [
+        "Software:",
+        " Meta Horizon store and app; can also stream PC VR over Wi-Fi"
+      ]
+    ],
+    "teaching": [
+      [
+        "Virtual field trips:",
+        " museums, historical sites, outer space or the inside of the human body."
+      ],
+      [
+        "Simulations:",
+        " lab procedures, safety training, clinical or workplace scenarios that are hard to stage in class."
+      ],
+      [
+        "Spatial exploration:",
+        " 3D models in geometry, anatomy, architecture and geography."
+      ],
+      [
+        "Creative work:",
+        " 3D drawing, sculpting and storytelling apps, followed by a reflection task."
+      ]
+    ],
+    "research": [
+      [
+        "Immersive learning studies:",
+        " retention and transfer after VR compared with video or text."
+      ],
+      [
+        "User experience research:",
+        " onboarding, comfort, motion sickness and accessibility."
+      ],
+      [
+        "Simulation-based investigations:",
+        " behaviour and decision-making in controlled virtual scenarios."
+      ],
+      [
+        "Presence and embodiment:",
+        " how immersion shapes engagement and learning."
+      ]
+    ],
+    "notes": [
+      "Keep sessions to 15–20 minutes at first and clear a 2 × 2 m area per headset.",
+      "Clean the facial interface after each user; disposable covers help in group sessions.",
+      "Each headset needs its account and apps ready before a group session."
+    ]
+  },
+  {
+    "id": "cutebot",
+    "num": "08",
+    "name": "micro:bit Smart Cutebot",
+    "lead": "ELECFREAKS robot car driven by a micro:bit — block coding on wheels",
+    "type": "Educational robotics",
+    "use": "Teaching & Research",
+    "quantity": "3 cars",
+    "status": "Ready to demo (1 assembled)",
+    "image": "images/cutebot.jpg",
+    "caption": "One of the three Cutebot cars, assembled and sitting on its box.",
+    "summary": "A small two-wheeled robot car controlled by a BBC micro:bit. Students program it in MakeCode (drag-and-drop blocks or Python) to drive, follow lines, avoid obstacles with its ultrasonic sensor, light up its LEDs and react to the micro:bit's buttons and sensors. It is one of the quickest ways to get from “first line of code” to something that moves across the floor.",
+    "kit": [
+      [
+        "Cutebot chassis",
+        " with two motors, line-tracking sensors, ultrasonic distance sensor, RGB headlights and a buzzer"
+      ],
+      [
+        "micro:bit",
+        " slots into the top of the car and is programmed over USB or Bluetooth"
+      ],
+      [
+        "Power:",
+        " 3 AAA batteries per car (not included)"
+      ],
+      [
+        "Software:",
+        " Microsoft MakeCode in the browser, with the Cutebot extension"
+      ]
+    ],
+    "teaching": [
+      [
+        "First steps in coding:",
+        " drive the car with block code, then add sensors one at a time."
+      ],
+      [
+        "Algorithms in any subject:",
+        " students write step-by-step instructions for a partner to turn into code."
+      ],
+      [
+        "Maths and measurement:",
+        " distance, speed, angles and timing become concrete problems."
+      ],
+      [
+        "Maps and missions:",
+        " the robot navigates a map of a story, a city, an ecosystem or a cell."
+      ],
+      [
+        "Group challenges:",
+        " line-following races, obstacle courses and delivery missions."
+      ]
+    ],
+    "research": [
+      [
+        "Computational thinking across subjects:",
+        " integrating coding into non-computing classes."
+      ],
+      [
+        "Collaborative problem solving:",
+        " recording and analysing group talk during debugging."
+      ],
+      [
+        "Teacher education:",
+        " pre-service teachers' confidence with physical computing."
+      ]
+    ],
+    "notes": [
+      "Each car runs on 3 AAA batteries.",
+      "MakeCode runs in any browser, so a first session can start on a laptop before the cars come out.",
+      "Line following works best on a light floor or paper with a clear dark line."
+    ]
+  },
+  {
+    "id": "nezha",
+    "num": "09",
+    "name": "Nezha Inventor's Kit for micro:bit",
+    "lead": "ELECFREAKS building-block kit with motors and sensors — medium difficulty",
+    "type": "Educational robotics",
+    "use": "Teaching & Research",
+    "quantity": "3 kits",
+    "status": "Setup pending (needs assembly and charging)",
+    "image": "images/nezha.jpg",
+    "caption": "The three Nezha kits in their carrying cases.",
+    "summary": "A construction kit that combines a micro:bit with plastic building blocks, servo motors and sensors. Students build mechanical models — vehicles, cranes, a catapult, a smart lamp — and then program their behaviour in MakeCode. It sits one step above the Cutebot: more building, more parts, more room for open-ended projects.",
+    "kit": [
+      [
+        "Nezha expansion board",
+        " with motor and servo ports and a rechargeable battery"
+      ],
+      [
+        "Building blocks",
+        " (LEGO-compatible), motors, servos and sensors"
+      ],
+      [
+        "micro:bit",
+        " as the controller; programmed in MakeCode"
+      ]
+    ],
+    "teaching": [
+      [
+        "Project-based units:",
+        " each group builds and programs a different model and presents it to the class."
+      ],
+      [
+        "Technical communication:",
+        " students write, test and revise assembly instructions for others."
+      ],
+      [
+        "Engineering design cycle:",
+        " plan, build, test, improve — with the robot as the evidence."
+      ],
+      [
+        "Cross-curricular STEAM:",
+        " simple machines, levers, gears and sensors in one build."
+      ]
+    ],
+    "research": [
+      [
+        "Maker education:",
+        " how open-ended building affects engagement and persistence."
+      ],
+      [
+        "Multimodal interaction analysis:",
+        " gesture, talk and handling of parts during group work."
+      ],
+      [
+        "Instructional design:",
+        " comparing printed, video and peer-written build instructions."
+      ]
+    ],
+    "notes": [
+      "Medium difficulty — plan a first session around one guided build.",
+      "The expansion board has a rechargeable battery; charge it before a session.",
+      "Keep the parts sorted in the case compartments to make clean-up quick."
+    ]
+  },
+  {
+    "id": "omni-one",
+    "num": "10",
+    "name": "Omni One",
+    "lead": "Virtuix omnidirectional VR treadmill — walk and run inside virtual worlds",
+    "type": "Immersive technology",
+    "use": "Teaching & Research",
+    "quantity": "1 unit",
+    "status": "Setup pending (being set up)",
+    "image": "images/omni-one.jpg",
+    "caption": "The Omni One platform with its support arm, installed in the lab.",
+    "summary": "A full-body VR system: the user stands on a low-friction dish wearing special shoes and a support harness, and physically walks, runs or crouches to move through the virtual environment. Combined with a VR headset, it turns locomotion into a natural movement instead of a joystick push — which matters for presence, for exercise and for studies of embodied experience.",
+    "kit": [
+      [
+        "Omni One platform",
+        " with support arm"
+      ],
+      [
+        "VR headset",
+        ""
+      ],
+      [
+        "Vest",
+        " (harness)"
+      ],
+      [
+        "Shoes",
+        " with low-friction soles"
+      ]
+    ],
+    "teaching": [
+      [
+        "Embodied virtual field trips:",
+        " walking through a city, a museum, a historical site or a natural environment."
+      ],
+      [
+        "Physical education and health:",
+        " movement-based activities and exergames."
+      ],
+      [
+        "Demonstrations of immersion:",
+        " showing the difference between seated and full-body VR in media, design or technology courses."
+      ]
+    ],
+    "research": [
+      [
+        "Presence and embodiment studies:",
+        " comparing locomotion methods and their effect on learning or recall."
+      ],
+      [
+        "Physical activity and cognition:",
+        " movement-based tasks in immersive environments."
+      ],
+      [
+        "Accessibility in VR:",
+        " how different users navigate and orient themselves."
+      ],
+      [
+        "User experience research:",
+        " onboarding, comfort and motion sickness across users."
+      ]
+    ],
+    "notes": [
+      "Needs a clear area around the platform and a short safety briefing before use.",
+      "Sessions should be short at first; ask about dizziness and take breaks.",
+      "Users wear the Omni One vest and shoes; fit them before each session."
+    ]
+  },
+  {
+    "id": "pocketalk",
+    "num": "11",
+    "name": "Pocketalk S2 Plus",
+    "lead": "Handheld two-way voice and camera translator with a large touchscreen",
+    "type": "Language technology & AI",
+    "use": "Teaching & Research",
+    "quantity": "1 unit",
+    "status": "To confirm",
+    "image": "images/pocketalk.jpg",
+    "caption": "Our Pocketalk S2 Plus in its box, with the wall charger and cable.",
+    "summary": "A phone-sized device built for one thing: translating conversations. Press the button, speak, and it shows and speaks the translation; hand it to the other person and it works the other way. The camera reads signs, menus and printed text and translates them on screen. The Plus model has an extra-large screen and a built-in eSIM, so it connects without Wi-Fi in more than 170 countries and regions; it covers more than 80 languages.",
+    "kit": [
+      [
+        "Pocketalk S2 Plus",
+        " with built-in eSIM data plan"
+      ],
+      [
+        "Wall charger and USB cable",
+        ""
+      ],
+      [
+        "Note:",
+        " translation runs online; check that the data plan is active before a session"
+      ]
+    ],
+    "teaching": [
+      [
+        "Critical AI literacy:",
+        " students test the device with jargon, idioms and accents and analyse what it gets wrong."
+      ],
+      [
+        "Supporting multilingual learners in any class:",
+        " newcomer students follow instructions and join group work."
+      ],
+      [
+        "Family communication:",
+        " pre-service teachers role-play parent–teacher conferences across languages."
+      ],
+      [
+        "Global classroom:",
+        " conversations with guest speakers or partner classes who speak another language."
+      ]
+    ],
+    "research": [
+      [
+        "Machine translation in interaction:",
+        " how speakers adapt their talk when a device mediates the conversation."
+      ],
+      [
+        "Accuracy and bias studies:",
+        " systematic comparisons across languages, accents and registers."
+      ],
+      [
+        "Educational equity:",
+        " use of translation devices with newcomer students and families."
+      ]
+    ],
+    "notes": [
+      "Recording other people's speech for translation still calls for consent; explain what the device does before using it with participants.",
+      "Do not rely on it for high-stakes exchanges (health, legal, grading) without a human check."
+    ]
+  },
+  {
+    "id": "podcast-kit",
+    "num": "12",
+    "name": "Portable Podcast Kit",
+    "lead": "Movo MDX-2 bundle — two-person recording setup for computers, tablets and phones",
+    "type": "Audio production",
+    "use": "Teaching & Research",
+    "quantity": "1 kit",
+    "status": "Ready to demo (recording app pending)",
+    "image": "images/podcast-kit.jpg",
+    "caption": "Our kit: two dynamic microphones on stands, the MDX-2 interface and two headphones.",
+    "summary": "A compact two-channel recording setup that lets two speakers record clean, separate audio tracks on a laptop, tablet or phone — no studio required. The MDX-2 interface runs on batteries or USB power, so the kit can be carried to a classroom, an office or the field and set up in minutes. It suits podcasting, interviews, reflective audio journals and any project where students produce audio rather than only consume it.",
+    "kit": [
+      [
+        "2 dynamic microphones",
+        " (XLR, with windscreens) on tabletop stands"
+      ],
+      [
+        "MDX-2 audio interface",
+        " — 2 inputs, headphone monitoring, up to 24-bit/48 kHz; runs on USB power or 2 AA batteries"
+      ],
+      [
+        "2 pairs of headphones",
+        " for live monitoring"
+      ],
+      [
+        "Cables and case",
+        " — 2 XLR, USB-A, USB-C and Lightning"
+      ],
+      [
+        "Not included:",
+        " a recording device (any laptop, tablet or phone with a recording app such as Audacity or GarageBand)"
+      ]
+    ],
+    "teaching": [
+      [
+        "Student podcasts in any subject:",
+        " explain a concept, debate an issue, review a book or report on a project."
+      ],
+      [
+        "Interviews:",
+        " with experts, community members or family — oral histories for social studies, careers for counselling."
+      ],
+      [
+        "Reflective audio journals:",
+        " students record what they learned and listen back at the end of the term."
+      ],
+      [
+        "Audio stories and documentaries:",
+        " two-voice narratives with sound effects and music."
+      ],
+      [
+        "Teacher education:",
+        " recording and reviewing classroom talk and questioning."
+      ]
+    ],
+    "research": [
+      [
+        "Interview studies:",
+        " clean two-track recordings for qualitative and oral-history research."
+      ],
+      [
+        "Think-aloud and usability studies:",
+        " capturing participant commentary during tasks."
+      ],
+      [
+        "Student voice:",
+        " podcasts and audio journals as data on learning and reflection."
+      ]
+    ],
+    "notes": [
+      "Each microphone records to its own track; keep headphones on while recording and set gain so speech peaks around –12 dB.",
+      "Any phone, tablet or laptop with a recording app works — Audacity, GarageBand or Voice Memos are enough to start.",
+      "Dynamic microphones pick up little room noise, so ordinary classrooms work fine."
+    ]
+  },
+  {
+    "id": "meta-glasses",
+    "num": "13",
+    "name": "Ray-Ban Meta Smart Glasses",
+    "lead": "Wayfarer (Gen 2) — camera, open-ear audio and a voice assistant in a pair of glasses",
+    "type": "Wearable & AI",
+    "use": "Teaching & Research",
+    "quantity": "4 units",
+    "status": "Setup pending (being set up)",
+    "image": "images/meta-glasses.jpg",
+    "caption": "One of the four pairs, with its charging case and box.",
+    "summary": "Ordinary-looking glasses with a built-in camera, microphones and small speakers in the arms. The wearer can take first-person photos and video, listen to audio, take calls, and talk to the Meta AI assistant — asking what it sees, translating speech or text, or answering questions hands-free. They pair with a phone through the Meta AI app.",
+    "kit": [
+      [
+        "4 pairs of Ray-Ban Meta Wayfarer glasses",
+        " (Gen 2)"
+      ],
+      [
+        "Charging cases",
+        " and cables"
+      ],
+      [
+        "Software:",
+        " Meta AI app on a paired phone"
+      ]
+    ],
+    "teaching": [
+      [
+        "First-person tutorials:",
+        " demonstrate a lab procedure, a craft or a sports technique hands-free."
+      ],
+      [
+        "Fieldwork and field trips:",
+        " record observations and narrate them on the spot (with consent)."
+      ],
+      [
+        "Critical AI literacy:",
+        " test and critique the assistant's descriptions and answers."
+      ],
+      [
+        "Teaching reflection:",
+        " first-person recordings of a lesson for later self-review."
+      ]
+    ],
+    "research": [
+      [
+        "Human–AI interaction:",
+        " how people rely on or correct an AI assistant in everyday tasks."
+      ],
+      [
+        "Egocentric video:",
+        " gaze-aligned recordings for classroom or workplace interaction analysis."
+      ],
+      [
+        "Privacy and ethics:",
+        " attitudes toward wearable recording in public and in classrooms."
+      ]
+    ],
+    "notes": [
+      "The glasses pair with a phone through the Meta AI app.",
+      "Recording others requires consent; the LED indicator must stay visible and uncovered.",
+      "Frames are standard Wayfarer size; users who wear prescription glasses may need other lenses."
+    ]
+  },
+  {
+    "id": "robosapien",
+    "num": "14",
+    "name": "RoboSapien",
     "lead": "WowWee 8081N — remote-controlled, programmable humanoid robot",
-    "type": "Educational robotics", "use": "Teaching", "quantity": "1 unit",
+    "type": "Educational robotics",
+    "use": "Teaching",
+    "quantity": "1 unit",
     "status": "Training needed (to be investigated)",
     "image": "images/robosapien.jpg",
     "caption": "The RoboSapien with its infrared remote.",
-    "summary": "A 35 cm humanoid robot that walks, dances, picks up objects and makes dozens of sounds and gestures, controlled by an infrared remote. It can be programmed with sequences of moves — up to several dozen steps — and it reacts to touch and sound. More playful than the other robots in the lab, it is a strong hook for younger learners and for demonstrations of commands, sequences and body language.",
+    "summary": "A humanoid robot that walks, dances, picks up objects and makes sounds and gestures, controlled by an infrared remote. It can be programmed with sequences of moves and reacts to touch and sound. More playful than the other robots in the lab, it is a strong hook for younger learners and for demonstrations of commands, sequences and body language.",
     "kit": [
-      ["RoboSapien robot", " (model 8081N) with infrared remote control"],
-      ["Power:", " D-cell batteries for the robot, AAA for the remote"],
-      ["Programming:", " through the remote — sequence, touch-sensor and sound-sensor programs"]
+      [
+        "RoboSapien robot",
+        " (model 8081N) with infrared remote control"
+      ],
+      [
+        "Programming:",
+        " through the remote — sequence, touch-sensor and sound-sensor programs"
+      ]
     ],
     "teaching": [
-      ["Commands and sequencing:", " students plan a routine in words, then program it on the remote."],
-      ["Body language and gesture vocabulary:", " naming and describing the robot's movements and moods."],
-      ["Performance tasks:", " a short choreographed skit or dialogue between a student and the robot."],
-      ["Young learners:", " an engaging introduction to robots before moving to coding kits."]
+      [
+        "Commands and sequencing:",
+        " students plan a routine step by step, then program it on the remote."
+      ],
+      [
+        "Introduction to robotics:",
+        " an engaging first contact for younger learners before the coding kits."
+      ],
+      [
+        "Performance and storytelling:",
+        " a short skit or presentation with the robot as a character."
+      ],
+      [
+        "Discussion starter:",
+        " what makes a machine seem alive, and how should we treat robots?"
+      ]
     ],
     "research": [
-      ["Human–robot interaction with children:", " responses to a humanoid, non-speaking robot in language play."],
-      ["Comparative demos:", " the robot as a contrast to screen-based and ball-shaped robots in engagement studies."]
+      [
+        "Child–robot interaction:",
+        " responses to a humanoid, non-speaking robot."
+      ],
+      [
+        "Engagement comparisons:",
+        " humanoid, screen-based and ball-shaped robots in learning activities."
+      ]
     ],
     "notes": [
-      "Not yet investigated in detail — check the batteries and the remote before the first demo.",
       "Programming is done entirely through the remote; the manual explains the sequence modes."
+    ]
+  },
+  {
+    "id": "sphero-bolt",
+    "num": "15",
+    "name": "Sphero BOLT Power Pack",
+    "lead": "15 programmable robot balls with charging bases, protractors and an educator guide",
+    "type": "Educational robotics",
+    "use": "Teaching & Research",
+    "quantity": "1 pack (15 robots)",
+    "status": "Setup pending (not yet opened)",
+    "image": "images/sphero-bolt.jpg",
+    "caption": "The BOLT Power Pack case with the 15 robots in their inductive charging bases.",
+    "summary": "Sphero BOLT is a transparent, app-controlled robot ball with an 8×8 LED matrix, sensors (gyroscope, accelerometer, light, compass) and infrared communication between robots. Students drive it, draw paths for it, program it with blocks or JavaScript in the Sphero Edu app, and build activities around its sensors. The Power Pack holds fifteen robots, charging them in one case — enough for a whole class working in pairs.",
+    "kit": [
+      [
+        "15 Sphero BOLT robots",
+        " with 15 inductive charging bases and 15 turbo covers"
+      ],
+      [
+        "15 protractors",
+        " and a hard carrying case with built-in charging"
+      ],
+      [
+        "Educator guide",
+        " with lessons and classroom-management tips (model PP02)"
+      ],
+      [
+        "Software:",
+        " Sphero Edu app on tablets, phones, Chromebooks or computers"
+      ]
+    ],
+    "teaching": [
+      [
+        "Whole-class coding:",
+        " pairs program their own robot; the LED matrix shows messages, symbols or data."
+      ],
+      [
+        "Maths and physics:",
+        " speed, distance, angles and heading using the protractors."
+      ],
+      [
+        "Science with sensors:",
+        " collect light, motion and orientation data and graph it."
+      ],
+      [
+        "Games and art:",
+        " relay races, mazes and robot “painting” on paper."
+      ],
+      [
+        "Storytelling:",
+        " robots act out scenes or follow routes on a story map."
+      ]
+    ],
+    "research": [
+      [
+        "Class-scale robotics studies:",
+        " fifteen identical units allow comparisons across groups."
+      ],
+      [
+        "Collaboration and talk:",
+        " analysing paired programming conversations."
+      ],
+      [
+        "Learning analytics:",
+        " the Sphero Edu platform logs programs and runs."
+      ]
+    ],
+    "notes": [
+      "Robots charge in the case's inductive bases; charge the case before a session.",
+      "Comes with an educator guide — a good starting point for a first lesson.",
+      "Plan floor space: the robots need a clear area to run."
     ]
   }
 ]

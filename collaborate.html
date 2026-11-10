@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f26b1d'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='JetBrains Mono,Menlo,monospace' font-weight='700' font-size='24' fill='%23111'%3ELAB%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="Have an idea? Let&#x27;s collaborate — What&#x27;s in the Lab">
 <meta property="og:description" content="Book a demo, borrow equipment or propose a project.">
-<meta property="og:image" content="images/omni-one.jpg">
+<meta property="og:image" content="images/lab-room.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,6 +65,7 @@
   .pill.ready{background:#e6f4ea;color:#1e7a3a}
   .pill.pending{background:var(--tint);color:var(--orange-dark)}
   .pill.training{background:#eee;color:#444}
+  .pill.confirm{background:#111;color:var(--orange)}
 
   /* tech page */
   .band{display:inline-flex;overflow:hidden;border-radius:6px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
@@ -113,6 +114,8 @@
   .collab ol{counter-reset:step;list-style:none;padding:0;margin:0 0 1.5rem}
   .collab ol li{counter-increment:step;position:relative;padding-left:2.4rem;margin:.6rem 0}
   .collab ol li::before{content:counter(step);position:absolute;left:0;top:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .formwrap{background:#fff;border-radius:10px;overflow:hidden;margin-top:1.2rem;border-top:4px solid var(--orange)}
+  .formwrap iframe{display:block;width:100%;height:780px;border:0}
   .cta{display:inline-block;background:var(--orange);color:#fff !important;text-decoration:none;font-weight:800;padding:.8rem 1.4rem;border-radius:8px}
   .cta:hover{background:var(--orange-dark)}
   footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.88rem;border-top:1px solid #2a2a2a}
@@ -144,7 +147,8 @@
   .meta-line{font-family:var(--mono);font-size:.74rem;color:var(--mute);margin-top:1rem}
   .labgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
   .photo-ph{aspect-ratio:4/3;border:2px dashed var(--line);border-radius:10px;display:grid;place-items:center;color:var(--mute);text-align:center;padding:1rem;background:#fff}
-  @media (max-width:760px){.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
+  @media (max-width:520px){.logo > span{display:none}.topbar nav a{margin-left:1rem}}
+  @media (max-width:760px){.formwrap iframe{height:900px}.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
   @media print{.topbar,.pager,footer,.interact{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
@@ -174,62 +178,42 @@
     <div class="collab" style="padding:1.5rem 1.5rem 1rem;border-radius:10px">
     <ol>
       <li><strong>Share the idea.</strong> Tell us the idea in a few lines — the course or project, the technology, and what you would like students or participants to do.</li>
-      <li><strong>Book a demo.</strong> We set up the equipment and walk you through it in about 30 minutes. Bring a colleague or a student assistant if you like.</li>
-      <li><strong>Run a pilot.</strong> Try it in one class or one pilot session. We can be present the first time.</li>
+      <li><strong>Book a demo.</strong> We set up the equipment and walk you through it. Bring a colleague or a student assistant if you like.</li>
+      <li><strong>Run a pilot.</strong> Try it in one class or one pilot session.</li>
       <li><strong>Build on it.</strong> Together we refine the activity or protocol, document it, and add it to this catalogue as an example for others.</li>
     </ol>
     </div>
 
     <div class="strip" style="margin-top:2rem">
-      <div><span>Coordinator</span><b>Name</b></div>
-      <div><span>Email</span><b>name@university.edu</b></div>
-      <div><span>Office</span><b>Building · Room</b></div>
-      <div><span>Open hours</span><b>Mon–Fri, 9 am – 5 pm</b></div>
+      <div><span>Contact</span><b>Dr. Carolina Torrejon Capurro</b><br><a href="mailto:ctorrej@okstate.edu" style="color:inherit">ctorrej@okstate.edu</a></div>
+      <div><span>Contact</span><b>Dr. Keunjae Kim</b><br><a href="mailto:keunjae.kim@okstate.edu" style="color:inherit">keunjae.kim@okstate.edu</a></div>
+      <div><span>Room</span><b><a href="https://goo.gl/maps/DotB7vQcAgGfvFpY9" target="_blank" rel="noopener" style="color:inherit">007A Willard Hall</a></b></div>
+      <div><span>Open</span><b>Daily</b></div>
     </div>
     <h3>What we can offer</h3>
     <ul>
       <li>Hands-on training sessions for instructors, students and research assistants.</li>
       <li>Help designing activities, assessment rubrics and research protocols around the equipment.</li>
       <li>Technical support during the first sessions and troubleshooting afterwards.</li>
-      <li>Space for workshops, recordings and small group work; equipment loans of up to two weeks.</li>
+      <li>Space for workshops, recordings and small group work.</li>
     </ul>
   </div>
 </section>
 
-<section class="interact">
+<section class="collab">
   <div class="wrap">
-    <span class="tag">Get involved</span>
-    <h2>Book a demo, propose a project</h2>
-    <div class="igrid">
-      <div class="ibox">
-        <h3>Book a demo</h3>
-        <p>Pick a 30-minute slot and tell us which technologies you want to see.</p>
-        <div class="embed tall">
-          <!-- GOOGLE CALENDAR appointment schedule: Calendar → appointment schedule → Share → Embed → paste the <iframe> here.
-               Or embed the "Book a demo" Google Form (questions in FORMS.docx). -->
-          <div class="placeholder"><b>Booking placeholder</b><span>Option A: Google Calendar appointment schedule → Share → Embed.<br>Option B: the “Book a demo” Google Form → Send → <code>&lt;&gt;</code> → paste the <code>&lt;iframe&gt;</code> here.</span></div>
-        </div>
-      </div>
-      <div class="ibox">
-        <h3>Propose a project or activity</h3>
-        <p>A few lines are enough. We will reply within a week.</p>
-        <div class="embed tall">
-          <!-- GOOGLE FORM "Project idea": Forms → Send → < > → paste the <iframe> here. -->
-          <div class="placeholder"><b>Google Form placeholder — Project idea</b><span>Create the “Propose a project” form (questions in FORMS.docx).<br>Send → <code>&lt;&gt;</code> Embed HTML → paste the <code>&lt;iframe&gt;</code> here.</span></div>
-        </div>
-      </div>
-      <div class="ibox full">
-        <h3>What should we add next?</h3>
-        <p>One question, one click: vote for the technology you would most like to see in the lab, or the training you would attend.</p>
-        <div class="embed" style="aspect-ratio:auto;height:420px">
-          <!-- GOOGLE FORM "Quick poll" (single question; share the results chart link next to it). -->
-          <div class="placeholder"><b>Google Form placeholder — Quick poll</b><span>Create the “Quick poll” form (questions in FORMS.docx).<br>Send → <code>&lt;&gt;</code> → paste the <code>&lt;iframe&gt;</code> here.</span></div>
-        </div>
-      </div>
+    <span class="tag">Get in touch</span>
+    <h2 style="font-size:2rem;margin-top:.6rem">Share an idea with us</h2>
+    <p>Tell us who you are and what you have in mind — a project, a class activity, a demo you would like to see. A few lines are enough; we will get back to you.</p>
+    <div class="formwrap">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNrnspill-tBAy8I5P5If7ZpqCwl4tXc7Vg8mW440QZa_Cqw/viewform?embedded=true" title="Contact form — Emerging Technologies and Creativity Research Laboratory" loading="lazy" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
+    <p style="margin-top:1rem;font-size:.95rem">Form not showing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNrnspill-tBAy8I5P5If7ZpqCwl4tXc7Vg8mW440QZa_Cqw/viewform" target="_blank" rel="noopener">Open it in a new tab</a>, or write directly to
+      <a href="mailto:ctorrej@okstate.edu?subject=Idea%20for%20the%20ETCR%20Lab">ctorrej@okstate.edu</a> or
+      <a href="mailto:keunjae.kim@okstate.edu?subject=Idea%20for%20the%20ETCR%20Lab">keunjae.kim@okstate.edu</a>.</p>
   </div>
 </section>
 
-<footer><div class="wrap">What's in the Lab · Lab name · Building, Room · City · <a href="collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 6 Nov 2026 · kept by [name]</span></div></footer>
+<footer><div class="wrap">What's in the Lab · <a href="https://education.okstate.edu/research/labs/emerging-technologies-creativity-research-lab">Emerging Technologies and Creativity Research Laboratory</a> · Learning, Design and Technology · Oklahoma State University · <a href="https://goo.gl/maps/DotB7vQcAgGfvFpY9">007A Willard Hall</a> · <a href="collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 10 Nov 2026 · kept by Rildo Reis</span></div></footer>
 </body>
 </html>

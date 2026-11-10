@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What&#x27;s in the Lab - Technology Showcase</title>
+<title>What&#x27;s in the Lab — Technology Showcase</title>
 <meta name="description" content="Technologies available in the lab for teaching and research, with ideas for putting them to work.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f26b1d'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='JetBrains Mono,Menlo,monospace' font-weight='700' font-size='24' fill='%23111'%3ELAB%3C/text%3E%3C/svg%3E">
-<meta property="og:title" content="What&#x27;s in the Lab - Technology Showcase">
+<meta property="og:title" content="What&#x27;s in the Lab — Technology Showcase">
 <meta property="og:description" content="Technologies available in the lab for teaching and research, with ideas for putting them to work.">
-<meta property="og:image" content="images/omni-one.jpg">
+<meta property="og:image" content="images/lab-room.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,6 +65,7 @@
   .pill.ready{background:#e6f4ea;color:#1e7a3a}
   .pill.pending{background:var(--tint);color:var(--orange-dark)}
   .pill.training{background:#eee;color:#444}
+  .pill.confirm{background:#111;color:var(--orange)}
 
   /* tech page */
   .band{display:inline-flex;overflow:hidden;border-radius:6px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
@@ -113,6 +114,8 @@
   .collab ol{counter-reset:step;list-style:none;padding:0;margin:0 0 1.5rem}
   .collab ol li{counter-increment:step;position:relative;padding-left:2.4rem;margin:.6rem 0}
   .collab ol li::before{content:counter(step);position:absolute;left:0;top:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .formwrap{background:#fff;border-radius:10px;overflow:hidden;margin-top:1.2rem;border-top:4px solid var(--orange)}
+  .formwrap iframe{display:block;width:100%;height:780px;border:0}
   .cta{display:inline-block;background:var(--orange);color:#fff !important;text-decoration:none;font-weight:800;padding:.8rem 1.4rem;border-radius:8px}
   .cta:hover{background:var(--orange-dark)}
   footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.88rem;border-top:1px solid #2a2a2a}
@@ -121,7 +124,7 @@
 
   .logo{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff;font-weight:800}
   .logo i{display:inline-grid;place-items:center;width:30px;height:30px;background:var(--orange);color:#111;font-style:normal;font-family:var(--mono);font-weight:700;font-size:.72rem;border-radius:5px;letter-spacing:.02em}
-  .tag{font-family:var(--nunito);font-weight:700;font-size:.72rem;letter-spacing:.04em;color:var(--orange-dark);background:var(--tint);padding:.15rem .45rem;border-radius:4px;display:inline-block}
+  .tag{font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.04em;color:var(--orange-dark);background:var(--tint);padding:.15rem .45rem;border-radius:4px;display:inline-block}
   .hero .tag{background:#2a2a2a;color:var(--orange)}
   .ul-mark{display:inline-block;width:56px;height:6px;background:var(--orange);border-radius:3px;transform:rotate(-1.5deg);margin:.2rem 0 1.2rem}
   .filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem}
@@ -144,7 +147,8 @@
   .meta-line{font-family:var(--mono);font-size:.74rem;color:var(--mute);margin-top:1rem}
   .labgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
   .photo-ph{aspect-ratio:4/3;border:2px dashed var(--line);border-radius:10px;display:grid;place-items:center;color:var(--mute);text-align:center;padding:1rem;background:#fff}
-  @media (max-width:760px){.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
+  @media (max-width:520px){.logo > span{display:none}.topbar nav a{margin-left:1rem}}
+  @media (max-width:760px){.formwrap iframe{height:900px}.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
   @media print{.topbar,.pager,footer,.interact{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
@@ -164,11 +168,11 @@
   <div class="wrap">
     <span class="tag">Technology showcase · Fall 2026</span>
     <h1>What's in <b>the Lab</b></h1>
-    <p>Eleven pieces of equipment, two of them ready to demo this week, the rest being set up. Pick one, see what it does, and tell us how you would use it.</p>
+    <p>15 technologies for teaching and research. Pick one, see what it does, and tell us how you would use it.</p>
     <div class="meta">
-      <div><span>Lab</span>ETCR Creatitivity Lab</div>
-      <div><span>Institution</span>Learning, Design and Technology Department · Educational Foundations, Leadership and Aviation, Oklahoma State University</div>
-      <div><span>Contact</span>Dr. Carolina Torrejon Capurro (ctorrej@okstate.edu) and Dr. Keunjae Kim (keunjae.kim@okstate.edu)</div>
+      <div><span>Lab</span><a href="https://education.okstate.edu/research/labs/emerging-technologies-creativity-research-lab" style="color:inherit">Emerging Technologies and Creativity Research Laboratory</a></div>
+      <div><span>Institution</span>Learning, Design and Technology Department<br>Educational Foundations, Leadership and Aviation<br>Oklahoma State University</div>
+      <div><span>Contact</span>Dr. Carolina Torrejon Capurro · <a href="mailto:ctorrej@okstate.edu" style="color:inherit">ctorrej@okstate.edu</a><br>Dr. Keunjae Kim · <a href="mailto:keunjae.kim@okstate.edu" style="color:inherit">keunjae.kim@okstate.edu</a></div>
     </div>
   </div>
 </section>
@@ -178,59 +182,72 @@
     <h2>Technologies</h2><span class="ul-mark"></span>
     <div class="filters" id="filters">
       <button class="on" data-f="all">All</button>
-      <button data-f="stat:ready">Ready now</button>
-      <button data-f="stat:pending">Being set up</button>
-      <button data-f="stat:training">Nobody has tried yet</button>
       <button data-f="cat:robotics">Robotics</button>
       <button data-f="cat:immersive">Immersive &amp; wearable</button>
       <button data-f="cat:fabrication">Fabrication</button>
-      <button data-f="cat:media">Audio &amp; electronics</button>
+      <button data-f="cat:media">Audio, video &amp; more</button>
     </div>
     <ul class="gallery" id="gallery">
-      <li class="featured " data-cat="media" data-stat="ready"><a href="tech/podcast-kit.html">
-        <img src="images/podcast-kit.jpg" alt="Portable Podcast Kit" loading="lazy">
-        <div class="body"><span class="tag">LAB-01</span><div class="name">Portable Podcast Kit</div>
-        <div class="sub">Audio production · Teaching &amp; Research</div><span class="pill ready">Ready to demo</span><span class="ready-note">Book a demo this week →</span></div></a></li>
-      <li class="featured " data-cat="robotics" data-stat="ready"><a href="tech/cutebot.html">
-        <img src="images/cutebot.jpg" alt="micro:bit Smart Cutebot" loading="lazy">
-        <div class="body"><span class="tag">LAB-02</span><div class="name">micro:bit Smart Cutebot</div>
-        <div class="sub">Educational robotics · Teaching &amp; Research</div><span class="pill ready">Ready to demo</span><span class="ready-note">Book a demo this week →</span></div></a></li>
-      <li class="" data-cat="robotics" data-stat="pending"><a href="tech/nezha.html">
-        <img src="images/nezha.jpg" alt="Nezha Inventor&#x27;s Kit for micro:bit" loading="lazy">
-        <div class="body"><span class="tag">LAB-03</span><div class="name">Nezha Inventor&#x27;s Kit for micro:bit</div>
-        <div class="sub">Educational robotics · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
-      <li class="" data-cat="robotics" data-stat="pending"><a href="tech/sphero-bolt.html">
-        <img src="images/sphero-bolt.jpg" alt="Sphero BOLT Power Pack" loading="lazy">
-        <div class="body"><span class="tag">LAB-05</span><div class="name">Sphero BOLT Power Pack</div>
-        <div class="sub">Educational robotics · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
-      <li class="" data-cat="immersive" data-stat="pending"><a href="tech/omni-one.html">
-        <img src="images/omni-one.jpg" alt="Omni One" loading="lazy">
-        <div class="body"><span class="tag">LAB-06</span><div class="name">Omni One</div>
-        <div class="sub">Immersive technology · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
-      <li class="" data-cat="immersive" data-stat="pending"><a href="tech/meta-glasses.html">
-        <img src="images/meta-glasses.jpg" alt="Ray-Ban Meta Smart Glasses" loading="lazy">
-        <div class="body"><span class="tag">LAB-07</span><div class="name">Ray-Ban Meta Smart Glasses</div>
-        <div class="sub">Wearable &amp; AI · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
-      <li class="" data-cat="immersive" data-stat="pending"><a href="tech/meta-quest-3.html">
-        <img src="images/meta-quest-3.jpg" alt="Meta Quest 3" loading="lazy">
-        <div class="body"><span class="tag">LAB-08</span><div class="name">Meta Quest 3</div>
-        <div class="sub">Immersive technology · Teaching &amp; Research</div><span class="pill pending">Setup pending</span></div></a></li>
-      <li class="" data-cat="media" data-stat="training"><a href="tech/littlebits.html">
-        <img src="images/littlebits.jpg" alt="littleBits Kits" loading="lazy">
-        <div class="body"><span class="tag">LAB-04</span><div class="name">littleBits Kits</div>
-        <div class="sub">Electronics &amp; invention · Teaching</div><span class="pill training">Training needed</span></div></a></li>
-      <li class="" data-cat="fabrication" data-stat="training"><a href="tech/cricut-maker-3.html">
-        <img src="images/cricut-maker-3.jpg" alt="Cricut Maker 3" loading="lazy">
-        <div class="body"><span class="tag">LAB-09</span><div class="name">Cricut Maker 3</div>
-        <div class="sub">Digital fabrication · Teaching</div><span class="pill training">Training needed</span></div></a></li>
-      <li class="" data-cat="fabrication" data-stat="training"><a href="tech/ender3-s1.html">
+      <li data-cat="fabrication"><a href="tech/ender3-s1.html">
         <img src="images/ender3-s1.jpg" alt="3D Printers" loading="lazy">
-        <div class="body"><span class="tag">LAB-10</span><div class="name">3D Printers</div>
-        <div class="sub">Digital fabrication · Teaching &amp; Research</div><span class="pill training">Training needed</span></div></a></li>
-      <li class="" data-cat="robotics" data-stat="training"><a href="tech/robosapien.html">
+        <div class="body"><span class="tag">LAB-01</span><div class="name">3D Printers</div>
+        <div class="sub">Digital fabrication · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="fabrication"><a href="tech/cricut-maker-3.html">
+        <img src="images/cricut-maker-3.jpg" alt="Cricut Maker 3" loading="lazy">
+        <div class="body"><span class="tag">LAB-02</span><div class="name">Cricut Maker 3</div>
+        <div class="sub">Digital fabrication · Teaching</div></div></a></li>
+      <li data-cat="media"><a href="tech/green-screen.html">
+        <img src="images/green-screen.jpg" alt="Green Screen Studio Kit" loading="lazy">
+        <div class="body"><span class="tag">LAB-03</span><div class="name">Green Screen Studio Kit</div>
+        <div class="sub">Video production · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="immersive"><a href="tech/insta360-x5.html">
+        <img src="images/insta360-x5.jpg" alt="Insta360 X5" loading="lazy">
+        <div class="body"><span class="tag">LAB-04</span><div class="name">Insta360 X5</div>
+        <div class="sub">Immersive technology · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="media"><a href="tech/littlebits.html">
+        <img src="images/littlebits.jpg" alt="littleBits Kits" loading="lazy">
+        <div class="body"><span class="tag">LAB-05</span><div class="name">littleBits Kits</div>
+        <div class="sub">Electronics &amp; invention · Teaching</div></div></a></li>
+      <li data-cat="media"><a href="tech/meeting-owl.html">
+        <img src="images/meeting-owl.jpg" alt="Meeting Owl 4+" loading="lazy">
+        <div class="body"><span class="tag">LAB-06</span><div class="name">Meeting Owl 4+</div>
+        <div class="sub">Video conferencing · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="immersive"><a href="tech/meta-quest-3.html">
+        <img src="images/meta-quest-3.jpg" alt="Meta Quest 3" loading="lazy">
+        <div class="body"><span class="tag">LAB-07</span><div class="name">Meta Quest 3</div>
+        <div class="sub">Immersive technology · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="robotics"><a href="tech/cutebot.html">
+        <img src="images/cutebot.jpg" alt="micro:bit Smart Cutebot" loading="lazy">
+        <div class="body"><span class="tag">LAB-08</span><div class="name">micro:bit Smart Cutebot</div>
+        <div class="sub">Educational robotics · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="robotics"><a href="tech/nezha.html">
+        <img src="images/nezha.jpg" alt="Nezha Inventor&#x27;s Kit for micro:bit" loading="lazy">
+        <div class="body"><span class="tag">LAB-09</span><div class="name">Nezha Inventor&#x27;s Kit for micro:bit</div>
+        <div class="sub">Educational robotics · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="immersive"><a href="tech/omni-one.html">
+        <img src="images/omni-one.jpg" alt="Omni One" loading="lazy">
+        <div class="body"><span class="tag">LAB-10</span><div class="name">Omni One</div>
+        <div class="sub">Immersive technology · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="media"><a href="tech/pocketalk.html">
+        <img src="images/pocketalk.jpg" alt="Pocketalk S2 Plus" loading="lazy">
+        <div class="body"><span class="tag">LAB-11</span><div class="name">Pocketalk S2 Plus</div>
+        <div class="sub">Language technology &amp; AI · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="media"><a href="tech/podcast-kit.html">
+        <img src="images/podcast-kit.jpg" alt="Portable Podcast Kit" loading="lazy">
+        <div class="body"><span class="tag">LAB-12</span><div class="name">Portable Podcast Kit</div>
+        <div class="sub">Audio production · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="immersive"><a href="tech/meta-glasses.html">
+        <img src="images/meta-glasses.jpg" alt="Ray-Ban Meta Smart Glasses" loading="lazy">
+        <div class="body"><span class="tag">LAB-13</span><div class="name">Ray-Ban Meta Smart Glasses</div>
+        <div class="sub">Wearable &amp; AI · Teaching &amp; Research</div></div></a></li>
+      <li data-cat="robotics"><a href="tech/robosapien.html">
         <img src="images/robosapien.jpg" alt="RoboSapien" loading="lazy">
-        <div class="body"><span class="tag">LAB-11</span><div class="name">RoboSapien</div>
-        <div class="sub">Educational robotics · Teaching</div><span class="pill training">Training needed</span></div></a></li>
+        <div class="body"><span class="tag">LAB-14</span><div class="name">RoboSapien</div>
+        <div class="sub">Educational robotics · Teaching</div></div></a></li>
+      <li data-cat="robotics"><a href="tech/sphero-bolt.html">
+        <img src="images/sphero-bolt.jpg" alt="Sphero BOLT Power Pack" loading="lazy">
+        <div class="body"><span class="tag">LAB-15</span><div class="name">Sphero BOLT Power Pack</div>
+        <div class="sub">Educational robotics · Teaching &amp; Research</div></div></a></li>
     </ul>
   </div>
 </section>
@@ -238,14 +255,7 @@
 <section class="block" id="about">
   <div class="wrap">
     <h2>How this works</h2><span class="ul-mark"></span>
-    <p>One page per piece of equipment: our own photo, what it is in plain words, what is in the box, who has used it so far, and ideas for courses and studies. Every page ends with a short demo video, a thirty-second “I'm interested” form and an idea wall where you can see what colleagues have already proposed. The inventory code (LAB-01, LAB-02…) is the same one printed on the label of the equipment itself.</p>
-    <h3>Status labels</h3>
-    <div class="strip">
-      <div><span>Ready to demo</span><b>Set up and working; book a session</b></div>
-      <div><span>Setup pending</span><b>Assembly, charging or configuration still needed</b></div>
-      <div><span>Training needed</span><b>No one has used it yet</b></div>
-      <div><span>In use</span><b>Currently booked by a project</b></div>
-    </div>
+    <p>One page per piece of equipment: our own photo, what it is in plain words, what is in the box, ideas for courses and studies, practical notes and links to learn more. Each piece of equipment has an inventory code (LAB-01, LAB-02…), in alphabetical order.</p>
   </div>
 </section>
 
@@ -271,6 +281,6 @@
   })();
 </script>
 
-<footer><div class="wrap">What's in the Lab · Lab name · Building, Room · City · <a href="collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 6 Nov 2026 · kept by [name]</span></div></footer>
+<footer><div class="wrap">What's in the Lab · <a href="https://education.okstate.edu/research/labs/emerging-technologies-creativity-research-lab">Emerging Technologies and Creativity Research Laboratory</a> · Learning, Design and Technology · Oklahoma State University · <a href="https://goo.gl/maps/DotB7vQcAgGfvFpY9">007A Willard Hall</a> · <a href="collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 10 Nov 2026 · kept by Rildo Reis</span></div></footer>
 </body>
 </html>

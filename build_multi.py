@@ -1,6 +1,7 @@
 import json, html, os, shutil
 
 techs = json.load(open("techs.json"))
+techs.sort(key=lambda t: t["name"].casefold())  # alphabetical: gallery and previous/next links
 links = json.load(open("links.json"))
 OUT = "."
 e = html.escape
@@ -57,6 +58,7 @@ CSS = """
   .pill.ready{background:#e6f4ea;color:#1e7a3a}
   .pill.pending{background:var(--tint);color:var(--orange-dark)}
   .pill.training{background:#eee;color:#444}
+  .pill.confirm{background:#111;color:var(--orange)}
 
   /* tech page */
   .band{display:inline-flex;overflow:hidden;border-radius:6px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
@@ -105,6 +107,8 @@ CSS = """
   .collab ol{counter-reset:step;list-style:none;padding:0;margin:0 0 1.5rem}
   .collab ol li{counter-increment:step;position:relative;padding-left:2.4rem;margin:.6rem 0}
   .collab ol li::before{content:counter(step);position:absolute;left:0;top:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .formwrap{background:#fff;border-radius:10px;overflow:hidden;margin-top:1.2rem;border-top:4px solid var(--orange)}
+  .formwrap iframe{display:block;width:100%;height:780px;border:0}
   .cta{display:inline-block;background:var(--orange);color:#fff !important;text-decoration:none;font-weight:800;padding:.8rem 1.4rem;border-radius:8px}
   .cta:hover{background:var(--orange-dark)}
   footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.88rem;border-top:1px solid #2a2a2a}
@@ -136,7 +140,8 @@ CSS = """
   .meta-line{font-family:var(--mono);font-size:.74rem;color:var(--mute);margin-top:1rem}
   .labgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
   .photo-ph{aspect-ratio:4/3;border:2px dashed var(--line);border-radius:10px;display:grid;place-items:center;color:var(--mute);text-align:center;padding:1rem;background:#fff}
-  @media (max-width:760px){.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
+  @media (max-width:520px){.logo > span{display:none}.topbar nav a{margin-left:1rem}}
+  @media (max-width:760px){.formwrap iframe{height:900px}.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
   @media print{.topbar,.pager,footer,.interact{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 """
 
@@ -171,18 +176,18 @@ HEAD = """<!DOCTYPE html>
 """
 
 FOOT = """
-<footer><div class="wrap">What's in the Lab · Lab name · Building, Room · City · <a href="{root}collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 6 Nov 2026 · kept by [name]</span></div></footer>
+<footer><div class="wrap">What's in the Lab · <a href="https://education.okstate.edu/research/labs/emerging-technologies-creativity-research-lab">Emerging Technologies and Creativity Research Laboratory</a> · Learning, Design and Technology · Oklahoma State University · <a href="https://goo.gl/maps/DotB7vQcAgGfvFpY9">007A Willard Hall</a> · <a href="{root}collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 10 Nov 2026 · kept by Rildo Reis</span></div></footer>
 </body>
 </html>
 """
 
-def head(title, desc, root, on="tech", og="omni-one.jpg"):
+def head(title, desc, root, on="tech", og="lab-room.jpg"):
     return HEAD.format(title=e(title), desc=e(desc), css=CSS, root=root, og=og,
                        on_tech="on" if on == "tech" else "", on_collab="on" if on == "collab" else "", on_lab="on" if on == "lab" else "")
 
 def pill(status):
     s = status.lower()
-    cls = "ready" if s.startswith("ready") else "training" if s.startswith("training") else "pending"
+    cls = "ready" if s.startswith("ready") else "training" if s.startswith("training") else "confirm" if s.startswith("to confirm") else "pending"
     return f'<span class="pill {cls}">{e(status.split(" (")[0])}</span>'
 
 def li_pairs(items):
@@ -196,6 +201,8 @@ def used_text(t):
     st = t["status"].lower()
     if st.startswith("ready"):
         return "Not used in a course yet — set up and waiting for its first project. Be the first and we will write it up here."
+    if st.startswith("to confirm"):
+        return "Just arrived in the lab. Its status and first uses will be recorded here as soon as the team has tried it."
     if st.startswith("setup"):
         return "Not available yet. Once it is set up, the first session will be documented here: who used it, for what, and what we learned."
     return "Nobody in the lab has tried this one yet. If you know it, come and show us — a 20-minute walkthrough would be the first entry here."
@@ -237,8 +244,7 @@ def tech_page(i, t):
         <div class="strip" style="grid-template-columns:1fr 1fr">
           <div><span>Type of tech</span><b>{e(t['type'])}</b></div>
           <div><span>Use</span><b>{e(t['use'])}</b></div>
-          <div><span>Quantity</span><b>{e(t['quantity'])}</b></div>
-          <div><span>Status</span><b>{e(t['status'])}</b></div>
+          {'' if t['quantity'].lower().startswith('to confirm') else '<div style="grid-column:1/-1"><span>Quantity</span><b>' + e(t['quantity']) + '</b></div>'}
         </div>
         <h3>What is it?</h3>
         <p>{e(t['summary'])}</p>
@@ -249,12 +255,6 @@ def tech_page(i, t):
     <ul>
 {li_pairs(t['kit'])}
     </ul>
-
-    <div class="used">
-      <h3>Used so far</h3>
-      <!-- Replace with real history: course, semester, what happened, who ran it. One to three lines. -->
-      <p>{used_text(t)}</p>
-    </div>
 
     <h2 style="margin-top:2rem">Ideas for teaching and research</h2><span class="ul-mark"></span>
     <div class="cols">
@@ -275,46 +275,7 @@ def tech_page(i, t):
     <ul class="learn">
 {ex}
     </ul>
-    <p class="meta-line">Inventory LAB-{t['num']} · {e(t['quantity'])} · status: {e(t['status'])}</p>
-  </div>
-</section>
-
-<section class="interact" id="interact">
-  <div class="wrap">
-    <span class="tag">Get involved</span>
-    <h2>Try it, tell us, share an idea</h2>
-    <div class="igrid">
-
-      <div class="ibox full">
-        <h3>Watch our demo</h3>
-        <p>A short video recorded in the lab with this equipment.</p>
-        <div class="embed">
-          <!-- VIDEO: replace the placeholder below with the YouTube embed code.
-               YouTube → Share → Embed → copy the <iframe …></iframe> and paste it here. -->
-          {placeholder("Demo video placeholder", ["Upload the demo to YouTube (unlisted is fine).", "Share → Embed → paste the <code>&lt;iframe&gt;</code> here."])}
-        </div>
-      </div>
-
-      <div class="ibox">
-        <h3>I'm interested</h3>
-        <p>Thirty seconds: tell us you would like to try the <strong>{form_hint}</strong> and we will get in touch.</p>
-        <div class="embed tall">
-          <!-- GOOGLE FORM "I'm interested": Forms → Send → < > (Embed HTML) → paste the <iframe> here.
-               Pre-fill the "Technology" question with "{form_hint}" using Forms → ⋮ → Get pre-filled link. -->
-          {placeholder("Google Form placeholder — I'm interested", ["Create the “I'm interested” form (questions in FORMS.docx).", "Send → <code>&lt;&gt;</code> Embed HTML → paste the <code>&lt;iframe&gt;</code> here.", f"Use a pre-filled link with Technology = “{form_hint}”."])}
-        </div>
-      </div>
-
-      <div class="ibox">
-        <h3>How would you use it?</h3>
-        <p>Post an idea, a question or a link on the wall — and see what colleagues have already suggested.</p>
-        <div class="embed tall">
-          <!-- PADLET: Share → Embed in your blog or website → copy the <iframe> and paste it here. -->
-          {placeholder("Padlet placeholder", ["Create a Padlet wall for this technology.", "Share → Embed in your blog or website → paste the <code>&lt;iframe&gt;</code> here."])}
-        </div>
-      </div>
-
-    </div>
+    <p class="meta-line">Inventory LAB-{t['num']}{'' if t['quantity'].lower().startswith('to confirm') else ' · ' + e(t['quantity'])}</p>
   </div>
 </section>
 
@@ -328,22 +289,22 @@ def index_page():
         return "robotics" if "robot" in ty else "immersive" if ("immersive" in ty or "wearable" in ty) else "fabrication" if "fabrication" in ty else "media"
     def stat(t):
         st = t["status"].lower()
-        return "ready" if st.startswith("ready") else "training" if st.startswith("training") else "pending"
-    ordered = sorted(techs, key=lambda t: {"ready": 0, "pending": 1, "training": 2}[stat(t)])
-    cards = "\n".join(f"""      <li class="{'featured ' if stat(t)=='ready' else ''}" data-cat="{cat(t)}" data-stat="{stat(t)}"><a href="tech/{t['id']}.html">
+        return "ready" if st.startswith("ready") else "training" if st.startswith("training") else "confirm" if st.startswith("to confirm") else "pending"
+    ordered = techs
+    cards = "\n".join(f"""      <li data-cat="{cat(t)}"><a href="tech/{t['id']}.html">
         <img src="{t['image']}" alt="{e(t['name'])}" loading="lazy">
         <div class="body"><span class="tag">LAB-{t['num']}</span><div class="name">{e(t['name'])}</div>
-        <div class="sub">{e(t['type'])} · {e(t['use'])}</div>{pill(t['status'])}{'<span class="ready-note">Book a demo this week →</span>' if stat(t)=='ready' else ''}</div></a></li>""" for t in ordered)
+        <div class="sub">{e(t['type'])} · {e(t['use'])}</div></div></a></li>""" for t in ordered)
     return head("What's in the Lab — Technology Showcase", "Technologies available in the lab for teaching and research, with ideas for putting them to work.", "", on="tech") + f"""
 <section class="hero" id="top">
   <div class="wrap">
     <span class="tag">Technology showcase · Fall 2026</span>
     <h1>What's in <b>the Lab</b></h1>
-    <p>Eleven pieces of equipment, two of them ready to demo this week, the rest being set up. Pick one, see what it does, and tell us how you would use it.</p>
+    <p>{len(techs)} technologies for teaching and research. Pick one, see what it does, and tell us how you would use it.</p>
     <div class="meta">
-      <div><span>Lab</span>Lab name</div>
-      <div><span>Institution</span>Department · University</div>
-      <div><span>Contact</span>Coordinator name · email</div>
+      <div><span>Lab</span><a href="https://education.okstate.edu/research/labs/emerging-technologies-creativity-research-lab" style="color:inherit">Emerging Technologies and Creativity Research Laboratory</a></div>
+      <div><span>Institution</span>Learning, Design and Technology Department<br>Educational Foundations, Leadership and Aviation<br>Oklahoma State University</div>
+      <div><span>Contact</span>Dr. Carolina Torrejon Capurro · <a href="mailto:ctorrej@okstate.edu" style="color:inherit">ctorrej@okstate.edu</a><br>Dr. Keunjae Kim · <a href="mailto:keunjae.kim@okstate.edu" style="color:inherit">keunjae.kim@okstate.edu</a></div>
     </div>
   </div>
 </section>
@@ -353,13 +314,10 @@ def index_page():
     <h2>Technologies</h2><span class="ul-mark"></span>
     <div class="filters" id="filters">
       <button class="on" data-f="all">All</button>
-      <button data-f="stat:ready">Ready now</button>
-      <button data-f="stat:pending">Being set up</button>
-      <button data-f="stat:training">Nobody has tried yet</button>
       <button data-f="cat:robotics">Robotics</button>
       <button data-f="cat:immersive">Immersive &amp; wearable</button>
       <button data-f="cat:fabrication">Fabrication</button>
-      <button data-f="cat:media">Audio &amp; electronics</button>
+      <button data-f="cat:media">Audio, video &amp; more</button>
     </div>
     <ul class="gallery" id="gallery">
 {cards}
@@ -370,14 +328,7 @@ def index_page():
 <section class="block" id="about">
   <div class="wrap">
     <h2>How this works</h2><span class="ul-mark"></span>
-    <p>One page per piece of equipment: our own photo, what it is in plain words, what is in the box, who has used it so far, and ideas for courses and studies. Every page ends with a short demo video, a thirty-second “I'm interested” form and an idea wall where you can see what colleagues have already proposed. The inventory code (LAB-01, LAB-02…) is the same one printed on the label of the equipment itself.</p>
-    <h3>Status labels</h3>
-    <div class="strip">
-      <div><span>Ready to demo</span><b>Set up and working; book a session</b></div>
-      <div><span>Setup pending</span><b>Assembly, charging or configuration still needed</b></div>
-      <div><span>Training needed</span><b>No one has used it yet</b></div>
-      <div><span>In use</span><b>Currently booked by a project</b></div>
-    </div>
+    <p>One page per piece of equipment: our own photo, what it is in plain words, what is in the box, ideas for courses and studies, practical notes and links to learn more. Each piece of equipment has an inventory code (LAB-01, LAB-02…), in alphabetical order.</p>
   </div>
 </section>
 
@@ -406,51 +357,37 @@ def index_page():
 
 # ------------------------------------------------------------------ lab page
 def lab_page():
-    return head("The lab — What's in the Lab", "Who we are, where we are, and how to use the lab.", "", on="lab") + """
+    return head("The lab — What's in the Lab", "Emerging Technologies and Creativity Research Laboratory: who we are, where we are, and how to use the lab.", "", on="lab") + """
 <section class="hero small">
   <div class="wrap">
-    <span class="tag">Who we are</span>
-    <h1>The <b>lab</b></h1>
-    <p>A small space with a lot of equipment and a short list of rules.</p>
+    <span class="tag">Emerging Technologies and Creativity Research Laboratory</span>
+    <h1>Learning <b>Reimagined</b></h1>
+    <p>Transforming education through creative habits.</p>
   </div>
 </section>
 <section class="block">
   <div class="wrap">
     <div class="labgrid">
       <div>
-        <!-- Replace with a wide photo of the room, with people in it if possible: images/lab-room.jpg -->
-        <div class="photo-ph">Photo of the room<br><small>images/lab-room.jpg · wide shot, people welcome</small></div>
+        <figure>
+          <img src="images/lab-room.jpg" alt="The lab in 007A Willard Hall: round tables with orange chairs, a large display, 3D printers and the green screen with its lights">
+          <figcaption>The lab in 007A Willard Hall.</figcaption>
+        </figure>
       </div>
       <div>
-        <h2>What this place is for</h2><span class="ul-mark"></span>
-        <!-- Two or three sentences in your own words: why the lab exists, who set it up, what you hope people do here. -->
-        <p>[Two or three sentences in the team's own words: why the lab exists, who set it up, and what you hope people will do here. Mention one thing that already happened in it.]</p>
+        <h2>About the lab</h2><span class="ul-mark"></span>
+        <p>Our unique lab explores imaginative ways to improve research, teaching and learning with emerging technologies. Open to all students, faculty and staff within the College of Education and Human Sciences, we aim to facilitate conversations, ideas and solutions that ultimately translate into collaborative research and projects. Come experience the lab for yourself – we are located in <a href="https://goo.gl/maps/DotB7vQcAgGfvFpY9" target="_blank" rel="noopener">007A Willard Hall</a> and open daily.</p>
+        <p><a href="https://education.okstate.edu/research/labs/emerging-technologies-creativity-research-lab" target="_blank" rel="noopener">The lab on the College of Education and Human Sciences website →</a></p>
         <h3>Where and when</h3>
         <div class="strip" style="grid-template-columns:1fr 1fr">
-          <div><span>Room</span><b>Building · Room</b></div>
-          <div><span>Open hours</span><b>Mon–Fri, 9 am – 5 pm</b></div>
-          <div><span>Coordinator</span><b>Name</b></div>
-          <div><span>Email</span><b>name@university.edu</b></div>
+          <div><span>Room</span><b><a href="https://goo.gl/maps/DotB7vQcAgGfvFpY9" target="_blank" rel="noopener" style="color:inherit">007A Willard Hall</a></b></div>
+          <div><span>Open</span><b>Daily</b></div>
+          <div><span>Contact</span><b>Dr. Carolina Torrejon Capurro</b><br><a href="mailto:ctorrej@okstate.edu" style="color:inherit">ctorrej@okstate.edu</a></div>
+          <div><span>Contact</span><b>Dr. Keunjae Kim</b><br><a href="mailto:keunjae.kim@okstate.edu" style="color:inherit">keunjae.kim@okstate.edu</a></div>
         </div>
       </div>
     </div>
 
-    <h2 style="margin-top:2.5rem">Team</h2><span class="ul-mark"></span>
-    <!-- One line per person: name, role, what to ask them about. Add a photo if you like. -->
-    <ul>
-      <li><strong>[Name]</strong> — coordinator. Ask about: bookings, new equipment, collaborations.</li>
-      <li><strong>[Name]</strong> — graduate assistant. Ask about: VR headsets, Omni One.</li>
-      <li><strong>[Name]</strong> — graduate assistant. Ask about: robots, 3D printers, Cricut.</li>
-    </ul>
-
-    <h2 style="margin-top:2.5rem">House rules</h2><span class="ul-mark"></span>
-    <ul>
-      <li>Book first. Even a quick look — it keeps the equipment where we expect it.</li>
-      <li>Sign the sheet when you take something out; loans are up to two weeks.</li>
-      <li>Put it back charged. Batteries and chargers live in the labelled drawer.</li>
-      <li>Recording people? Ask them first. Consent forms are in the folder by the door.</li>
-      <li>Something broke? Tell us the same day. Nobody will be upset; silence is the only problem.</li>
-    </ul>
   </div>
 </section>
 """ + FOOT.format(root="")
@@ -472,59 +409,39 @@ def collaborate_page():
     <div class="collab" style="padding:1.5rem 1.5rem 1rem;border-radius:10px">
     <ol>
       <li><strong>Share the idea.</strong> Tell us the idea in a few lines — the course or project, the technology, and what you would like students or participants to do.</li>
-      <li><strong>Book a demo.</strong> We set up the equipment and walk you through it in about 30 minutes. Bring a colleague or a student assistant if you like.</li>
-      <li><strong>Run a pilot.</strong> Try it in one class or one pilot session. We can be present the first time.</li>
+      <li><strong>Book a demo.</strong> We set up the equipment and walk you through it. Bring a colleague or a student assistant if you like.</li>
+      <li><strong>Run a pilot.</strong> Try it in one class or one pilot session.</li>
       <li><strong>Build on it.</strong> Together we refine the activity or protocol, document it, and add it to this catalogue as an example for others.</li>
     </ol>
     </div>
 
     <div class="strip" style="margin-top:2rem">
-      <div><span>Coordinator</span><b>Name</b></div>
-      <div><span>Email</span><b>name@university.edu</b></div>
-      <div><span>Office</span><b>Building · Room</b></div>
-      <div><span>Open hours</span><b>Mon–Fri, 9 am – 5 pm</b></div>
+      <div><span>Contact</span><b>Dr. Carolina Torrejon Capurro</b><br><a href="mailto:ctorrej@okstate.edu" style="color:inherit">ctorrej@okstate.edu</a></div>
+      <div><span>Contact</span><b>Dr. Keunjae Kim</b><br><a href="mailto:keunjae.kim@okstate.edu" style="color:inherit">keunjae.kim@okstate.edu</a></div>
+      <div><span>Room</span><b><a href="https://goo.gl/maps/DotB7vQcAgGfvFpY9" target="_blank" rel="noopener" style="color:inherit">007A Willard Hall</a></b></div>
+      <div><span>Open</span><b>Daily</b></div>
     </div>
     <h3>What we can offer</h3>
     <ul>
       <li>Hands-on training sessions for instructors, students and research assistants.</li>
       <li>Help designing activities, assessment rubrics and research protocols around the equipment.</li>
       <li>Technical support during the first sessions and troubleshooting afterwards.</li>
-      <li>Space for workshops, recordings and small group work; equipment loans of up to two weeks.</li>
+      <li>Space for workshops, recordings and small group work.</li>
     </ul>
   </div>
 </section>
 
-<section class="interact">
+<section class="collab">
   <div class="wrap">
-    <span class="tag">Get involved</span>
-    <h2>Book a demo, propose a project</h2>
-    <div class="igrid">
-      <div class="ibox">
-        <h3>Book a demo</h3>
-        <p>Pick a 30-minute slot and tell us which technologies you want to see.</p>
-        <div class="embed tall">
-          <!-- GOOGLE CALENDAR appointment schedule: Calendar → appointment schedule → Share → Embed → paste the <iframe> here.
-               Or embed the "Book a demo" Google Form (questions in FORMS.docx). -->
-          {placeholder("Booking placeholder", ["Option A: Google Calendar appointment schedule → Share → Embed.", "Option B: the “Book a demo” Google Form → Send → <code>&lt;&gt;</code> → paste the <code>&lt;iframe&gt;</code> here."])}
-        </div>
-      </div>
-      <div class="ibox">
-        <h3>Propose a project or activity</h3>
-        <p>A few lines are enough. We will reply within a week.</p>
-        <div class="embed tall">
-          <!-- GOOGLE FORM "Project idea": Forms → Send → < > → paste the <iframe> here. -->
-          {placeholder("Google Form placeholder — Project idea", ["Create the “Propose a project” form (questions in FORMS.docx).", "Send → <code>&lt;&gt;</code> Embed HTML → paste the <code>&lt;iframe&gt;</code> here."])}
-        </div>
-      </div>
-      <div class="ibox full">
-        <h3>What should we add next?</h3>
-        <p>One question, one click: vote for the technology you would most like to see in the lab, or the training you would attend.</p>
-        <div class="embed" style="aspect-ratio:auto;height:420px">
-          <!-- GOOGLE FORM "Quick poll" (single question; share the results chart link next to it). -->
-          {placeholder("Google Form placeholder — Quick poll", ["Create the “Quick poll” form (questions in FORMS.docx).", "Send → <code>&lt;&gt;</code> → paste the <code>&lt;iframe&gt;</code> here."])}
-        </div>
-      </div>
+    <span class="tag">Get in touch</span>
+    <h2 style="font-size:2rem;margin-top:.6rem">Share an idea with us</h2>
+    <p>Tell us who you are and what you have in mind — a project, a class activity, a demo you would like to see. A few lines are enough; we will get back to you.</p>
+    <div class="formwrap">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdNrnspill-tBAy8I5P5If7ZpqCwl4tXc7Vg8mW440QZa_Cqw/viewform?embedded=true" title="Contact form — Emerging Technologies and Creativity Research Laboratory" loading="lazy" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
+    <p style="margin-top:1rem;font-size:.95rem">Form not showing? <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNrnspill-tBAy8I5P5If7ZpqCwl4tXc7Vg8mW440QZa_Cqw/viewform" target="_blank" rel="noopener">Open it in a new tab</a>, or write directly to
+      <a href="mailto:ctorrej@okstate.edu?subject=Idea%20for%20the%20ETCR%20Lab">ctorrej@okstate.edu</a> or
+      <a href="mailto:keunjae.kim@okstate.edu?subject=Idea%20for%20the%20ETCR%20Lab">keunjae.kim@okstate.edu</a>.</p>
   </div>
 </section>
 """ + FOOT.format(root="")
