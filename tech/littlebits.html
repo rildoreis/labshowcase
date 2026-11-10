@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f26b1d'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='JetBrains Mono,Menlo,monospace' font-weight='700' font-size='24' fill='%23111'%3ELAB%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="littleBits Kits — What&#x27;s in the Lab">
 <meta property="og:description" content="Gizmos &amp; Gadgets Kit (2015) and Code Kit (2017) — snap-together electronics">
-<meta property="og:image" content="../images/omni-one.jpg">
+<meta property="og:image" content="../images/lab-room.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,6 +65,7 @@
   .pill.ready{background:#e6f4ea;color:#1e7a3a}
   .pill.pending{background:var(--tint);color:var(--orange-dark)}
   .pill.training{background:#eee;color:#444}
+  .pill.confirm{background:#111;color:var(--orange)}
 
   /* tech page */
   .band{display:inline-flex;overflow:hidden;border-radius:6px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
@@ -113,6 +114,8 @@
   .collab ol{counter-reset:step;list-style:none;padding:0;margin:0 0 1.5rem}
   .collab ol li{counter-increment:step;position:relative;padding-left:2.4rem;margin:.6rem 0}
   .collab ol li::before{content:counter(step);position:absolute;left:0;top:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .formwrap{background:#fff;border-radius:10px;overflow:hidden;margin-top:1.2rem;border-top:4px solid var(--orange)}
+  .formwrap iframe{display:block;width:100%;height:780px;border:0}
   .cta{display:inline-block;background:var(--orange);color:#fff !important;text-decoration:none;font-weight:800;padding:.8rem 1.4rem;border-radius:8px}
   .cta:hover{background:var(--orange-dark)}
   footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.88rem;border-top:1px solid #2a2a2a}
@@ -144,7 +147,8 @@
   .meta-line{font-family:var(--mono);font-size:.74rem;color:var(--mute);margin-top:1rem}
   .labgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
   .photo-ph{aspect-ratio:4/3;border:2px dashed var(--line);border-radius:10px;display:grid;place-items:center;color:var(--mute);text-align:center;padding:1rem;background:#fff}
-  @media (max-width:760px){.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
+  @media (max-width:520px){.logo > span{display:none}.topbar nav a{margin-left:1rem}}
+  @media (max-width:760px){.formwrap iframe{height:900px}.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
   @media print{.topbar,.pager,footer,.interact{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
@@ -162,7 +166,7 @@
 
 <section class="hero small">
   <div class="wrap">
-    <span class="tag">LAB-04</span> &nbsp;<span class="tag">Electronics &amp; invention</span> &nbsp;<span class="tag">Teaching</span>
+    <span class="tag">LAB-05</span> &nbsp;<span class="tag">Electronics &amp; invention</span> &nbsp;<span class="tag">Teaching</span>
     <h1>littleBits Kits</h1>
     <p>Gizmos &amp; Gadgets Kit (2015) and Code Kit (2017) — snap-together electronics</p>
   </div>
@@ -181,8 +185,7 @@
         <div class="strip" style="grid-template-columns:1fr 1fr">
           <div><span>Type of tech</span><b>Electronics &amp; invention</b></div>
           <div><span>Use</span><b>Teaching</b></div>
-          <div><span>Quantity</span><b>2 kits</b></div>
-          <div><span>Status</span><b>Training needed (to be investigated)</b></div>
+          <div style="grid-column:1/-1"><span>Quantity</span><b>2 kits</b></div>
         </div>
         <h3>What is it?</h3>
         <p>littleBits are small electronic modules — power, sensors, motors, lights, buzzers — that snap together with magnets, so students can build working circuits and inventions in minutes without soldering or wiring. The Gizmos &amp; Gadgets Kit focuses on mechanical inventions (materials for 12 projects with 15 bits); the Code Kit adds a programmable “codeBit” and over 100 classroom activities with 10 lessons for grades 3 and up.</p>
@@ -191,89 +194,44 @@
 
     <h3>What's in the kit</h3>
     <ul>
-      <li><strong>Gizmos &amp; Gadgets Kit:</strong> 15 bits plus wheels, gears, servo, motors and craft materials for 12 inventions</li>
-      <li><strong>Code Kit:</strong> codeBit, sensors, LED matrix, buttons; 1–3 students per kit; grades 3+</li>
-      <li><strong>Software:</strong> the littleBits Code Kit app (block-based, browser or desktop)</li>
+      <li><strong>Gizmos &amp; Gadgets Kit:</strong> 15 bits and materials for 12 inventions</li>
+      <li><strong>Code Kit:</strong> 100+ activities and 10 lessons; 1–3 students per kit; grades 3+</li>
     </ul>
-
-    <div class="used">
-      <h3>Used so far</h3>
-      <!-- Replace with real history: course, semester, what happened, who ran it. One to three lines. -->
-      <p>Nobody in the lab has tried this one yet. If you know it, come and show us — a 20-minute walkthrough would be the first entry here.</p>
-    </div>
 
     <h2 style="margin-top:2rem">Ideas for teaching and research</h2><span class="ul-mark"></span>
     <div class="cols">
       <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Invention challenges:</strong> “build something that helps…” prompts, then a pitch in the target language.</li>
-      <li><strong>Vocabulary of cause and effect:</strong> if-then language mapped onto input–output circuits.</li>
-      <li><strong>Games and quizzes:</strong> the Code Kit&#x27;s built-in game projects (buzzers, scoreboards) for classroom activities.</li>
-      <li><strong>Low-floor prototyping:</strong> fast mock-ups of interactive objects for design thinking sessions.</li>
+      <li><strong>Invention challenges:</strong> “build something that helps…” prompts in any subject, followed by a short pitch.</li>
+      <li><strong>Systems thinking:</strong> inputs, outputs and feedback made visible in a working circuit.</li>
+      <li><strong>Science and engineering:</strong> circuits, energy and simple machines through hands-on builds.</li>
+      <li><strong>Rapid prototyping:</strong> quick mock-ups of interactive objects in design-thinking sessions.</li>
       </ul></div>
       <div class="card"><h3>Research ideas</h3><ul>
       <li><strong>Tinkering and creativity:</strong> observing idea generation with modular, no-wiring electronics.</li>
-      <li><strong>Younger learners:</strong> early STEM and language integration in grades 3–6.</li>
+      <li><strong>Early STEM:</strong> physical computing with younger learners in grades 3–6.</li>
       </ul></div>
     </div>
 
     <h3>Good to know</h3>
     <ul>
-      <li>Older kits (boxes dated 2015 and 2017); contents and software compatibility still need to be checked.</li>
-      <li>Not yet investigated in detail — may be kept out of the public showcase until someone has tested them.</li>
-      <li>Both kits are in the same photo; add a separate entry later if they are presented individually.</li>
+      <li>Bits snap together with magnets and only connect the right way round — no wiring, no soldering.</li>
+      <li>Build in order: power first, then inputs, then outputs.</li>
+      <li>The two kits can be combined for bigger inventions.</li>
     </ul>
 
     <h2 style="margin-top:2rem">Learn and explore</h2>
     <ul class="learn">
-      <li><span class="k">WATCH</span><div><a href="https://core-electronics.com.au/videos/our-review-of-littlebits-gizmos-and-gadgets-kit-2nd-edition" target="_blank" rel="noopener">Video review of the Gizmos &amp; Gadgets Kit</a><small>core-electronics.com.au</small></div></li>
+      <li><span class="k">WATCH</span><div><a href="https://www.youtube.com/watch?v=BZAFzRmAsCM" target="_blank" rel="noopener">Introducing the Gizmos &amp; Gadgets Kit (video)</a><small>youtube.com</small></div></li>
+      <li><span class="k">WATCH</span><div><a href="https://www.youtube.com/watch?v=w7g1oE7p1G8" target="_blank" rel="noopener">littleBits Gizmos &amp; Gadgets Kit, 2nd Edition (video)</a><small>youtube.com</small></div></li>
       <li><span class="k">START HERE</span><div><a href="https://makezine.com/projects/getting-started-with-littlebits" target="_blank" rel="noopener">Getting started with littleBits: how the bits snap together and first circuits</a><small>makezine.com</small></div></li>
       <li><span class="k">IN THE CLASSROOM</span><div><a href="https://sites.google.com/aps.edu/apsapps/apps-extensions/classroom-edtech-applications/littlebits-code-kit" target="_blank" rel="noopener">Classroom uses of the Code Kit</a><small>sites.google.com</small></div></li>
     </ul>
-    <p class="meta-line">Inventory LAB-04 · 2 kits · status: Training needed (to be investigated)</p>
+    <p class="meta-line">Inventory LAB-05 · 2 kits</p>
   </div>
 </section>
 
-<section class="interact" id="interact">
-  <div class="wrap">
-    <span class="tag">Get involved</span>
-    <h2>Try it, tell us, share an idea</h2>
-    <div class="igrid">
+<div class="wrap"><div class="pager"><a href="insta360-x5.html"><small>← Previous</small>Insta360 X5</a><a class="next" href="meeting-owl.html"><small>Next →</small>Meeting Owl 4+</a></div></div>
 
-      <div class="ibox full">
-        <h3>Watch our demo</h3>
-        <p>A short video recorded in the lab with this equipment.</p>
-        <div class="embed">
-          <!-- VIDEO: replace the placeholder below with the YouTube embed code.
-               YouTube → Share → Embed → copy the <iframe …></iframe> and paste it here. -->
-          <div class="placeholder"><b>Demo video placeholder</b><span>Upload the demo to YouTube (unlisted is fine).<br>Share → Embed → paste the <code>&lt;iframe&gt;</code> here.</span></div>
-        </div>
-      </div>
-
-      <div class="ibox">
-        <h3>I'm interested</h3>
-        <p>Thirty seconds: tell us you would like to try the <strong>littleBits Kits</strong> and we will get in touch.</p>
-        <div class="embed tall">
-          <!-- GOOGLE FORM "I'm interested": Forms → Send → < > (Embed HTML) → paste the <iframe> here.
-               Pre-fill the "Technology" question with "littleBits Kits" using Forms → ⋮ → Get pre-filled link. -->
-          <div class="placeholder"><b>Google Form placeholder — I'm interested</b><span>Create the “I'm interested” form (questions in FORMS.docx).<br>Send → <code>&lt;&gt;</code> Embed HTML → paste the <code>&lt;iframe&gt;</code> here.<br>Use a pre-filled link with Technology = “littleBits Kits”.</span></div>
-        </div>
-      </div>
-
-      <div class="ibox">
-        <h3>How would you use it?</h3>
-        <p>Post an idea, a question or a link on the wall — and see what colleagues have already suggested.</p>
-        <div class="embed tall">
-          <!-- PADLET: Share → Embed in your blog or website → copy the <iframe> and paste it here. -->
-          <div class="placeholder"><b>Padlet placeholder</b><span>Create a Padlet wall for this technology.<br>Share → Embed in your blog or website → paste the <code>&lt;iframe&gt;</code> here.</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="wrap"><div class="pager"><a href="nezha.html"><small>← Previous</small>Nezha Inventor&#x27;s Kit for micro:bit</a><a class="next" href="sphero-bolt.html"><small>Next →</small>Sphero BOLT Power Pack</a></div></div>
-
-<footer><div class="wrap">What's in the Lab · Lab name · Building, Room · City · <a href="../collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 6 Nov 2026 · kept by [name]</span></div></footer>
+<footer><div class="wrap">What's in the Lab · <a href="https://education.okstate.edu/research/labs/emerging-technologies-creativity-research-lab">Emerging Technologies and Creativity Research Laboratory</a> · Learning, Design and Technology · Oklahoma State University · <a href="https://goo.gl/maps/DotB7vQcAgGfvFpY9">007A Willard Hall</a> · <a href="../collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 10 Nov 2026 · kept by Rildo Reis</span></div></footer>
 </body>
 </html>

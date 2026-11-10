@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23f26b1d'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='JetBrains Mono,Menlo,monospace' font-weight='700' font-size='24' fill='%23111'%3ELAB%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="Omni One — What&#x27;s in the Lab">
 <meta property="og:description" content="Virtuix omnidirectional VR treadmill — walk and run inside virtual worlds">
-<meta property="og:image" content="../images/omni-one.jpg">
+<meta property="og:image" content="../images/lab-room.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,6 +65,7 @@
   .pill.ready{background:#e6f4ea;color:#1e7a3a}
   .pill.pending{background:var(--tint);color:var(--orange-dark)}
   .pill.training{background:#eee;color:#444}
+  .pill.confirm{background:#111;color:var(--orange)}
 
   /* tech page */
   .band{display:inline-flex;overflow:hidden;border-radius:6px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
@@ -113,6 +114,8 @@
   .collab ol{counter-reset:step;list-style:none;padding:0;margin:0 0 1.5rem}
   .collab ol li{counter-increment:step;position:relative;padding-left:2.4rem;margin:.6rem 0}
   .collab ol li::before{content:counter(step);position:absolute;left:0;top:0;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .formwrap{background:#fff;border-radius:10px;overflow:hidden;margin-top:1.2rem;border-top:4px solid var(--orange)}
+  .formwrap iframe{display:block;width:100%;height:780px;border:0}
   .cta{display:inline-block;background:var(--orange);color:#fff !important;text-decoration:none;font-weight:800;padding:.8rem 1.4rem;border-radius:8px}
   .cta:hover{background:var(--orange-dark)}
   footer{background:#000;color:#9a9a9a;padding:1.5rem 0;font-size:.88rem;border-top:1px solid #2a2a2a}
@@ -144,7 +147,8 @@
   .meta-line{font-family:var(--mono);font-size:.74rem;color:var(--mute);margin-top:1rem}
   .labgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start}
   .photo-ph{aspect-ratio:4/3;border:2px dashed var(--line);border-radius:10px;display:grid;place-items:center;color:var(--mute);text-align:center;padding:1rem;background:#fff}
-  @media (max-width:760px){.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
+  @media (max-width:520px){.logo > span{display:none}.topbar nav a{margin-left:1rem}}
+  @media (max-width:760px){.formwrap iframe{height:900px}.gallery{grid-template-columns:1fr}.gallery li,.gallery li.featured{grid-column:span 1}.gallery li.featured img{aspect-ratio:4/3}.learn li{grid-template-columns:1fr;gap:.2rem}.labgrid{grid-template-columns:1fr}.two,.cols,.igrid,.collab .boxes{grid-template-columns:1fr}.topbar nav a{margin-left:.9rem;font-size:.88rem}.hero{padding:3.5rem 0 2.5rem}.embed.tall{height:480px}}
   @media print{.topbar,.pager,footer,.interact{display:none}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
@@ -162,7 +166,7 @@
 
 <section class="hero small">
   <div class="wrap">
-    <span class="tag">LAB-06</span> &nbsp;<span class="tag">Immersive technology</span> &nbsp;<span class="tag">Teaching &amp; Research</span>
+    <span class="tag">LAB-10</span> &nbsp;<span class="tag">Immersive technology</span> &nbsp;<span class="tag">Teaching &amp; Research</span>
     <h1>Omni One</h1>
     <p>Virtuix omnidirectional VR treadmill — walk and run inside virtual worlds</p>
   </div>
@@ -181,8 +185,7 @@
         <div class="strip" style="grid-template-columns:1fr 1fr">
           <div><span>Type of tech</span><b>Immersive technology</b></div>
           <div><span>Use</span><b>Teaching &amp; Research</b></div>
-          <div><span>Quantity</span><b>1 unit</b></div>
-          <div><span>Status</span><b>Setup pending (being set up)</b></div>
+          <div style="grid-column:1/-1"><span>Quantity</span><b>1 unit</b></div>
         </div>
         <h3>What is it?</h3>
         <p>A full-body VR system: the user stands on a low-friction dish wearing special shoes and a support harness, and physically walks, runs or crouches to move through the virtual environment. Combined with a VR headset, it turns locomotion into a natural movement instead of a joystick push — which matters for presence, for exercise and for studies of embodied experience.</p>
@@ -191,90 +194,45 @@
 
     <h3>What's in the kit</h3>
     <ul>
-      <li><strong>Omni One platform</strong> with support arm, harness and vest</li>
-      <li><strong>VR headset</strong> integrated with the system</li>
-      <li><strong>Shoes</strong> in several sizes with low-friction soles</li>
-      <li><strong>Software:</strong> the Omni One store of compatible titles</li>
+      <li><strong>Omni One platform</strong> with support arm</li>
+      <li><strong>VR headset</strong></li>
+      <li><strong>Vest</strong> (harness)</li>
+      <li><strong>Shoes</strong> with low-friction soles</li>
     </ul>
-
-    <div class="used">
-      <h3>Used so far</h3>
-      <!-- Replace with real history: course, semester, what happened, who ran it. One to three lines. -->
-      <p>Not available yet. Once it is set up, the first session will be documented here: who used it, for what, and what we learned.</p>
-    </div>
 
     <h2 style="margin-top:2rem">Ideas for teaching and research</h2><span class="ul-mark"></span>
     <div class="cols">
       <div class="card"><h3>Teaching ideas</h3><ul>
-      <li><strong>Embodied virtual field trips:</strong> walking through a city, museum or historical site in the target language.</li>
-      <li><strong>Situated vocabulary:</strong> movement verbs, directions and spatial language experienced physically.</li>
-      <li><strong>Demonstrations of immersion:</strong> showing the difference between seated and full-body VR in media or design courses.</li>
+      <li><strong>Embodied virtual field trips:</strong> walking through a city, a museum, a historical site or a natural environment.</li>
+      <li><strong>Physical education and health:</strong> movement-based activities and exergames.</li>
+      <li><strong>Demonstrations of immersion:</strong> showing the difference between seated and full-body VR in media, design or technology courses.</li>
       </ul></div>
       <div class="card"><h3>Research ideas</h3><ul>
       <li><strong>Presence and embodiment studies:</strong> comparing locomotion methods and their effect on learning or recall.</li>
       <li><strong>Physical activity and cognition:</strong> movement-based tasks in immersive environments.</li>
-      <li><strong>Accessibility and audio description in VR:</strong> navigation with audio cues.</li>
-      <li><strong>User experience research:</strong> onboarding, discomfort and motion sickness across users.</li>
+      <li><strong>Accessibility in VR:</strong> how different users navigate and orient themselves.</li>
+      <li><strong>User experience research:</strong> onboarding, comfort and motion sickness across users.</li>
       </ul></div>
     </div>
 
     <h3>Good to know</h3>
     <ul>
-      <li>Someone is currently working on the setup; not yet available for demos.</li>
       <li>Needs a clear area around the platform and a short safety briefing before use.</li>
       <li>Sessions should be short at first; ask about dizziness and take breaks.</li>
+      <li>Users wear the Omni One vest and shoes; fit them before each session.</li>
     </ul>
 
     <h2 style="margin-top:2rem">Learn and explore</h2>
     <ul class="learn">
-      <li><span class="k">WATCH</span><div><a href="https://www.fox5ny.com/video/1755569" target="_blank" rel="noopener">A news segment showing the Omni One in use</a><small>fox5ny.com</small></div></li>
+      <li><span class="k">WATCH</span><div><a href="https://www.youtube.com/watch?v=Zi8rjwtZ_cs" target="_blank" rel="noopener">Virtuix Omni One trailer (video)</a><small>youtube.com</small></div></li>
       <li><span class="k">START HERE</span><div><a href="https://www.manualslib.com/manual/3757080/Omni-One.html" target="_blank" rel="noopener">The Omni One manual: setup, harness and safety</a><small>manualslib.com</small></div></li>
     </ul>
-    <p class="meta-line">Inventory LAB-06 · 1 unit · status: Setup pending (being set up)</p>
+    <p class="meta-line">Inventory LAB-10 · 1 unit</p>
   </div>
 </section>
 
-<section class="interact" id="interact">
-  <div class="wrap">
-    <span class="tag">Get involved</span>
-    <h2>Try it, tell us, share an idea</h2>
-    <div class="igrid">
+<div class="wrap"><div class="pager"><a href="nezha.html"><small>← Previous</small>Nezha Inventor&#x27;s Kit for micro:bit</a><a class="next" href="pocketalk.html"><small>Next →</small>Pocketalk S2 Plus</a></div></div>
 
-      <div class="ibox full">
-        <h3>Watch our demo</h3>
-        <p>A short video recorded in the lab with this equipment.</p>
-        <div class="embed">
-          <!-- VIDEO: replace the placeholder below with the YouTube embed code.
-               YouTube → Share → Embed → copy the <iframe …></iframe> and paste it here. -->
-          <div class="placeholder"><b>Demo video placeholder</b><span>Upload the demo to YouTube (unlisted is fine).<br>Share → Embed → paste the <code>&lt;iframe&gt;</code> here.</span></div>
-        </div>
-      </div>
-
-      <div class="ibox">
-        <h3>I'm interested</h3>
-        <p>Thirty seconds: tell us you would like to try the <strong>Omni One</strong> and we will get in touch.</p>
-        <div class="embed tall">
-          <!-- GOOGLE FORM "I'm interested": Forms → Send → < > (Embed HTML) → paste the <iframe> here.
-               Pre-fill the "Technology" question with "Omni One" using Forms → ⋮ → Get pre-filled link. -->
-          <div class="placeholder"><b>Google Form placeholder — I'm interested</b><span>Create the “I'm interested” form (questions in FORMS.docx).<br>Send → <code>&lt;&gt;</code> Embed HTML → paste the <code>&lt;iframe&gt;</code> here.<br>Use a pre-filled link with Technology = “Omni One”.</span></div>
-        </div>
-      </div>
-
-      <div class="ibox">
-        <h3>How would you use it?</h3>
-        <p>Post an idea, a question or a link on the wall — and see what colleagues have already suggested.</p>
-        <div class="embed tall">
-          <!-- PADLET: Share → Embed in your blog or website → copy the <iframe> and paste it here. -->
-          <div class="placeholder"><b>Padlet placeholder</b><span>Create a Padlet wall for this technology.<br>Share → Embed in your blog or website → paste the <code>&lt;iframe&gt;</code> here.</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="wrap"><div class="pager"><a href="sphero-bolt.html"><small>← Previous</small>Sphero BOLT Power Pack</a><a class="next" href="meta-glasses.html"><small>Next →</small>Ray-Ban Meta Smart Glasses</a></div></div>
-
-<footer><div class="wrap">What's in the Lab · Lab name · Building, Room · City · <a href="../collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 6 Nov 2026 · kept by [name]</span></div></footer>
+<footer><div class="wrap">What's in the Lab · <a href="https://education.okstate.edu/research/labs/emerging-technologies-creativity-research-lab">Emerging Technologies and Creativity Research Laboratory</a> · Learning, Design and Technology · Oklahoma State University · <a href="https://goo.gl/maps/DotB7vQcAgGfvFpY9">007A Willard Hall</a> · <a href="../collaborate.html">Have an idea? Let's collaborate</a><br><span style="font-family:var(--mono);font-size:.74rem">Page updated 10 Nov 2026 · kept by Rildo Reis</span></div></footer>
 </body>
 </html>
